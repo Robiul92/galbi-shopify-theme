@@ -1,0 +1,231 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-collection-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-collection-v1">
+    <div class="container container-v1">
+      <div class="row towrow">
+        <div class="col-lg-6 col-md-5">
+          <div class="box-info left">
+            <div class="box-img">
+              {% if section.settings.img_banner1 != blank %}
+              <a href="{{section.settings.url_banner_1}}"><img src="{{section.settings.img_banner1 | img_url:'master'}}" class="img-fluid"></a>
+              {% else %}
+              <a href="{{section.settings.url_banner_1}}"><img src="//placehold.it/524x582" class="img-fluid" alt=""></a>
+              {% endif %}
+            </div>
+            <div class="content-banner">
+              {% if section.settings.title_1 != blank %}
+              <h3 class="title mb-0">
+                <a class="link__hover" title="{{section.settings.title_1}}" href="{{section.settings.url_banner_1}}">{{section.settings.title_1}}</a>
+              </h3>
+              {% endif %}
+              {% if section.settings.sub_title1 != blank %}
+              <span class="label_text"><span class="text">{{section.settings.sub_title1}}</span></span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-7">
+          <div class="box-info right">
+            <div class="box-img">
+              <a href="{{section.settings.url_banner_2}}">
+                {% if section.settings.img_banner2 != blank %}
+                <img src="{{section.settings.img_banner2 | img_url:'master'}}" class="img-fluid">
+                {% else %}
+                <img src="//placehold.it/678x497" class="img-fluid" alt="">
+                {% endif %}
+              </a>
+            </div>
+            <div class="content-banner">
+              {% if section.settings.title_2 != blank %}
+              <h3 class="title mb-0">
+                <a class="link__hover" title="{{section.settings.title_2}}" href="{{section.settings.url_banner_2}}">{{section.settings.title_2}}</a>
+              </h3>
+              {% endif %}
+              {% if section.settings.sub_title2 != blank %}
+              <span class="label_text"><span class="text">{{section.settings.sub_title2}}</span></span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6">
+          <div class="box-info2">
+            <div class="box-img1 relative">
+              {% if section.settings.img_banner3 != blank %}
+              <img src="{{section.settings.img_banner3 | img_url:'master'}}" class="img-fluid">
+              {% else %}
+              <img src="//placehold.it/510x320" class="img-fluid" alt="">
+              {% endif %}
+            </div>
+            {% if section.settings.title_3 != blank %}
+            <div class="content-banner">
+              <p class="mb-0">{{section.settings.title_3}}</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="box-info tow">
+            <div class="box-img">
+              <a href="{{section.settings.url_banner_4}}">
+                {% if section.settings.img_banner4 != blank %}
+                <img src="{{section.settings.img_banner4 | img_url:'master'}}" class="img-fluid">
+                {% else %}
+                <img src="//placehold.it/560x800" class="img-fluid" alt="">
+                {% endif %}
+              </a>
+            </div>
+            <div class="content-banner">
+              {% if section.settings.title_4 != blank %}
+              <h3 class="title mb-0">
+                <a class="link__hover" title="{{section.settings.title_4}}"  href="{{section.settings.url_banner_4}}">{{section.settings.title_4}}</a>
+              </h3>
+              {% endif %}
+
+              {% if section.settings.sub_title4 != blank %}
+              <span class="label_text"><span class="text">{{section.settings.sub_title4}}</span></span>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Collection v1",
+  "settings": [
+  	 {
+      "type": "header",
+      "content": "Banner 1"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner1",
+      "label": "Image",
+  	  "info": "524 x 582px recommended"
+    },
+  	{
+      "type": "url",
+      "id": "url_banner_1",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+	{
+      "type": "text",
+      "id": "title_1",
+      "label": "Title banner 1",
+      "default": "best.seller"
+    },	
+	{
+      "type": "text",
+      "id": "sub_title1",
+      "label": "Sub Title banner",
+      "default": "WORK IT OUT"
+    },
+  
+  	{
+      "type": "header",
+      "content": "Banner 2"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner2",
+      "label": "Image",
+  	  "info": "678 x 497px recommended"
+    },
+  	{
+      "type": "url",
+      "id": "url_banner_2",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+	{
+      "type": "text",
+      "id": "title_2",
+      "label": "Title banner 2",
+      "default": "new.arrivals"
+    },	
+	{
+      "type": "text",
+      "id": "sub_title2",
+      "label": "Sub Title banner 2",
+      "default": "WORK IT OUT"
+    },  
+  	{
+      "type": "header",
+      "content": "Banner 3"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner3",
+      "label": "Image",
+  	  "info": "510 x 320 px recommended"
+    },
+	{
+      "type": "text",
+      "id": "title_3",
+      "label": "Title banner 3",
+      "default": "Free Shipping More Than $30"
+    },  
+    {
+      "type": "header",
+      "content": "Banner 4"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner4",
+      "label": "Image",
+  	  "info": "560 x 800px recommended"
+    },
+  	{
+      "type": "url",
+      "id": "url_banner_4",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+	{
+      "type": "text",
+      "id": "title_4",
+      "label": "Title banner 4",
+      "default": "accsecosires"
+    },	
+	{
+      "type": "text",
+      "id": "sub_title4",
+      "label": "Sub Title banner 4",
+      "default": "WORK IT OUT"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection v1",
+      "category": "HOME 1"
+    }
+  ]
+}
+  {% endschema %}
+
+  {% stylesheet %}
+  {% endstylesheet %}
+
+  {% javascript %}
+  {% endjavascript %}

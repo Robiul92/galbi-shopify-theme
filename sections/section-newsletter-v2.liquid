@@ -1,0 +1,109 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-newsletter-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  {% if settings.newsletter_form_action != blank %}
+  {% assign form_action = settings.newsletter_form_action %}
+  {% else %}
+  {% assign form_action = '#' %}
+  {% endif %}
+  <div class="section-newsletter-v2" style="background-image: url({% if section.settings.bg_newsletter != blank %}{{section.settings.bg_newsletter |img_url :'master'}} {% else %} //placehold.it/1920x540 {% endif %})">  
+    <div class="container container-v2">
+      <div class="box-content">
+      <div class="row align-items-center justify-content-around">
+        <div class="col-lg-5">
+          {% if section.settings.img_title != blank %}
+          <div class="text-center imgtop">
+            <img src="{{section.settings.img_title | img_url : 'master'}} ">
+          </div>
+          {% endif %}
+
+          {% if section.settings.title_newletter != blank %}
+          <div class="title_newletter">
+            <h3 class="title mb-0">{{section.settings.title_newletter}}</h3>
+          </div>
+          {% endif %}
+
+          {% if section.settings.content_newletter != blank %}
+          <p class="mb-0 content">{{section.settings.content_newletter}}</p>
+          {% endif %}
+        </div>
+        <div class="col-lg-5">
+          <div class="newletter_email">          
+            <form class="needs-validation form-inline" action="{{form_action}}" method="post">
+              <div class="form-group mb-0">                           
+                <input type="email" name="EMAIL" class="form-control" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" required >                 
+              </div>
+              <button class="btn" type="submit">{{ 'general.newsletter_form.submit_footer' | t }}</button>
+            </form>
+          </div> 
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  
+</style>
+
+
+{% schema %}
+{
+  "name": "Section Newsletter v2",
+  "settings": [
+	
+	{
+      "type": "image_picker",
+      "id": "bg_newsletter",
+      "label": "Background Image",
+	  "info": "1920 x 540px recommended"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_title",
+      "label": "Image top title",
+	  "info": "100 x 60px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_newletter",
+      "label": "Title Newletter",
+      "default": "SIGN UP FOR NEWSLETTER"
+    },
+
+	{
+      "type": "text",
+      "id": "content_newletter",
+      "label": "Content Newletter",
+      "default": "TO RECEIVE UPDATES"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter v2",
+      "category": "HOME 2"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

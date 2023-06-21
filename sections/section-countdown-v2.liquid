@@ -1,0 +1,129 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-countdown-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-countdown-v2" style="background-image: url({% if section.settings.img_bg_countdown != blank %}{{section.settings.img_bg_countdown|img_url:'master'}}{% else %}//placehold.it/1640x997{% endif %})">
+    <div class="container container-v1">
+      <div class="row">
+        <div class="col-lg-12">          
+          <div class="info-section-countdow">
+            <div class="content">
+              <div class="box-content-countdow text-center">
+                {% if section.settings.title_countdow != blank %}
+                <div class="title-countdow">
+                  <h2 class="mb-0">{{section.settings.title_countdow}}</h2>
+                </div>
+                {% endif %}
+                <div class="info-product">
+                  <div class="list-inline price-product-countdown">
+                    {% if section.settings.content_countdowt != blank %}
+                    <p class="no-sale list-inline-item">{{section.settings.content_countdowt}}</p>
+                    {% endif %}
+                  </div>                  
+
+                  {% if section.settings.button_1 != blank %}
+                  <div class="buy">
+                  	<a href="{{section.settings.url_button1}}" class="button-shop">{{section.settings.button_1}}</a>
+                  </div>
+                  {% endif %}
+
+                </div>
+              </div>
+              <div class="picture-time text-center">
+                <div class="time">
+                  {% if section.settings.timecountdow != blank %}
+                  <ul class="mb-0 list-inline list-unstyled " data-countdown="section-countdown-v2" data-date="{{section.settings.timecountdow}}">
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Countdown v2",
+  "settings": [
+	{
+      "type": "text",
+      "id": "title_countdow",
+      "label": "Title Countdow",
+      "default": "Deal of the day"
+    },
+  	{
+      "type": "header",
+      "content": "setting banner 1"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_bg_countdown",
+      "label": "Image background",
+	  "info": "1640 x 997px recommended"
+    },
+	{
+      "type": "url",
+      "id": "url_product",
+      "label": "URL banner",
+      "default": "/collections/all"
+    },
+  	{
+      "type": "text",
+      "id": "content_countdowt",
+      "label": "Content",
+      "default": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed vulputate massa. Fusce ante magna, iaculis ut purus ut, facilisis ultrices nibh. "
+    },
+	{
+      "type": "header",
+      "content": "Setting Time"
+    },
+	{
+        "type": "text",
+        "id": "timecountdow",
+        "label": "Year-Month-Date-Time-Minute-Seconds",
+        "default": "2019-12-12-12-12-12"
+      },
+
+    {
+      "type": "text",
+      "id": "button_1",
+      "label": "button 1",
+      "default": "ShOP NOW"
+    },
+  	{
+      "type": "url",
+      "id": "url_button1",
+      "label": "URL button 1",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Countdown v2",
+      "category": "HOME 3"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

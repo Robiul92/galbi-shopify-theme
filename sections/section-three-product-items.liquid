@@ -1,0 +1,212 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="three__product_items section-banner-v2 mt-all">
+    <div class="container container-v1">      
+      <div class="row">
+         <div class="col-lg-4 col-sm-6">
+         <div class="box-info one">
+            <div class="box-img text-center">
+              <a href="{{section.settings.url_collection3}}">
+                {% if section.settings.img_collection3 != blank %}
+                <img src="{{section.settings.img_collection3 | img_url:'master'}}" class="img-fluid">
+                {% else %}
+                <img src="//placehold.it/480x652" class="img-fluid" alt="">
+                {% endif %}
+              </a>
+            </div>
+            <div class="content-banner ">
+
+              {% if section.settings.title_collection3 != blank %}
+               <h3 class="bigtitle mb-0">{{section.settings.title_collection3}}</h3>
+              {% endif %}
+
+              {% if section.settings.button_3 != blank %}
+              <span class="sub-title">{{section.settings.button_3}}</span>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="box-info">
+            <div class="box-img text-center">
+              <a href="{{section.settings.url_collection1}}">
+                {% if section.settings.img_collection1 != blank %}
+                <img src="{{section.settings.img_collection1 | img_url:'master'}}" class="img-fluid">
+                {% else %}
+                <img src="//placehold.it/480x652" class="img-fluid" alt="">
+                {% endif %}
+              </a>
+            </div>
+            <div class="content-banner one style-white-one">              
+              {% if section.settings.title_collection1 != blank %}
+              <h3 class="bigtitle mb-0">{{section.settings.title_collection1}}</h3>
+              {% endif %}
+              
+              {% if section.settings.button_1 != blank %}
+              <span class="sub-title">{{section.settings.button_1}}</span>
+              {% endif %}
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6">
+          <div class="box-info ">
+            <div class="box-img text-center">
+              <a href="{{section.settings.url_collection2}}">
+                {% if section.settings.img_collection2 != blank %}
+                <img src="{{section.settings.img_collection2 | img_url:'master'}}" class="img-fluid">
+                {% else %}
+                <img src="//placehold.it/480x652" class="img-fluid" alt="">
+                {% endif %}
+              </a>
+            </div>
+            <div class="content-banner">
+              
+              {% if section.settings.title_collection2 != blank %}
+               <h3 class="bigtitle mb-0">{{section.settings.title_collection2}}</h3>
+              {% endif %}
+              
+              {% if section.settings.button_2 != blank %}
+              <span class="sub-title">{{section.settings.button_2}}</span>
+              {% endif %}
+              
+            </div>
+          </div>
+        </div>
+        
+       
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+
+{
+  "name": "Three Product Grid",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Info Left"
+    },  
+	{
+      "type": "header",
+      "content": "Info Left 1"
+    },  
+	{
+      "type": "image_picker",
+      "id": "img_collection3",
+      "label": "Image collection 1",
+      "info": "480 x 310px recommended"
+    },    
+    {
+      "type": "text",
+      "id": "title_collection3",
+      "label": "Title Collection 1",
+      "default": "Accessories"
+    },
+	{
+      "type": "text",
+      "id": "button_3",
+      "label": "Sub Title",
+      "default": "Sales 30%"
+    },
+	{
+      "type": "url",
+      "id": "url_collection3",
+      "label": "URL Collection 1",
+      "default": "/collections/all"
+    },
+   
+	
+	{
+      "type": "header",
+      "content": "Info Center"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_collection1",
+      "label": "Image collection",
+      "info": "480 x 652px recommended"
+    },    
+    {
+      "type": "text",
+      "id": "title_collection1",
+      "label": "Title Collection",
+      "default": "Dress"
+    },
+	{
+      "type": "text",
+      "id": "button_1",
+      "label": "Sub Title",
+      "default": "New Arrivals"
+    },
+	{
+      "type": "url",
+      "id": "url_collection1",
+      "label": "URL Collection",
+      "default": "/collections/all"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Info Right"
+    },  
+	{
+      "type": "image_picker",
+      "id": "img_collection2",
+      "label": "Image collection",
+      "info": "480 x 652px recommended"
+    },    
+    {
+      "type": "text",
+      "id": "title_collection2",
+      "label": "Title Collection",
+      "default": "Tshirt"
+    },
+	{
+      "type": "text",
+      "id": "button_2",
+      "label": "Sub Title",
+      "default": "New Collection"
+    },
+	{
+      "type": "url",
+      "id": "url_collection2",
+      "label": "URL Collection",
+      "default": "/collections/all"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Three Product Grid",
+      "category": "HOME 2"
+    }
+  ]
+}
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

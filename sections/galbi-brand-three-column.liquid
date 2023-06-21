@@ -1,0 +1,138 @@
+<div data-section-id="{{ section.id }}" data-section-type="our-story-section-top" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="our-story-section-top mt-all">
+<div class="container container-v1">
+    <div class="row align-items-center">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="brand_three_column info">
+          {% if section.settings.title_top1 != blank %}
+          <div class="title-banner-top">
+            <h3 class="title">{{section.settings.title_top1}}</h3>
+          </div>
+          {% endif %}
+
+          {% if section.settings.content_top1 != blank %}
+          <p class="mb-0 content">{{section.settings.content_top1}}</p>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="brand_three_column info">
+          {% if section.settings.title_top2 != blank %}
+          <div class="title-banner-top">
+            <h3 class="title">{{section.settings.title_top2}}</h3>
+          </div>
+          {% endif %}
+
+          {% if section.settings.content_top2 != blank %}
+          <p class="mb-0 content">{{section.settings.content_top2}}</p>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="brand_three_column info">
+          {% if section.settings.title_top3 != blank %}
+          <div class="title-banner-top">
+            <h3 class="title">{{section.settings.title_top3}}</h3>
+          </div>
+          {% endif %}
+
+          {% if section.settings.content_top3 != blank %}
+          <p class="mb-0 content">{{section.settings.content_top3}}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+</div>
+  </div>
+</div>
+{% schema %}
+
+{
+  "name": "Top Heading & Details",
+  "settings": [
+    {
+      "type": "header",
+      "content": "First Info"
+    },
+    {
+      "type": "text",
+      "id": "title_top1",
+      "label": "Heading",
+      "default": "Brand Value"
+    },
+    {
+      "type": "textarea",
+      "id": "content_top1",
+      "label": "Content top",
+      "default": "Quam viverra orci sagittis eu volutpat. Lacus luctus accumsan tortor posuere ac ut consequat semper. In ante metus dictum at tempor. Lacus vel facilisis volutpat est velit egestas dui id. Faucibus scelerisque eleifend donec pretium."
+    },
+
+    {
+      "type": "header",
+      "content": "Second Info"
+    },
+    {
+      "type": "text",
+      "id": "title_top2",
+      "label": "Heading",
+      "default": "Brand Value"
+    },
+    {
+      "type": "textarea",
+      "id": "content_top2",
+      "label": "Content top",
+      "default": "Quam viverra orci sagittis eu volutpat. Lacus luctus accumsan tortor posuere ac ut consequat semper. In ante metus dictum at tempor. Lacus vel facilisis volutpat est velit egestas dui id. Faucibus scelerisque eleifend donec pretium."
+    },
+
+    {
+      "type": "header",
+      "content": "Third Info"
+    },
+    {
+      "type": "text",
+      "id": "title_top3",
+      "label": "Heading",
+      "default": "Brand Value"
+    },
+    {
+      "type": "textarea",
+      "id": "content_top3",
+      "label": "Content top",
+      "default": "Quam viverra orci sagittis eu volutpat. Lacus luctus accumsan tortor posuere ac ut consequat semper. In ante metus dictum at tempor. Lacus vel facilisis volutpat est velit egestas dui id. Faucibus scelerisque eleifend donec pretium."
+    },
+ 
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Top Heading & Details",
+      "category": "Our Story"
+    }
+  ]
+}
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
