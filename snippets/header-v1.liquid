@@ -11,6 +11,10 @@
   /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
+.no-relative {
+  position: static !important;
+}
+
 .modal-content {
   /* background-color: #fefefe;
   margin: 15% auto;
@@ -37,7 +41,7 @@
 
 <header id="header" class="header-v1-h1 js_height_hd jsheader1 d-none d-xl-block {% if settings.hdv1_enable_absolute %}header-absolute {% endif %}">
   <div class="container container-v1">
-    <div class="row align-items-center">
+    <div style="position: relative;" class="row align-items-center">
       <div class="col-lg-2 galbi_head_s1">
         <div class="logo">
           <div class="center logo delay05">          	
@@ -57,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8 galbi_head_s2">
+      <div class="col-lg-8 galbi_head_s2 no-relative">
         <div class="menu right">
 			{% include 'eveland-menu' %}
         </div>
@@ -184,7 +188,7 @@ If you do, the pagination of results will be broken.
   {% comment %} {% section 'section-three-product-items' %} {% endcomment %}
 
   <div data-section-id="{{ section.id }}" data-section-type="section-banner-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
-    <div class="three__product_items section-banner-v2 mt-all">
+    <div style="padding: 2em 6em;" class="three__product_items section-banner-v2 mt-all">
       <div class="container container-v1">      
         <div class="row">
            <div class="col-lg-4 col-sm-6">
