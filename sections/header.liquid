@@ -31,17 +31,22 @@
 {% endif %}
 
 {% style %}
-.modal {
+#myModal {
   display: none;
   position: fixed;
-  z-index: 1;
+  /* z-index: 1; */
   left: 0;
   top: 80px;
   width: 100%;
   height: 100%;
+  padding-bottom: 120px;
   overflow: auto;
   background-color: #f2f1eb;
 }
+
+.col-lg-5 {
+  padding-right: 5em
+} 
 
 .search-input, .search-input:focus{
   border: 3px solid #868686;
@@ -55,7 +60,8 @@
   position: static !important;
 }
 
-.modal-content {
+.modal-contents {
+  background-color: #f2f1eb;
   /* background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
@@ -69,7 +75,9 @@
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-  padding: 1em 1em 0em 1em
+  padding: 1em 1em 0em 1em;
+  position: fixed;
+  right: 0;
 }
 
 .close:hover,
@@ -79,10 +87,10 @@
   cursor: pointer;
 }
 {% endstyle %}
-
+<div style="position: relative;">
 <header id="header" class="header-v1-h1 js_height_hd jsheader1 d-none d-xl-block {% if settings.hdv1_enable_absolute %}header-absolute {% endif %}">
   <div class="container container-v1">
-    <div style="position: relative;" class="row align-items-center">
+    <div class="row align-items-center">
       <div class="col-lg-2 galbi_head_s1">
         <div class="logo">
           <div class="center logo delay05">          	
@@ -152,7 +160,7 @@
 
   <div id="myModal" class="modal">
     <span class="close">&times;</span> 
-    <div class="modal-content">
+    <div class="modal-contents">
 
 
       <!-- /templates/search.liquid -->
@@ -228,7 +236,7 @@ If you do, the pagination of results will be broken.
   {% comment %} {% section 'section-three-product-items' %} {% endcomment %}
 
   <div data-section-id="{{ section.id }}" data-section-type="section-banner-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
-    <div style="padding: 2em 6em;" class="three__product_items section-banner-v2 mt-all">
+    <div style="padding: 0em 10em;" class="three__product_items section-banner-v2 mt-all">
       <div class="container container-v1">      
         <div class="row">
            <div class="col-lg-4 col-sm-6">
@@ -320,6 +328,7 @@ If you do, the pagination of results will be broken.
   </div>
 
 </header>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 

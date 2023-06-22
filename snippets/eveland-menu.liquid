@@ -207,6 +207,13 @@
                 {% endif %}
                 {% endfor %}
               </div>
+              {% for childlink in linklists[child_list_handle].links %}
+                {% if linklists[grand_child_list_handle].links == blank %}
+                  {% if forloop.index == 1 %}
+                    <hr style="width: 57%;float: right;"/>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
             </div>
             <div class="col-lg-3">
               <div class="picture">
