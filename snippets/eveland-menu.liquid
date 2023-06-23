@@ -221,7 +221,10 @@
                   {% if settings[_mega_lcol_img_up] == blank %}
                   {% comment %} {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }} {% endcomment %}
                   {% else %}
-                  <img src="{{settings[_mega_lcol_img_up] | img_url: "master"}}" alt="banner-megamenu">
+                  <img src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/Shop_by_products_image.png?v=1687444182" alt="banner-megamenu">
+                  {% comment %}
+                    {{settings[_mega_lcol_img_up] | img_url: "master"}}
+                  {% endcomment %}
                   {% endif %}
                 </a>
               </div>

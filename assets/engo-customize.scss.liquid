@@ -1,4 +1,40 @@
 @font-face {
+  font-family: 'Brooklyn';
+  src: url('./Brooklyn-Bold.woff2') format('woff2'),
+      url('./Brooklyn-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ambroise Std';
+  src: url('./AmbroiseStd-Regular.woff2') format('woff2'),
+      url('./AmbroiseStd-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./LibreBaskerville-Bold.woff2') format('woff2'),
+      url('./LibreBaskerville-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./OpenSans-Regular.woff2') format('woff2'),
+      url('./OpenSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: HurmeGeometricSans1;
   src: url({{ "HurmeGeometricSans1.otf" | asset_url}});
   font-style: normal;
@@ -10833,13 +10869,13 @@ POPup newletter
         }
 
         .nav-link {
-          font-size: 16px;
-          font-weight: 500;
+          font-size: 12px;
           color: {{settings.hdv_color_text}};
           // position: relative;
           padding-left: 0px;
           padding-right: 0px;
           display: inline-block;
+          font-family: 'Brooklyn';
 
           &:hover,
           &:focus,
@@ -10892,16 +10928,30 @@ POPup newletter
           .list-clothing {
             .title {
               h5 {
-                font-size: 14px;
+                font-size: 20px;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 font-weight: 600;
                 margin-bottom: 20px;
+                font-family: 'Ambroise Std';
                 a{
                   text-decoration:none;
                   text-transform: uppercase;
                   transition: all 0.5s ease;
-                  color:{{settings.hdv_color_text}}; 
+                  // color:{{settings.hdv_color_text}};
+                  color: #161616;
+                  font-family: 'Ambroise Std';
+                  font-size: 20px;
+                  small {
+                    font-family: 'Open Sans' !important;
+                    font-size: 12px !important;
+                    text-transform: capitalize
+                  };
+                  .under_image {
+                    font-family: 'Libre Baskerville';
+                    font-size: 14px;
+                    font-weight: 600;
+                  }
                   // &:after {
                   //   content: '';
                   //   display: block;
@@ -10925,8 +10975,7 @@ POPup newletter
                 padding-right: 0px;
                 a {
                   text-decoration: none;
-                  font-size: 14px;
-                  font-family: $font-primary;
+                  font-family: 'Brooklyn';
                   color: {{settings.hdv_color_linkchildren}};
                   font-weight: 300;
                   // &:hover {
@@ -11005,7 +11054,7 @@ POPup newletter
           }
 
           .list-woman {        
-            margin-top: 1px;
+            margin-top: -8px;
             opacity: 1;
             visibility: visible;
 
@@ -13007,11 +13056,12 @@ POPup newletter
       transition: 0.5s;
       width: 90%;
       .bigtitle{
-        font-size: 22px;
+        font-size: 12px !important;
         font-weight: 500;
         color: $color-main;
         margin-bottom: 0px !important;
         transition: 0.5s;
+        font-family: 'Brooklyn' !important;
       }
       span{
         position: relative;
@@ -13020,7 +13070,8 @@ POPup newletter
         color: #909090;
         transition: 0.5s;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 12px;
+        font-family: 'Brooklyn' !important;
       }
     }
   }  
@@ -21248,9 +21299,10 @@ h4 {font-family: "Brooklyn Bold" !important; text-transform: uppercase;}
 }
 
 h2, h1 {
-    font-family: Ambroise Std Regular !important;
+    font-family: 'Ambroise Std';
     font-weight: 400 !important;
     text-transform: uppercase;
+    font-size: 30px;
 }
 
 @font-face {
@@ -21259,7 +21311,11 @@ h2, h1 {
   url("LibreBaskerville_Bold.woff") format("woff");
 }
 
-h3 {font-family: "Libre Baskerville Bold" !important; text-transform: uppercase;}
+h3 {
+  font-family: 'Libre Baskerville' !important; 
+  text-transform: uppercase;
+  font-size: 14px !important;
+}
 
 ul#qikify-tmenu-megamenu-0 li a {
     font-family: Open Sans Regular;
@@ -21271,6 +21327,16 @@ a.tiktok-icon img {
     width: 20px;
     height: 20px;
     border-radius: 10px;
+}
+
+.search-input, .search-input:focus{
+  border: 3px solid #868686;
+  color: #000;
+  background-color: #f2f1eb;
+  text-align: center;
+  width: 25vw;
+  font-family: 'Open Sans';
+  font-size: 12px;
 }
 
 .our_story_heading_details.info {
