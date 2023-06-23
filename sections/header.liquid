@@ -113,9 +113,11 @@
             <li class="list-inline-item mr-0">
               <a href="{% if customer %}/account {% else %}javascript:void(0){% endif %}" class="login {% if customer %}{% else %}js-call-popup-login{% endif %}">
                 {% if settings.hd_icon_login_svg != blank %}
-                {{settings.hd_icon_login_svg}}
+                {% comment %} {{settings.hd_icon_login_svg}} {% endcomment %}
+                {% include 'icon-account' %}
                 {% else %}
-                <i class="{{settings.hd_icon_login}}"></i>
+                {% comment %} <i class="{{settings.hd_icon_login}}"></i> {% endcomment %}
+                {% include 'icon-account' %}
                 {% endif %}                
               </a>
             </li>
@@ -134,11 +136,15 @@
               {% comment %} </a> {% endcomment %}
             </li>
             <li class="list-inline-item mr-0">
-              <a href="javascript:void(0)" class="cart js-call-minicart">
+              <a href="/cart" class="cart js-call-minicart">
                 {% if settings.hd_icon_cart_svg != blank %}
-                {{settings.hd_icon_cart_svg}}
+                {% comment %} {{settings.hd_icon_cart_svg}} {% endcomment %}
+                {% include 'icon-cart' %}
+                </object>                
                 {% else %}
-                <i class="{{settings.hd_icon_cart}}"></i>
+                {% comment %} <i class="{{settings.hd_icon_cart}}"></i> {% endcomment %}
+                {% include 'icon-cart' %}
+                
                 {% endif %}
                 <span class="number-cart enj-cartcount">{{ cart.item_count }}</span>
               </a>
