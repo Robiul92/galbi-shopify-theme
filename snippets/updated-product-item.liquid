@@ -1,0 +1,52 @@
+{% style %}
+.box-info {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+.box-img {
+  overflow: hidden;
+}
+.content-banner {
+  text-align: left;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 5%;
+  transition: .5s;
+  width: 90%;
+}
+.bigtitle {
+  font-size: 12px !important;
+  font-weight: 500;
+  color: #333;
+  color: #fff;
+  margin-bottom: 0 !important;
+  transition: .5s;
+  font-family: 'Brooklyn' !important;
+}
+.sub-title {
+  position: relative;
+  display: inline-block;
+  color: #fff !important;
+  padding-top: 5px;
+  color: #909090;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: 'Brooklyn' !important;
+}
+{% endstyle %}
+
+<div class="box-info one">
+  <div class="box-img text-center">
+    <a href="{{ product.url | within: collection }}">
+        <img alt="{{ product.featured_image.alt | escape }}" src="{{ product.featured_image.src | img_url: 'master' }}" class="img-fluid">
+    </a>
+  </div>
+  <div class="content-banner">
+      <h3 class="bigtitle mb-0">{{product.title}}</h3>
+
+      <span class="sub-title">{{ product.price | money }}</span>
+  </div>
+</div>

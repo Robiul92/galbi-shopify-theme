@@ -313,14 +313,14 @@ Swatches Styles
 {% assign width = '30px' %}
 {% assign height = '30px' %}
 .swatch { 
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   width: 100%;
-  margin:1em 0; 
+  // margin:1em 0; 
   align-items: center;
 }
 .maxus-productdetail__options{
   &:first-child{
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
   }
 }
 
@@ -343,7 +343,7 @@ Swatches Styles
   margin:0;
   /* The border when the button is not selected */
   /* Background color */
-  background-color:#fff;
+  // background-color:#fff;
   /* Styling text */
   font-size:13px;
   text-align:center;
@@ -1058,7 +1058,7 @@ body {
   max-width: 1670px;
 }
 .container-v2{
-  max-width: 1430px;
+  max-width: 1670px;
 }
 
 
@@ -1801,7 +1801,7 @@ body {
     width: 70%;
     padding-left: 50px; 
     .product-title{
-      font-family: $font-primary;
+      font-family: '$font-primary';
       font-size: 22px;
       font-weight: 400;
       color: #010101;
@@ -2045,13 +2045,13 @@ body {
 }
 }
 .tab-pd-details{
-  border-bottom: 1px solid #e4e4e4;
+  // border-bottom: 1px solid #e4e4e4;
   padding-bottom: 30px;
   margin-bottom: 30px;
   text-align : center;
   .tab_prod{ 
   	border-bottom: none;
-    border-top: 1px solid #e4e4e4;
+    // border-top: 1px solid #e4e4e4;
     padding:30px 0;
     display: flex;
     justify-content : center;
@@ -2219,6 +2219,7 @@ body {
       .prod_sub{
         img{
           margin-bottom: 13px;
+          cursor: pointer;
         }
       }
       .prod_sub_bottom{
@@ -2332,16 +2333,19 @@ body {
       }
     } 
   .detail-info{ 
-    padding-left: 10px;
+    // padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     .product-title{
-      font-family: $font-primary;
-      font-size: 22px;
+      font-family: 'Ambroise Std';
+      font-size: 50px;
       font-weight: 400;
       color: #010101;
       text-transform: capitalize;
     }
     .product-price{
-      border-bottom: 1px solid #e7e7e7;
+      // border-bottom: 1px solid #e7e7e7;
       padding-bottom: 25px;
       del{
         font-size: 18px;
@@ -2350,10 +2354,11 @@ body {
         margin-right: 10px;
       }
       ins{
-        font-size: 22px;
-        font-weight: 500;
+        font-size: 16px;
         color: #010101;
         text-decoration :none;
+        font-family: 'Brooklyn';
+        letter-spacing: 2px;
       }
     }
     .btn-action{
@@ -2367,17 +2372,18 @@ body {
       align-items: center;
       .shop-button{
         margin-right: 7px;
-        font-family: $font-primary;
+        font-family: 'Brooklyn';
         transition: all .3s ease;
         width: 200px;
-        height: 55px;
+        height: 43px;
         font-size: 12px;
-        background: #000;
+        background: #f2f1eb;
+        border: 2px solid #000;
         letter-spacing: 2.2px;
         justify-content: center;
         text-transform: uppercase;
         font-weight: 600;
-        color: #fff;
+        color: #000;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -2389,8 +2395,9 @@ body {
         transition: .3s;
         text-align: center;
         &:hover{
-         background: $color-main2;
+         background: #000;
           transition: .3s;
+          color: #f2f1eb;
         }
       }
       .shop-button-amazon{
@@ -9115,7 +9122,7 @@ body {
   max-width: 1670px;
 }
 .container-v2{
-  max-width: 1430px;
+  max-width: 1670px;
 }
 
 .poup-login-destop{
@@ -11130,9 +11137,11 @@ POPup newletter
               left: 16px;
               width: 20px;
               height: 20px;
-              background-color: {{settings.color_bgnumber_cart}};
+              // background-color: {{settings.color_bgnumber_cart}};
+              background-color: #000;
               border-radius: 50px;
-              color: {{settings.color_number_cart}};
+              // color: {{settings.color_number_cart}};
+              color: #f2f1eb;
               text-align: center;
               font-size: 12px;
               line-height: 20px;
@@ -11151,7 +11160,7 @@ POPup newletter
   background: transparent;
 }
 .header-v1-h1{
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  // border-bottom: 1px solid rgba(0,0,0,0.1);
   transition: background-color 0.5s ease 0s, padding 0.5s ease 0s;
   z-index: 2;
   &.menu_scroll_v1 {
@@ -13187,7 +13196,7 @@ POPup newletter
 
 .section-product-v1{
   .product_item{
-  	    padding: 0 15px;
+  	    padding: 0 15px 0px 0px;
   }
   .box-info-product{
     .icon-top{
@@ -21283,7 +21292,7 @@ RESPONSIVE
 }
 .prod_largeimg .content-page-detail .detail-info .btn-action .shop-button-amazon,
 .prod_extended .content-page-detail .detail-info .btn-action, .product_sidebar .content-page-detail .detail-info .btn-action{
-	margin-top: 30px;
+	// margin-top: 30px;
 }
 
 /* custom css start here */
@@ -21474,13 +21483,15 @@ p.menu__details_left {
   width: 100%;
   color: #000;
   overflow: hidden;
+  border-bottom: 2px solid #000;
 }
 .tab-label {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
-  font-weight: bold;
+  padding: 18px 0px 3px 0px;
   cursor: pointer;
+  font-family: 'Brooklyn';
+  font-size: 12px;
   /* Icon */
 }
 /* .tab-label:hover {
@@ -21497,8 +21508,9 @@ p.menu__details_left {
   max-height: 0;
   padding: 0 1em;
   color: #2c3e50;
-  background: white;
+  // background: white;
   transition: all 0.35s;
+  text-align: left;
 }
 .tab-close {
   display: flex;
@@ -21520,7 +21532,7 @@ input:checked + .tab-label::after {
 }
 input:checked ~ .tab-content {
   max-height: 100vh;
-  padding: 1em;
+  padding: 1em 0;
 }
 
 

@@ -1,3 +1,13 @@
+{% style %}
+.colapsable {
+  padding: 4rem 8rem;
+}
+@media only screen and (min-width: 1480px) {
+  .colapsable {
+    padding: 4rem 12rem;
+    }
+  }
+{% endstyle %}
 {% assign on_sale = false %}
 {% if product.compare_at_price > product.price %}
 {% assign on_sale = true %}
@@ -12,7 +22,7 @@
   <section id="content">
     <div class="wrap-bread-crumb">
       <div class="container container-v1  ">
-        {% include 'breadcrumb' %}
+        {% comment %} {% include 'breadcrumb' %} {% endcomment %}
       </div>
     </div>
 
@@ -620,7 +630,7 @@
             </div>
             <!-- End Gallery -->
           </div>
-          <div class="{% if section.settings.show_servicebox == true %}col-lg-3{% else %}col-lg-6 {% endif %} col-md-5 col-sm-12 col-12 ">
+          <div class="{% if section.settings.show_servicebox == true %}col-lg-3{% else %}col-lg-6 {% endif %} col-md-5 col-sm-12 col-12 colapsable">
             <div class="detail-info">
               {% if section.settings.show_rating %}
                 <div class="wrap-rating pb-3">
@@ -640,9 +650,43 @@
                   </div>
                 {% endif %}
               {% endif %}
-              <form action="/cart/add" method="post" enctype="multipart/form-data">
-                <button>Add to cart</button>
+
+              <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="cart clearfix">
+                <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+
+                {% if product.available and product.variants.size > 1 %}
+                  <!--Swatch Variant -->
+                  {% for option in product.options %}
+                    {% include 'swatch' with option %}
+                  {% endfor %}
+                  <!--End Swatch Variant -->
+                {% endif %}
+
+                {% if sold_out %}
+                  <div class="btn-action">
+                    <button class="shop-button-soldout">
+                      {{ 'products.product.out_of_stock' | t }}
+                    </button>
+                  </div>
+                  {% else %}
+                  <div class="btn-action detail-attr qty-cart">
+                    <button type="submit" class="shop-button enj-add-to-cart-btn engoj-btn-addtocart">
+                      {{settings.pia_addcart_name}}
+                    </button>
+                    {% if section.settings.show_quantity %}
+                      <div class="js-qty">
+                        <input type="number" size="4" title="Qty" value="1" min="1" id="Quantity" name="quantity" />
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
               </form>
+
+              {% comment %} <form method="post" action="/cart/add">
+                <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+                <input name="add" value="ORDER NOW" type="submit" />
+              </form> {% endcomment %}
+              
               {% comment %}
               
               <form  action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="cart clearfix">
@@ -694,10 +738,13 @@
               </form>
               {% endcomment %}
               <!--addwhlist-->
+
+              {% comment %}
               <div class="btn-addwhlist">
                 {% include 'add-wishlist' %}
                 <span class="text_whlist">{{'products.product.add_whlist' | t}}</span>
               </div>
+              {% endcomment %}
               
               <ul class="product-meta-info">
                 {% if section.settings.show_sku %}
@@ -785,7 +832,7 @@
   </section>
 
   {% if section.settings.enable_related_product %}
-    {% include 'related-product-new' %}
+    {% include 'related-product-update' %}
   {% endif %}
 
 </div>

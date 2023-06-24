@@ -1,0 +1,132 @@
+{% comment %}
+  <div class="related-product container container-v2">
+      {% if section.settings.enable_related_product%}
+      {% assign products_limit = section.settings.related_product_limit | plus: 1%}
+      {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+      {% assign found_a_collection = false %}
+      {% for c in product.collections %}
+      {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' and c.all_products_count > 1 %}
+      {% assign found_a_collection = true %}
+      {% assign collection = c %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      <div class="text-center">
+        <div class="relatedProd-title" >{{section.settings.related_product_title}}</div>
+      </div>
+      <div class="related-tabs pt-4 pt-lg-5">
+        <div class="row js_product_related">
+          {% if collection and collection.products_count > 1 %}
+          {% assign current_product = product %}
+          {% assign current_product_found = false %}
+          {% for product in collection.products limit: products_limit %}
+          {% if product.handle == current_product.handle %}
+          {% assign current_product_found = true %}
+          {% else %}
+          {% unless current_product_found == false and forloop.last %}
+
+          	<div class="col-12">
+          	{% include 'product-item-v1' %}
+  			</div>
+
+
+          {% endunless %}
+          {% endif %}
+          {% endfor %}
+
+          {% endif %}
+        </div>
+
+      </div>
+      {% endif %}
+  </div>
+{% endcomment %}
+
+{% style %}
+.mb-all {
+  padding-bottom: 7em;
+}
+.box-info-product {
+  max-width: 280px;
+  margin: 0 auto;
+}
+.related-product-title {
+  font-family: 'Ambroise Std' !important;
+}
+.related-product-button {
+  font-family: 'Brooklyn' !important;
+  font-size: 12px !important;
+}
+{% endstyle %}
+
+<div class="Galbi__product_home section-product-v1 mb-all">
+  {% if section.settings.enable_related_product %}
+    {% assign products_limit = section.settings.related_product_limit | plus: 1 %}
+    {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+      {% assign found_a_collection = false %}
+      {% for c in product.collections %}
+        {% if found_a_collection == false
+          and c.handle != 'frontpage'
+          and c.handle != 'all'
+          and c.all_products_count > 1
+        %}
+          {% assign found_a_collection = true %}
+          {% assign collection = c %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    <div class="container container-v1">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="box-info-product">
+            <h3 class="title-top related-product-title">{{ section.settings.related_product_title }}</h3>
+
+            {% comment %} <p class="Gproduct__details">This is product details</p> {% endcomment %}
+
+            <a href="/" class="button-shop related-product-button">Shop our latest collection</a>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row product_handpicked slick_product_h1_banner">
+            {% if collection and collection.products_count > 1 %}
+              {% assign current_product = product %}
+              {% assign current_product_found = false %}
+{% comment %}
+  products_limit
+{% endcomment %}
+              {% for product in collection.products limit: products_limit %}
+                <div class="padding-slick product_item">
+                  {% if product.handle == current_product.handle %}
+                    {% assign current_product_found = true %}
+                  {% else %}
+                    {% unless current_product_found == false and forloop.last %}
+                      {% comment %} {% include 'product-item-v1' %} {% endcomment %}
+                      {% include 'updated-product-item' %}
+                    {% endunless %}
+                  {% endif %}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          {% comment %}
+            {% assign products_limit = section.settings.products_limit %}
+            {% assign col = section.settings.select_collection %}
+            {% for product in collections[col].products limit: products_limit %}
+            <div class="padding-slick product_item">
+              {% include 'product-item-v1' %}
+            </div>
+            {% else %}
+            {% for i in (1..section.settings.products_limit) %}
+            <div class="padding-slick product_item">
+              {% include 'empty-product-item' %}
+            </div>
+            {% endfor %}
+            {% endfor %}
+          {% endcomment %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
