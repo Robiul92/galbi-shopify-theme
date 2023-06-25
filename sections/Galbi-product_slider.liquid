@@ -26,7 +26,8 @@
               {% assign col = section.settings.select_collection %}
               {% for product in collections[col].products limit: products_limit %}
               <div class="padding-slick product_item">
-                {% include 'product-item-v1' %}
+                {% comment %} {% include 'product-item-v1' %} {% endcomment %}
+                {% include 'updated-product-item' %}
               </div>
               {% else %}
               {% for i in (1..section.settings.products_limit) %}

@@ -12194,7 +12194,7 @@ POPup newletter
       .title-slideshow{
         font-size: 60px;
         text-align: left;
-        font-family: $font-primary;
+        font-family: 'Ambroise Std';
         font-weight: 400;
         opacity:0;
         transition: all 1.2s;
@@ -12213,7 +12213,7 @@ POPup newletter
       }
       a{
         padding: 18px 35px;
-        font-size: 14px;
+        font-size: 12px;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: 500;
@@ -12223,6 +12223,7 @@ POPup newletter
         opacity:0;
         transition: all 0.5s cubic-bezier(0,.45,.58,.2);
         transition-delay: 1s;
+        font-family: 'Brooklyn';
       }
     }
   }
@@ -13205,14 +13206,18 @@ POPup newletter
       margin-bottom: 25px;
     }
     .title-top{
-      font-size: 25px;
+      font-size: 50px;
       margin-bottom: 38px;
       margin-top: 0;
       font-weight: 600;
-      font-family: $font-primary;
+      font-family: 'Ambroise Std' !important;
       text-transform: uppercase;
       letter-spacing: 0.4em;
       line-height: 1.4;
+    }
+    .Gproduct__details {
+      font-family: "Open Sans";
+      font-size: 12px;
     }
     .button-shop{
       border-radius: 0px;
@@ -13222,11 +13227,13 @@ POPup newletter
       position: relative;
       display: inline-block;
       transition: all 0.5s ease-out;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing:2px;
       border:2px solid $color-main;
       z-index: 1;
+      font-family: 'Brooklyn';
+      border-bottom: 1px solid #000 !important;
       &:after {
         -webkit-transition:0.5s all ease;
         transition:0.5s all ease;
@@ -13240,17 +13247,17 @@ POPup newletter
         background-color:$color-main2;
         z-index: -1;
       }
-      &:hover {
-        color:#fff;
-        border:2px solid $color-main2;
-        &:after {
-          -webkit-transition:0.5s all ease;
-          transition:0.5s all ease;
-          left:0;
-          right:0;
-          opacity:1;
-        }
-      }
+      // &:hover {
+      //   color:#fff;
+      //   border:2px solid $color-main2;
+      //   &:after {
+      //     -webkit-transition:0.5s all ease;
+      //     transition:0.5s all ease;
+      //     left:0;
+      //     right:0;
+      //     opacity:1;
+      //   }
+      // }
       &:focus {
         &:after {
           transition:0.5s all ease;
@@ -14839,8 +14846,8 @@ POPup newletter
       .title{
         font-size: 22px;
         color: $color-main;
-        text-align: center;
-        font-family: $font-primary;
+        text-align: center !important;
+        font-family: 'Ambroise Std' !important;
         font-weight: 600;
         font-style: normal;
         letter-spacing: 0.4em;
@@ -21544,6 +21551,20 @@ input:checked ~ .tab-content {
     position: relative;
     top: -92px;
     color: #fff;
+    text-align: left;
+    padding: 0 1em;
+    .product__name {
+      .title {
+        a {
+          font-family: 'Brooklyn';
+          font-size: 12px;
+        }
+      }
+    };
+    .product___price {
+      font-family: 'Brooklyn' !important;
+      font-size: 12px;
+    }
 }
 
 .galbi__product_nameprice a {
@@ -21670,7 +21691,7 @@ section.galbi__search_page {
 }
 
 .left-image-banner .picture.text-center {
-    height: 758px;
+    // height: 758px;
 }
 
 .galbi__video.videoBox {
@@ -21694,7 +21715,9 @@ h1.videoBoxInfoTitle {
 .left-image-banner.section-banner-v7.mt-all .left_image_details.info {
     max-width: 500px;
     margin: 0 auto;
-    text-align: justify !important;
+    text-align: center !important;
+    font-family: 'Open Sans';
+    font-size: 12px;
 }
 
 .amalfi_subheading {
