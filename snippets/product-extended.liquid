@@ -8,6 +8,9 @@
     }
   }
 {% endstyle %}
+
+{{ 'jquery.jqZoom.css' | asset_url | stylesheet_tag }}
+
 {% assign on_sale = false %}
 {% if product.compare_at_price > product.price %}
 {% assign on_sale = true %}
@@ -222,8 +225,8 @@
                     {% endif %}
                     <div class="img_thumb js_prod_main">
                       {% for image in product.images %}
-                        <div>
-                          <img class="engoj_img_main w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
+                        <div class="zoom-box">
+                          <img id="d-img" class="engoj_img_main w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
                         </div>
                       {% endfor %}
                     </div>
@@ -413,8 +416,8 @@
                     {% endif %}
                     <div class="img_thumb js_prod_main">
                       {% for image in product.images %}
-                        <div>
-                          <img class="engoj_img_main w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
+                        <div class="zoom-box">
+                          <img id="d-img" class="engoj_img_main w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
                         </div>
                       {% endfor %}
                     </div>
@@ -610,8 +613,8 @@
                   {% endif %}
                   <div class="img_thumb js_prod_main_bot">
                     {% for image in product.images %}
-                      <div>
-                        <img class="engoj_img_main w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
+                      <div class="zoom-box">
+                        <img id="d-img" class="engoj_img_main w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
                       </div>
                     {% endfor %}
                   </div>
@@ -877,3 +880,17 @@
   });
 </script>
 {% endif %}
+
+{{ 'jquery.jqZoom.js' | asset_url | script_tag }}
+
+<script>
+  $(document).ready(function() {
+    $("#d-img").jqZoom({
+      selectorWidth: 30,
+      selectorHeight: 30,
+      viewerWidth: 400,
+      viewerHeight: 300
+    });
+    console.log( "ready!" );
+  });
+</script>

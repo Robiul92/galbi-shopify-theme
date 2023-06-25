@@ -99,6 +99,7 @@
                 <div class="padding-slick product_item">
                   {% if product.handle == current_product.handle %}
                     {% assign current_product_found = true %}
+                    {% include 'updated-product-item' %}
                   {% else %}
                     {% unless current_product_found == false and forloop.last %}
                       {% comment %} {% include 'product-item-v1' %} {% endcomment %}
