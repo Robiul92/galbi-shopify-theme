@@ -1,10 +1,10 @@
 <div class="wrap-bread-crumb breadcrumb_collection2">
   <div class="text-center">
     <div style="padding: 120px 0;" class="title-page">
-
-      <h2 style="font-family: Ambroise Std; font-size: 50px;" class="">{{page.title}}</h2>
-      <p style="width: 50%; margin: auto; text-align: justify; font-family: Open Sans !important; font-size: 12px;">{{ page.content }}</p>
-
+      <h2 style="font-family: Ambroise Std; font-size: 50px;" class="">{{ page.title }}</h2>
+      <p style="width: 50%; margin: auto; text-align: justify; font-family: Open Sans !important; font-size: 12px;">
+        {{ page.content }}
+      </p>
     </div>
     {% comment %} {% include 'breadcrumb' %} {% endcomment %}
     <div class="container container-v1">
@@ -14,31 +14,36 @@
 </div>
 <section>
   <div class="aboutus-pages">
-
-    <!--service box -->
+    <!-- service box -->
     {% if section.settings.enable_s_servicebox %}
       <div class="about-servicebox">
         <div class="container container-v2">
           {% comment %} <h2 class="title-servicebox">{{section.settings.title_servicebox}}</h2> {% endcomment %}
           <div class="row slickjs-services-v1">
             {% if section.blocks.size > 0 %}
-            {% for block in section.blocks %}
-            {% if block.type == "service" %}
-            <div class="text-center itemtservice justify-content-center">
-              <div class="box-service col-lg-12">
-                {% comment %} <span class="icon">          
-                  <i class="{{block.settings.block_icon}} "></i>
-                </span> {% endcomment %}
-                {% if block.settings.block_title != blank %}
-                <h4 style="color: #000; font-family: Brooklyn !important; font-size: 12px;" class="title">{{block.settings.block_title}}</h4>
+              {% for block in section.blocks %}
+                {% if block.type == 'service' %}
+                  <div class="text-center itemtservice justify-content-center">
+                    <div class="box-service col-lg-12">
+                      {% comment %}
+                        <span class="icon">
+                          <i class="{{block.settings.block_icon}} "></i>
+                        </span>
+                      {% endcomment %}
+                      {% if block.settings.block_title != blank %}
+                        <h4 style="color: #000; font-family: Brooklyn !important; font-size: 12px;" class="title">
+                          {{ block.settings.block_title }}
+                        </h4>
+                      {% endif %}
+                      {% if block.settings.block_content != blank %}
+                        <p style="color: #000; font-family: Open Sans !important; font-size: 12px;" class="content">
+                          {{ block.settings.block_content }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  </div>
                 {% endif %}
-                {% if block.settings.block_content != blank %}          	
-                <p style="color: #000; font-family: Open Sans !important; font-size: 12px;" class="content">{{block.settings.block_content}}</p>
-                {% endif %}
-              </div>
-            </div>
-            {% endif %}
-            {% endfor %}
+              {% endfor %}
             {% endif %}
           </div>
         </div>
@@ -53,190 +58,219 @@
               {% if block.type == 'introduce' %}
                 {% assign mod = forloop.index | modulo: 2 %}
                 {% if mod == 0 %}
+                  <div class="col-md-6 intro_image ">
+                    <img
+                      class="w-100"
+                      src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}"
+                    >
+                  </div>
                   <div class="col-md-6 intro_detail d-flex align-items-end">
                     <div class="info-intro">
-                      <h3 class="title_intro">{{block.settings.title_intro}}</h3>
-                      <p class="des_intro">{{block.settings.des_intro}}</p>
-                      <p class="content_intro">{{block.settings.content_intro}}</p>
+                      <h3 class="title_intro">{{ block.settings.title_intro }}</h3>
+                      <p class="des_intro">{{ block.settings.des_intro }}</p>
+                      <p class="content_intro">{{ block.settings.content_intro }}</p>
+                    </div>
+                  </div>
+                  
+                {% else %}
+                <div class="col-md-6 intro_detail d-flex align-items-end">
+                  <div class="info-intro">
+                    <h3 class="title_intro">{{ block.settings.title_intro }}</h3>
+                    {% comment %} <p class="des_intro">{{block.settings.des_intro}}</p> {% endcomment %}
+                    <p class="content_intro">{{ block.settings.content_intro }}</p>
+                  </div>
+                </div>
+                  <div class="col-md-6 intro_image">
+                    <img
+                      class="w-100"
+                      src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}"
+                    >
+                  </div>
+                  
+                {% endif %}
+              {% endif %}
+              {% if block.type == 'introduce_v1' %}
+
+                  <div class="col-md-6 intro_detail d-flex align-items-center">
+                    <div style="width: 70%; margin: auto; text-align: center;" class="info-intro">
+                      <img src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/About_2.png?v=1687727429" alt="lorem image">
+                      
+                      <h3 style="text-align: center; margin-top: 1.5em;" class="title_intro">{{ block.settings.title_intro }}</h3>
+                      {% comment %} <p class="des_intro">{{ block.settings.des_intro }}</p> {% endcomment %}
+                      <p style="text-align: center;" class="content_intro">{{ block.settings.content_intro }}</p>
                     </div>
                   </div>
                   <div class="col-md-6 intro_image ">
-                    <img class="w-100" src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}">
-                  </div>          
-                  {% else %}
-                  <div class="col-md-6 intro_image">
-                    <img class="w-100" src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}">
+                    <img
+                      class="w-100"
+                      src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}"
+                    >
                   </div>
-                  <div class="col-md-6 intro_detail d-flex align-items-end">
-                    <div class="info-intro">
-                      <h3 class="title_intro">{{block.settings.title_intro}}</h3>
-                      {% comment %} <p class="des_intro">{{block.settings.des_intro}}</p> {% endcomment %}
-                      <p class="content_intro">{{block.settings.content_intro}}</p>
-                    </div>
-                  </div>
-                {% endif %}
+            
               {% endif %}
             {% endfor %}
           </div>
         </div>
       {% endif %}
     </div>
-    
+
     <div class="container container-v2">
       <div class="content-about">
         {% if section.settings.enable_insta %}
-        	<div class="about-instagram mt-all">
-          {% assign instafeed_img = '{{image}}' %}
-          {% assign instafeed_link = '{{link}}' %}
+          <div class="about-instagram mt-all">
+            {% assign instafeed_img = '{{image}}' %}
+            {% assign instafeed_link = '{{link}}' %}
 
-          {% if section.settings.ins_userid != blank and section.settings.ins_access_token != blank %}
-          <script>
-            jQuery(document).ready(function($) {
-              var feed = new Instafeed({
-                get: 'user',
-                userId: '{{section.settings.ins_userid}}',
-                accessToken: '{{section.settings.ins_access_token}}',
-                template: '<div class="content relative hover-images"> <img src="{{instafeed_img}}" class="img-responsive"> <div class="absolute content_text flex center"> <a href="{{instafeed_link}}" class="delay03 inline-block" target="_blank"><i class="{{section.settings.item_icon}}"></i></a></div> </div>',
-                target: 'engoj_section_instagram_v2',
-                resolution: 'standard_resolution',
-                limit: '{{section.settings.ins_limit_number}}',
-                after: engo_insv2
-              });
-              feed.run();
+            {% if section.settings.ins_userid != blank and section.settings.ins_access_token != blank %}
+              <script>
+                jQuery(document).ready(function ($) {
+                  var feed = new Instafeed({
+                    get: 'user',
+                    userId: '{{section.settings.ins_userid}}',
+                    accessToken: '{{section.settings.ins_access_token}}',
+                    template:
+                      '<div class="content relative hover-images"> <img src="{{instafeed_img}}" class="img-responsive"> <div class="absolute content_text flex center"> <a href="{{instafeed_link}}" class="delay03 inline-block" target="_blank"><i class="{{section.settings.item_icon}}"></i></a></div> </div>',
+                    target: 'engoj_section_instagram_v2',
+                    resolution: 'standard_resolution',
+                    limit: '{{section.settings.ins_limit_number}}',
+                    after: engo_insv2,
+                  });
+                  feed.run();
 
-              function engo_insv2() {
-                $('.js-instagram').slick({
-                  arrows: true,
-                  dots: false,
-                  infinite: false,
-                  autoplay: true,
-                  slidesToShow: 5,
-                  slidesToScroll: 1,
-                  prevArrow: '<button type="button" class="slick-prev fa fa-angle-left"></button>',
-                  nextArrow: '<button type="button" class="slick-next fa fa-angle-right"></button>',
-                  responsive: [
-                    {
-                      breakpoint: 1400,
-                      settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1
-                      }
-                    },
-                    {
-                      breakpoint: 1199,
-                      settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1
-                      }
-                    },
-                    {
-                      breakpoint: 1024,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-
-                      }
-                    },
-                    {
-                      breakpoint: 600,
-                      settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                      }
-                    }
-                  ]
+                  function engo_insv2() {
+                    $('.js-instagram').slick({
+                      arrows: true,
+                      dots: false,
+                      infinite: false,
+                      autoplay: true,
+                      slidesToShow: 5,
+                      slidesToScroll: 1,
+                      prevArrow: '<button type="button" class="slick-prev fa fa-angle-left"></button>',
+                      nextArrow: '<button type="button" class="slick-next fa fa-angle-right"></button>',
+                      responsive: [
+                        {
+                          breakpoint: 1400,
+                          settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                          },
+                        },
+                        {
+                          breakpoint: 1199,
+                          settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                          },
+                        },
+                        {
+                          breakpoint: 1024,
+                          settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                          },
+                        },
+                        {
+                          breakpoint: 600,
+                          settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                          },
+                        },
+                      ],
+                    });
+                  }
                 });
-              }
-            });
-          </script>
-          {% else %}
-          <script>
-            jQuery(document).ready(function($) {
-              function engo_insv2() {
-                $('.js-instagram').slick({
-                  arrows: true,
-                  dots: false,
-                  infinite: false,
-                  autoplay: true,
-                  slidesToShow: 5,
-                  slidesToScroll: 1,
-                  prevArrow: '<button type="button" class="slick-prev fa fa-angle-left"></button>',
-                  nextArrow: '<button type="button" class="slick-next fa fa-angle-right"></button>',
-                  responsive: [
-                    {
-                      breakpoint: 1600,
-                      settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1
-                      }
-                    },
-                    {
-                      breakpoint: 1199,
-                      settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1
-                      }
-                    },
-                    {
-                      breakpoint: 1024,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                      }
-                    },
-                    {
-                      breakpoint: 600,
-                      settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                      }
-                    }
-                  ]
+              </script>
+            {% else %}
+              <script>
+                jQuery(document).ready(function ($) {
+                  function engo_insv2() {
+                    $('.js-instagram').slick({
+                      arrows: true,
+                      dots: false,
+                      infinite: false,
+                      autoplay: true,
+                      slidesToShow: 5,
+                      slidesToScroll: 1,
+                      prevArrow: '<button type="button" class="slick-prev fa fa-angle-left"></button>',
+                      nextArrow: '<button type="button" class="slick-next fa fa-angle-right"></button>',
+                      responsive: [
+                        {
+                          breakpoint: 1600,
+                          settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                          },
+                        },
+                        {
+                          breakpoint: 1199,
+                          settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                          },
+                        },
+                        {
+                          breakpoint: 1024,
+                          settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                          },
+                        },
+                        {
+                          breakpoint: 600,
+                          settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                          },
+                        },
+                      ],
+                    });
+                  }
+                  engo_insv2();
                 });
-              }
-              engo_insv2();
-            });
-          </script>
-          {% endif %}
+              </script>
+            {% endif %}
 
-          <div class="instagram_v2 center">
-            <div class="text-center  text_top">
-              <h3 class="title_insta">{{section.settings.title_content}}</h3>
-              <a class="des_insta text-center">{{section.settings.des}}</a>
-
-            </div>
-
-            <div class="js-instagram galary_inta" id="engoj_section_instagram_v2">  
-
-              {% if section.settings.ins_userid == blank or section.settings.ins_access_token == blank %}
-              {% if shop.permanent_domain == "eveland-store-demo.myshopify.com" %}
-              {% for i in (1..10) %}
-              <div class="content relative hover-images">
-                <img src="{{ 'instagram_v2_img' | append: i | append: '.jpg' | file_img_url: 'master' }}" class="img-responsive" alt="instagram" />
-                <div class="absolute content_text flex center">
-                  <a href="https://www.instagram.com/" class="delay03 inline-block" target="_blank"><i class="{{section.settings.item_icon}}"></i></a>
-                </div>
+            <div class="instagram_v2 center">
+              <div class="text-center  text_top">
+                <h3 class="title_insta">{{ section.settings.title_content }}</h3>
+                <a class="des_insta text-center">{{ section.settings.des }}</a>
               </div>
-              {% endfor %}
-              {% else %}
-              <div class="content relative hover-images">
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                <div class="absolute content_text flex center">
-                  <a href="https://www.instagram.com/" class="delay03 inline-block" target="_blank"><i class="{{section.settings.item_icon}}"></i></a>
-                </div>
+
+              <div class="js-instagram galary_inta" id="engoj_section_instagram_v2">
+                {% if section.settings.ins_userid == blank or section.settings.ins_access_token == blank %}
+                  {% if shop.permanent_domain == 'eveland-store-demo.myshopify.com' %}
+                    {% for i in (1..10) %}
+                      <div class="content relative hover-images">
+                        <img
+                          src="{{ 'instagram_v2_img' | append: i | append: '.jpg' | file_img_url: 'master' }}"
+                          class="img-responsive"
+                          alt="instagram"
+                        >
+                        <div class="absolute content_text flex center">
+                          <a href="https://www.instagram.com/" class="delay03 inline-block" target="_blank"
+                            ><i class="{{section.settings.item_icon}}"></i
+                          ></a>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  {% else %}
+                    <div class="content relative hover-images">
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      <div class="absolute content_text flex center">
+                        <a href="https://www.instagram.com/" class="delay03 inline-block" target="_blank"
+                          ><i class="{{section.settings.item_icon}}"></i
+                        ></a>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endif %}
               </div>
-              {% endif %}
-              {% endif %}
             </div>
           </div>
-        </div>
-  		{% endif %}
-        
-        
+        {% endif %}
       </div>
     </div>
-    
-    
   </div>
 </section>
 
@@ -244,21 +278,21 @@
 {
   "name": "About Us",
   "settings": [
-	{
-		"type" : "image_picker",
-		"id": "bg_breadcrumb",
-		"label" : "Background Image BreadCrumb",
-		"info" : "1920x510px recommended"
-	},
-	{
+    {
+      "type": "image_picker",
+      "id": "bg_breadcrumb",
+      "label": "Background Image BreadCrumb",
+      "info": "1920x510px recommended"
+    },
+    {
       "type": "header",
       "content": "Introduce"
     },
-	{
+    {
       "type": "paragraph",
       "content": "Please scroll to bottom and click Add content to add content for Introduce"
     },
-	{
+    {
       "type": "checkbox",
       "id": "enable_intro",
       "label": "Enable?",
@@ -268,45 +302,45 @@
       "type": "header",
       "content": "Service Box"
     },
-	{
+    {
       "type": "paragraph",
       "content": "Please scroll to bottom and click Add content to add content for Introduce"
     },
-	{
+    {
       "type": "checkbox",
       "id": "enable_s_servicebox",
       "label": "Enable?",
       "default": true
     },
-	{
-		"type" : "image_picker",
-		"id": "bg_image",
-		"label" : "Background Image ServiceBox",
-		"info" : "1920x650px recommended"
-	},
-	{
-          "type": "text",
-          "id": "title_servicebox",
-          "label": "Title",
-          "default": "Reasons to shop with us"
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image ServiceBox",
+      "info": "1920x650px recommended"
     },
-    
-	 {
+    {
+      "type": "text",
+      "id": "title_servicebox",
+      "label": "Title",
+      "default": "Reasons to shop with us"
+    },
+
+    {
       "type": "header",
       "content": "Instagram"
     },
-	{
+    {
       "type": "checkbox",
       "id": "enable_insta",
       "label": "Enable?",
       "default": true
     },
-	{
+    {
       "type": "text",
       "id": "title_icon",
       "label": "Icon title",
       "default": "icon-icon-intagram",
-	  "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
     },
     {
       "type": "text",
@@ -338,29 +372,26 @@
       "label": "Limit Image",
       "default": "6"
     },
-    
+
     {
       "type": "text",
       "id": "item_icon",
       "label": "Icon",
       "default": "fa fa-instagram",
-	  "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
     }
-
-	
-
   ],
   "blocks": [
     {
       "type": "service",
       "name": "Service V1",
       "settings": [
-		{
-        "type": "text",
-        "id": "block_icon",
-        "label": "Icon",
-        "default": "icon-icon-transport",
-        "info": "[Get icon in here](https:\/\/fontawesome.com\/v4.7.0\/icons)"
+        {
+          "type": "text",
+          "id": "block_icon",
+          "label": "Icon",
+          "default": "icon-icon-transport",
+          "info": "[Get icon in here](https:\/\/fontawesome.com\/v4.7.0\/icons)"
         },
         {
           "type": "text",
@@ -376,22 +407,22 @@
         }
       ]
     },
-	{
+    {
       "type": "introduce",
       "name": "Introduce",
-	  "settings": [
+      "settings": [
         {
-        "type" : "image_picker",
-        "id": "image_intro",
-        "label" : "Image Introduce",
-        "info" : "670x600px recommended"
+          "type": "image_picker",
+          "id": "image_intro",
+          "label": "Image Introduce",
+          "info": "670x600px recommended"
         },
         {
           "type": "text",
           "id": "title_intro",
           "label": "Title"
         },
-		 {
+        {
           "type": "text",
           "id": "des_intro",
           "label": "Description"
@@ -402,14 +433,39 @@
           "label": "Content"
         }
       ]
-	}
+    },
+    {
+      "type": "introduce_v1",
+      "name": "Introduce v1",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_intro",
+          "label": "Image Introduce",
+          "info": "670x600px recommended"
+        },
+        {
+          "type": "text",
+          "id": "title_intro",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "des_intro",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "content_intro",
+          "label": "Content"
+        }
+      ]
+    }
   ],
   "presets": [
     {
       "name": "About Us",
-       "blocks": [
-
-      ]
+      "blocks": []
     }
   ]
 }
