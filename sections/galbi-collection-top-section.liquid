@@ -1,30 +1,31 @@
 <div data-section-id="{{ section.id }}" data-section-type="galbi_left_imginfo section-countdown-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
   <div class="galbi_collection_topSec galbi_left_imginfo section-countdown-v1 mt-all">
     <div class="container container-v1">
-      <div class="row align-items-center justify-content-around">
-        <div class="col-lg-5  col-md-6 text-center">
+      <div style="background-color: #E2DED5" class="row align-items-center justify-content-between">
+        <div class="">
           <div class="img-bottom">
             <a href="{{section.settings.url_button1}}">
-              {% if section.settings.img_bottom != blank %}
-              <img src="{{section.settings.img_bottom | img_url:'master'}}" class="img-fluid">
-              {% else %}
+
+              {% if collection.featured_image != blank %}
+              <img src="{{collection.featured_image | img_url:'master'}}" class="img-fluid">
+                {% else %}
               <img src="//placehold.it/700x700" class="img-fluid" alt="">
               {% endif %}
+
             </a>
         </div> 
         </div>
-        <div class="col-lg-5  col-md-6">
-          <div class="countdown">
-            <div class="content-countdown">
-              {% if section.settings.title_product != blank %}
-              <h3 class="title-product-countdown">                
-                  {{section.settings.title_product}}
-              </h3>
-              {% endif %}
+        <div class="col-md-6">
+          <div class="">
+            <div style="text-align: center;max-width: 77%;margin: auto;" class="content-countdown">
               
-              {% if section.settings.content-countdown != blank %}                
-                <p class="content">{{section.settings.content-countdown}}</p>                
-              {% endif %}
+              <h3 style="font-family: Ambroise Std !important; font-size: 50px !important;" class="title-product-countdown">                
+                  {{collection.title}}
+              </h3>
+
+              <p style="text-align: justify; font-family: Open Sans !important; font-size: 14px !important; font-weight: 600;" class="content">{{collection.description}}</p>
+
+              <img src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/Map-galbi.png?v=1687726413" alt="place holder image">
 
             </div>                   
           </div>
