@@ -1,17 +1,18 @@
 <footer class="footer_v2">
     <div class="container container-v2">    
-      <div class="row">
+      <div class="row align-items-end">
         <div class="col-lg-3 col-md-3">
           <div class="info_us">
             <div class="logo-top">
               {% if settings.logo_svg2 !=blank %}
               <div class="logosvg" style="max-width:{{settings.fv2_main_logo_maxwidth}}px;">
                 <a class="d-block" href="{{shop.url}}">{{settings.logo_svg2}}</a>
-              </div>          
+              </div>        
               {% else %}          	
               <a href="{{shop.url}}" class="logo">
                 {% if settings.fv2_main_logo != blank %}
-                <img src="{{settings.fv2_main_logo | img_url:'master'}}"  width="{{settings.fv2_main_logo_maxwidth}}" alt="{{shop.name}}" class="img-fluid">
+                {% comment %} <img src="{{settings.fv2_main_logo | img_url:'master'}}"  width="{{settings.fv2_main_logo_maxwidth}}" alt="{{shop.name}}" class="img-fluid"> {% endcomment %}
+                <img src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/Hand-drawn_Galbi_Final_Deliverables-32.png?v=1687724883" alt="footer logo">
                 {% else %}
                 <img src="//placehold.it/160x46" width="{{settings.fv2_main_logo_maxwidth}}" alt="{{shop.name}}" class="img-fluid">
                 {% endif %}
