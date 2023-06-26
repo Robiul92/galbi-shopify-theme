@@ -1,79 +1,87 @@
 <div class="wrap-bread-crumb breadcrumb_collection2">
-  <div class="text-center bg-breadcrumb" style="background-image : url({% if section.settings.bg_breadcrumb != blank  %}{{section.settings.bg_breadcrumb | img_url : 'master'}} {% else %}//placehold.it/1920x510 {% endif %})">
-    <div class="title-page">
+  <div class="text-center">
+    <div style="padding: 120px 0;" class="title-page">
 
-      <h2 class="">{{page.title}}</h2>
+      <h2 style="font-family: Ambroise Std; font-size: 50px;" class="">{{page.title}}</h2>
+      <p style="width: 50%; margin: auto; text-align: justify; font-family: Open Sans !important; font-size: 12px;">{{ page.content }}</p>
 
     </div>
-    {% include 'breadcrumb' %}
+    {% comment %} {% include 'breadcrumb' %} {% endcomment %}
+    <div class="container container-v1">
+      <img src="{{section.settings.bg_breadcrumb | img_url : 'master'}}" alt="Page image">
+    </div>
   </div>
 </div>
 <section>
   <div class="aboutus-pages">
+
+    <!--service box -->
+    {% if section.settings.enable_s_servicebox %}
+      <div class="about-servicebox">
+        <div class="container container-v2">
+          {% comment %} <h2 class="title-servicebox">{{section.settings.title_servicebox}}</h2> {% endcomment %}
+          <div class="row slickjs-services-v1">
+            {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+            {% if block.type == "service" %}
+            <div class="text-center itemtservice justify-content-center">
+              <div class="box-service col-lg-12">
+                {% comment %} <span class="icon">          
+                  <i class="{{block.settings.block_icon}} "></i>
+                </span> {% endcomment %}
+                {% if block.settings.block_title != blank %}
+                <h4 style="color: #000; font-family: Brooklyn !important; font-size: 12px;" class="title">{{block.settings.block_title}}</h4>
+                {% endif %}
+                {% if block.settings.block_content != blank %}          	
+                <p style="color: #000; font-family: Open Sans !important; font-size: 12px;" class="content">{{block.settings.block_content}}</p>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
     <div class="container container-v2">
       {% if section.settings.enable_intro %}
         <div class="about-introduce">
           <div class="row">
             {% for block in section.blocks %}
-            {% if block.type == 'introduce' %}
-            {% assign mod = forloop.index | modulo: 2 %}
-            {% if mod == 0 %}
-            <div class="col-md-6 intro_detail d-flex align-items-center">
-              <div class="info-intro">
-                <h3 class="title_intro">{{block.settings.title_intro}}</h3>
-                <p class="des_intro">{{block.settings.des_intro}}</p>
-                <p class="content_intro">{{block.settings.content_intro}}</p>
-              </div>
-            </div>
-            <div class="col-md-6 intro_image ">
-              <img class="w-100" src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}">
-            </div>          
-            {% else %}
-            <div class="col-md-6 intro_image">
-              <img class="w-100" src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}">
-            </div>
-            <div class="col-md-6 intro_detail d-flex align-items-center">
-              <div class="info-intro">
-                <h3 class="title_intro">{{block.settings.title_intro}}</h3>
-                <p class="des_intro">{{block.settings.des_intro}}</p>
-                <p class="content_intro">{{block.settings.content_intro}}</p>
-              </div>
-            </div>
-            {% endif %}
-            {% endif %}
+              {% if block.type == 'introduce' %}
+                {% assign mod = forloop.index | modulo: 2 %}
+                {% if mod == 0 %}
+                  <div class="col-md-6 intro_detail d-flex align-items-end">
+                    <div class="info-intro">
+                      <h3 class="title_intro">{{block.settings.title_intro}}</h3>
+                      <p class="des_intro">{{block.settings.des_intro}}</p>
+                      <p class="content_intro">{{block.settings.content_intro}}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 intro_image ">
+                    <img class="w-100" src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}">
+                  </div>          
+                  {% else %}
+                  <div class="col-md-6 intro_image">
+                    <img class="w-100" src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}">
+                  </div>
+                  <div class="col-md-6 intro_detail d-flex align-items-end">
+                    <div class="info-intro">
+                      <h3 class="title_intro">{{block.settings.title_intro}}</h3>
+                      {% comment %} <p class="des_intro">{{block.settings.des_intro}}</p> {% endcomment %}
+                      <p class="content_intro">{{block.settings.content_intro}}</p>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
             {% endfor %}
           </div>
         </div>
       {% endif %}
     </div>
-    {% if section.settings.enable_s_servicebox %}
-    <div class="about-servicebox" style="background-image: url({% if section.settings.bg_image != blank %}{{section.settings.bg_image | img_url : 'master' }} {%else%} //placehold.it/1920x650 {% endif %})">
-      <div class="container container-v2">
-        <h2 class="title-servicebox">{{section.settings.title_servicebox}}</h2>
-        <div class="row slickjs-services-v1">
-          {% if section.blocks.size > 0 %}
-          {% for block in section.blocks %}
-          {% if block.type == "service" %}
-          <div class="text-center itemtservice justify-content-center">
-            <div class="box-service col-lg-12">
-              <span class="icon">          
-                <i class="{{block.settings.block_icon}} "></i>
-              </span>
-              {% if block.settings.block_title != blank %}
-              <h4 class="title">{{block.settings.block_title}}</h4>
-              {% endif %}
-              {% if block.settings.block_content != blank %}          	
-              <p class="content">{{block.settings.block_content}}</p>
-              {% endif %}
-            </div>
-          </div>
-          {% endif %}
-          {% endfor %}
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
+    
     <div class="container container-v2">
       <div class="content-about">
         {% if section.settings.enable_insta %}
