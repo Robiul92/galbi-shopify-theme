@@ -23,7 +23,9 @@
   </div>
   <div class="menuright">
     <span class=" pr-3 js-search-destop"><i class="icon-icon-search"></i></span>
-    <a href="javascript:void(0)" title="" class="js-call-minicart"><i class="icon-icon-cart"></i>
+    {% include 'icon-cart' %}
+    <a href="javascript:void(0)" title="" class="js-call-minicart">
+      {% comment %} <i class="icon-icon-cart"></i> {% endcomment %}
       <span class="count_pr_incart enj-cartcount">{{cart.item_count }}</span>
     </a>
   </div>
