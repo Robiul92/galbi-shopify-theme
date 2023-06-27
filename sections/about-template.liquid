@@ -67,7 +67,7 @@
                   <div class="col-md-6 intro_detail d-flex align-items-end">
                     <div class="info-intro">
                       <h3 class="title_intro">{{ block.settings.title_intro }}</h3>
-                      <p class="des_intro">{{ block.settings.des_intro }}</p>
+                      {% comment %} <p class="des_intro">{{ block.settings.des_intro }}</p> {% endcomment %}
                       <p class="content_intro">{{ block.settings.content_intro }}</p>
                     </div>
                   </div>
@@ -91,7 +91,7 @@
               {% endif %}
               {% if block.type == 'introduce_v1' %}
 
-                  <div class="col-md-6 intro_detail d-flex align-items-center">
+                  <div style="background-color: #E2DED5;" class="col-md-6 intro_detail d-flex align-items-center">
                     <div style="width: 70%; margin: auto; text-align: center;" class="info-intro">
                       <img src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/About_2.png?v=1687727429" alt="lorem image">
                       
@@ -100,7 +100,7 @@
                       <p style="text-align: center;" class="content_intro">{{ block.settings.content_intro }}</p>
                     </div>
                   </div>
-                  <div class="col-md-6 intro_image ">
+                  <div style="background-color: #E2DED5;" class="col-md-6 intro_image ">
                     <img
                       class="w-100"
                       src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}"

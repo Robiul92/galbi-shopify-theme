@@ -1,37 +1,50 @@
-<div data-section-id="{{ section.id }}" data-section-type="galbi_left_imginfo section-countdown-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="galbi_left_imginfo section-countdown-v1"
+  style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}"
+>
   <div class="galbi_collection_topSec galbi_left_imginfo section-countdown-v1 mt-all">
     <div class="container container-v1">
       <div style="background-color: #E2DED5" class="row align-items-center justify-content-between">
-        <div class="">
-          <div class="img-bottom">
-            <a href="{{section.settings.url_button1}}">
-
-              {% if collection.featured_image != blank %}
+        <div class="img-bottom">
+          <a href="{{section.settings.url_button1}}">
+            {% if collection.featured_image != blank %}
               <img src="{{collection.featured_image | img_url:'master'}}" class="img-fluid">
-                {% else %}
+            {% else %}
               <img src="//placehold.it/700x700" class="img-fluid" alt="">
-              {% endif %}
-
-            </a>
-        </div> 
+            {% endif %}
+          </a>
         </div>
         <div class="col-md-6">
           <div class="">
             <div style="text-align: center;max-width: 77%;margin: auto;" class="content-countdown">
-              
-              <h3 style="font-family: Ambroise Std !important; font-size: 50px !important;" class="title-product-countdown">                
-                  {{collection.title}}
+              <h3
+                style="font-family: Ambroise Std !important; font-size: 50px !important;"
+                class="title-product-countdown"
+              >
+                {% comment %} {{collection.title}} {% endcomment %}
+                The Marrakesh collection
               </h3>
 
-              <p style="text-align: justify; font-family: Open Sans !important; font-size: 14px !important; font-weight: 600;" class="content">{{collection.description}}</p>
+              <p style="font-family: Libre Baskerville !important; font-size: 14px !important; font-weight: bold; text-transform: uppercase; padding: 1em 0 !important;">
+                Lorem ipsum, dolor sit amet
+              </p>
 
-              <img src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/Map-galbi.png?v=1687726413" alt="place holder image">
+              <p
+                style="text-align: justify; font-family: Open Sans !important; font-size: 14px !important; font-weight: 600;"
+                class="content"
+              >
+                {{ collection.description }}
+              </p>
 
-            </div>                   
+              <img
+                src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/Map-galbi.png?v=1687726413"
+                alt="place holder image"
+              >
+            </div>
           </div>
         </div>
       </div>
-            
     </div>
   </div>
 </div>
@@ -39,29 +52,29 @@
 {
   "name": "Galbi Collection Top",
   "settings": [
-  	{
+    {
       "type": "header",
       "content": "setting banner"
     },
-	{
+    {
       "type": "image_picker",
       "id": "img_bottom",
       "label": "Image left",
-	  "info": "700 x 700px recommended"
+      "info": "700 x 700px recommended"
     },
-  	{
+    {
       "type": "text",
       "id": "title_product",
       "label": "Title",
       "default": "Winter Collection 2019"
     },
-	{
+    {
       "type": "text",
       "id": "content-countdown",
       "label": "Content",
       "default": "Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Nike. Perfect for pairing with denim and white kicks for a stylish sporty vibe."
     },
-  
+
     {
       "type": "header",
       "content": "Section Space"
@@ -78,7 +91,6 @@
       "label": "Margin Bottom",
       "info": "Defined in pixels. Do not add the 'px' unit."
     }
-	
   ],
   "presets": [
     {
