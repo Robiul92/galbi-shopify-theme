@@ -1,80 +1,133 @@
-<div
-  data-section-id="{{ section.id }}"
-  data-section-type="galbi_left_imginfo section-countdown-v1"
-  style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}"
->
-  <div class="galbi_collection_topSec galbi_left_imginfo section-countdown-v1 mt-all">
-    <div class="container container-v1">
-      <div style="background-color: #E2DED5" class="row align-items-center justify-content-between">
-        <div class="img-bottom">
-          <a href="{{section.settings.url_button1}}">
-            {% if collection.featured_image != blank %}
-              <img src="{{collection.featured_image | img_url:'master'}}" class="img-fluid">
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v7" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div style="background-color: #E2DED5;'" class="left-image-banner section-banner-v7 mt-all">
+<div class="">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 col-md-6">
+        <div class="picture text-center">
+          <div class="box-img2 w-100">
+            {% if section.settings.img_banner1 != blank %}
+            <a href="{{section.settings.url_banner1}}"><img src="{{section.settings.img_banner1 | img_url:'master'}}" class="img-fluid w-100"></a>
             {% else %}
-              <img src="//placehold.it/700x700" class="img-fluid" alt="">
+            <a href="{{section.settings.url_banner1}}"><img src="//placehold.it/850x600" class="img-fluid w-100" alt=""></a>
             {% endif %}
-          </a>
-        </div>
-        <div class="col-md-6">
-          <div class="">
-            <div style="text-align: center;max-width: 77%;margin: auto;" class="content-countdown">
-              <h3
-                style="font-family: Ambroise Std !important; font-size: 50px !important;"
-                class="title-product-countdown"
-              >
-                {% comment %} {{collection.title}} {% endcomment %}
-                The Marrakesh collection
-              </h3>
-
-              <p style="font-family: Libre Baskerville !important; font-size: 14px !important; font-weight: bold; text-transform: uppercase; padding: 1em 0 !important;">
-                Lorem ipsum, dolor sit amet
-              </p>
-
-              <p
-                style="text-align: justify; font-family: Open Sans !important; font-size: 14px !important; font-weight: 600;"
-                class="content"
-              >
-                {{ collection.description }}
-              </p>
-
-              <img
-                src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/Map-galbi.png?v=1687726413"
-                alt="place holder image"
-              >
-            </div>
           </div>
+
+        {% comment %}
+          <div class="galbi__product_nameprice">
+            {% if section.settings.product_name != blank %}
+            <div class="product__name">
+              <h3 class="title"><a href="{{section.settings.url_banner1}}">{{section.settings.product_name}}</a></h3>
+            </div>
+            {% endif %}
+  
+            {% if section.settings.product_price != blank %}
+            <p class="mb-0 product___price">{{section.settings.product_price}}</p>
+            {% endif %}
+          </div>
+        {% endcomment %}
+
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6">
+        <div class="left_image_details info">
+          {% if section.settings.title_top != blank %}
+          <div class="title-banner-top">
+            <h3 class="title">{{section.settings.title_top}}</h3>
+          </div>
+          {% endif %}
+
+          <p style="font-family: Libre Baskerville !important; font-size: 14px; text-transform: uppercase; padding-top: 15px;">The sub title</p>
+
+          {% if section.settings.content_top != blank %}
+          <p style="padding:15px 0;" class="mb-0 content">{{section.settings.content_top}}</p>
+          {% endif %}
+
+          {% if section.settings.img_banner1 != blank %}
+            <img src="{{section.settings.img_banner2 | img_url:'master'}}" class="img-fluid">
+          {% endif %}
+
+          {% if section.settings.button != blank %}
+          {% comment %} <a href="{{section.settings.url_button}}" class="button-shop">{{section.settings.button}}</a> {% endcomment %}
+          {% endif %}
         </div>
       </div>
     </div>
+</div>
   </div>
 </div>
 {% schema %}
+
 {
-  "name": "Galbi Collection Top",
+  "name": "Top section image",
   "settings": [
     {
       "type": "header",
-      "content": "setting banner"
+      "content": "Info top left"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Title banner top",
+      "default": "New Collection"
+    },
+    {
+      "type": "textarea",
+      "id": "content_top",
+      "label": "Content top",
+      "default": "Eveland is a London based jewellery brand. Each piece in our collection has been meticulously designed in our studio near London Bridge and embodies our principals of simplicity, detail and understated masculinity. Our collection of Pendants, Cuffs and Rings have been designed to be worn individually or layered and stacked together."
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "button",
+      "default": "ShOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "url_button",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Info top right"
     },
     {
       "type": "image_picker",
-      "id": "img_bottom",
-      "label": "Image left",
-      "info": "700 x 700px recommended"
+      "id": "img_banner1",
+      "label": "Image top right",
+      "info": "850 x 600px recommended"
+    },
+    {
+      "type": "url",
+      "id": "url_banner1",
+      "label": "URL images top right",
+      "default": "/collections/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner2",
+      "label": "Image bottom",
+      "info": "600 x 600px recommended"
+    },
+      {
+      "type": "header",
+      "content": "Product Name & Price"
     },
     {
       "type": "text",
-      "id": "title_product",
-      "label": "Title",
-      "default": "Winter Collection 2019"
+      "id": "product_name",
+      "label": "Product Name",
+      "default": "Product Title"
     },
     {
       "type": "text",
-      "id": "content-countdown",
-      "label": "Content",
-      "default": "Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Nike. Perfect for pairing with denim and white kicks for a stylish sporty vibe."
+      "id": "product_price",
+      "label": "Product Price",
+      "default": "$455"
     },
-
     {
       "type": "header",
       "content": "Section Space"
@@ -94,11 +147,12 @@
   ],
   "presets": [
     {
-      "name": "Galbi Collection Top",
-      "category": "HOME 2"
+      "name": "Top section image",
+      "category": "HOME 6"
     }
   ]
 }
+
 {% endschema %}
 
 {% stylesheet %}
@@ -106,9 +160,3 @@
 
 {% javascript %}
 {% endjavascript %}
-
-<style>
-  .section-countdown-v1 .bg_countdown{
-    background-color:{{section.settings.bg_color}};
-  }
-</style>

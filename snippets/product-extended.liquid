@@ -657,7 +657,7 @@
                   <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
                 </div>
               {% endif %}
-              <h2 class="product-title ">{{product.title}}</h2>
+              <h2 style="font-family: Ambroise Std !important; text-transform: uppercase !important; line-height: 50px;" class="product-title ">{{product.title}}</h2>
               <div class="product-price ">
                 {% capture price %}{{ product.price | money }}{% endcapture %}
                 {% if on_sale %}<del class="enj-product-price-compare">{{ product.compare_at_price | money }}</del> {% endif %}

@@ -1060,6 +1060,9 @@ body {
 .container-v2{
   max-width: 1670px;
 }
+.container-v3 {
+  max-width: 1250px;
+}
 
 
 .aboutus-pages{
@@ -1285,11 +1288,11 @@ body {
         }
         .content_intro{
           margin-top: 35px;
-          line-height: 28px;
+          line-height: 25px;
           font-size: 14px;
-          color: #666666;
+          color: #000;
           text-align: left;
-          font-family: $font-primary;
+          font-family: 'OPen Sans' !important;
           font-weight: 400;
         }
       }
@@ -5434,7 +5437,7 @@ body {
           	font-size: 14px;
             font-family: $font-primary;
             font-weight:400;
-            color: #a8a8a8;
+            color: #000;
           }
         }
         button[type='submit']{
@@ -5901,7 +5904,7 @@ body {
             font-size: 14px;
             font-family: $font-primary;
             font-weight:400;
-            color: #a8a8a8;
+            color: #000;
           }
         }
         button[type='submit']{
@@ -9123,6 +9126,9 @@ body {
 .container-v2{
   max-width: 1670px;
 }
+.container-v3 {
+  max-width: 1450px;
+}
 
 .poup-login-destop{
   width: 500px;
@@ -10887,7 +10893,7 @@ POPup newletter
           padding-right: 0px;
           display: inline-block;
           font-family: 'Brooklyn';
-
+          letter-spacing: 2px;
           &:hover,
           &:focus,
           &:active
@@ -10958,6 +10964,7 @@ POPup newletter
                   color: #161616;
                   font-family: 'Ambroise Std';
                   font-size: 20px;
+                  font-weight: normal;
                   small {
                     font-family: 'Open Sans' !important;
                     font-size: 12px !important;
@@ -10995,6 +11002,7 @@ POPup newletter
                   color: {{settings.hdv_color_linkchildren}};
                   font-weight: 300;
                   text-transform: uppercase;
+                  letter-spacing: 2px;
                   // &:hover {
                   //   color: {{settings.hdv_color_text_hover}};
                   // }
@@ -11400,7 +11408,7 @@ POPup newletter
 //section all
 
 .mt-all{
-	margin-top:80px;
+	// margin-top:80px;
 }
 .section-slideshow-v1{
   .slick-dots{
@@ -13174,12 +13182,12 @@ POPup newletter
   // width: 383px;
   // height: 447.55px;
   img{
-    transition: all .5s linear;
+    // transition: all .5s linear;
   }
   &:hover{
     img{
-      transform: scale(1.07);
-      transition: all .5s linear;
+      // transform: scale(1.07);
+      // transition: all .5s linear;
     }
   }
 }
@@ -13190,7 +13198,7 @@ POPup newletter
   }
   &:hover{
     img{
-      filter: grayscale(1);
+      // filter: grayscale(1);
       transition: all .5s linear;
     }
   }
@@ -13210,15 +13218,15 @@ POPup newletter
       font-size: 50px;
       margin-bottom: 38px;
       margin-top: 0;
-      font-weight: 600;
+      font-weight: normal;
       font-family: 'Ambroise Std' !important;
       text-transform: uppercase;
-      letter-spacing: 0.4em;
-      line-height: 1.4;
+      line-height: 50px;
     }
     .Gproduct__details {
       font-family: "Open Sans";
       font-size: 12px;
+      line-height: 25px;
     }
     .button-shop{
       border-radius: 0px;
@@ -14858,11 +14866,12 @@ POPup newletter
       }
     }
     .content{
-      font-size: 16px;
-      color: #a8a8a8;
-      line-height: 26px;
+      font-size: 12px;
+      color: #000;
+      line-height: 25px;
       font-weight: 300;
       margin-top: 20px;
+      font-family: 'Open Sans' !important;
     }
      .button-shop{
        border-radius: 0px;
@@ -15682,7 +15691,7 @@ POPup newletter
       form{
         width: 100%;
         position: relative;
-        margin-top: 20px;
+        margin-top: 7px;
         .form-group{
           width: 100%;
           .form-control {
@@ -15817,7 +15826,7 @@ POPup newletter
   padding-top: 20px;
   padding-bottom: 20px;
   border-top: 1px solid {{settings.color_bordertop_fv2}};
-  background-color: #f2f1eb;
+  // background-color: #f2f1eb;
   .title_footer{    
     // margin-bottom: 20px;
     h4{
@@ -15846,7 +15855,8 @@ POPup newletter
       color: #000;
       line-height: 25px;
       margin-top: 10px;
-      font-family: 'Open Sans';
+      font-family: 'Open Sans' !important;
+      line-height: 25px;
     }
     
     .list-icon{
@@ -15917,13 +15927,14 @@ POPup newletter
     .content_newleter{
       color: #000;
       font-size:12px;
-      margin-top: 0.5rem;
-      font-family: 'Open Sans';
+      margin-top: 0.9rem;
+      font-family: 'Open Sans' !important;
+      // line
     }
     form{
       width: 100%;
       position: relative;
-      margin-top: 20px;
+      margin-top: 7px;
       .form-group{
         width: 100%;
         input{
@@ -21323,7 +21334,7 @@ RESPONSIVE
   url("OpenSans_Regular.woff") format("woff");
 }
 
-body,p,span {font-family: "Open Sans Regular" !important;}
+body,p,span {font-family: "Open Sans" !important;}
 
 
 @font-face {
@@ -21379,6 +21390,9 @@ a.tiktok-icon img {
   width: 25vw;
   font-family: 'Open Sans';
   font-size: 12px;
+  &::placeholder {
+    color: black !important;
+  }
 }
 
 .our_story_heading_details.info {
@@ -21453,7 +21467,8 @@ a.videoBoxInfoBtn {
 .section-banner-v7 .info .title-banner-top .title,
 .Galbi__product_home h3.title-top {
     letter-spacing: 3px !important;
-    font-size: 35px !important;
+    font-size: 50px !important;
+    line-height: 50px;
 }
 
 .three__product_items h3.bigtitle, 
@@ -21527,10 +21542,13 @@ p.menu__details_left {
 .tab-content {
   max-height: 0;
   padding: 0 1em;
-  color: #2c3e50;
+  color: #000;
   // background: white;
   transition: all 0.35s;
   text-align: left;
+  font-size: 12px;
+  font-family: 'Open Sans' !important;
+  line-height: 25px;
 }
 .tab-close {
   display: flex;
@@ -21700,7 +21718,7 @@ section.galbi__search_page {
 }
 
 .left-image-banner.section-banner-v7.mt-all {
-    margin-top: 35px;
+    // margin-top: 35px;
 }
 
 .left-image-banner .picture.text-center {
@@ -21726,7 +21744,7 @@ h1.videoBoxInfoTitle {
 }
 
 .left-image-banner.section-banner-v7.mt-all .left_image_details.info {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     text-align: center !important;
     font-family: 'Open Sans';
@@ -21764,7 +21782,7 @@ div#shopify-section-footer {
     }
   
 @media (min-width: 1600px) and (max-width: 1899.98px) {
-        
+   
 #header .cs__mega_menu .tmenu_submenu_mega_position_fullwidth {
     left: -175%!important;
 }

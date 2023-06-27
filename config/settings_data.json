@@ -3663,7 +3663,7 @@
       "8ccaf8b0-1195-405d-9382-b587c6e9f140": {
         "type": "section-banner-left-image-description",
         "custom_css": [
-          ".amalfi_subheading {display: block; font-weight: 600; font-size: 14px; line-height: 35px; text-align: center; margin: 15px 0px; font-family: 'Libre Baskerville' !important;}"
+          ".amalfi_subheading {display: block; font-weight: 600; font-size: 14px !important; line-height: 30px; text-align: center; margin: 15px auto; font-family: 'Libre Baskerville' !important; letter-spacing: 2px; word-spacing: 30px; word-spacing: 2px; width: 70%;}"
         ],
         "settings": {
           "title_top": "THE AMALFI COAST",
