@@ -3667,7 +3667,7 @@
         ],
         "settings": {
           "title_top": "THE AMALFI COAST",
-          "content_top": "<h3 class=\"amalfi_subheading\">Our latest collecitons Straight from Italy\n<\/h3>\nAn ode to the European summer, our first collection is full of textured linens, timeless colors, and casual silhouettes you’ll reach for over and over. Carefully sourced by our founder from local designers, each piece is handcrafted with the highest quality. You won’t find this collection anywhere else — that’s the GALBI way.",
+          "content_top": "<h3 class=\"amalfi_subheading\">Our latest collecitons Straight from Italy\n<\/h3>",
           "button": "Shop the collection",
           "url_button": "shopify:\/\/products\/short-sleeve-button-up",
           "img_banner1": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_2.jpg",
@@ -3838,7 +3838,6 @@
           "img_bottom": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_5.jpg",
           "title_product": "OUR COLLECTIONS",
           "content-countdown": "Our collections are carefully curated by our founder. By visiting local artisans and designers around the world, we offer you unparalleled access to high-quality pieces from the best locales on Earth. Shopping small on an international scale has never been easier, and you’ll love reaching for pieces that are truly one of a kind in your closet for years to come.",
-          "margin_top": "80",
           "margin_bottom": ""
         }
       },
