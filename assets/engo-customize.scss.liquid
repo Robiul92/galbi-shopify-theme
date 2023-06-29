@@ -64,6 +64,24 @@
   background-image: url('./icons8-cart-50.png');
 }
 
+.btn {
+  font-size: 12px;
+  color: #000;
+  background-color: transparent;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 10px 40px;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 0;
+  margin-top: 1rem;
+  font-family: 'Brooklyn';
+  &:hover {
+    background-color: #000;
+    color: #f2f1eb;
+  }
+}
+
 .padding-slick{
   padding-right: 15px;
   padding-left: 15px;
@@ -12920,6 +12938,26 @@ POPup newletter
       opacity:0;
     }
   }
+  .add-wishlist {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: block;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+  }
+  .quick-view {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+  }  
   .product-icon-action{
     position: absolute;
     top: 50%;
@@ -12984,8 +13022,19 @@ POPup newletter
       transition: all .3s ease;
       opacity:1;
     }
+    .add-wishlist {
+      // right: 25px;
+      opacity: 1 ;
+      visibility: visible;
+      transition: all .3s linear;
+    }
+    .quick-view {
+      opacity: 1 ;
+      visibility: visible;
+      transition: all .3s linear;
+    }
     .product-icon-action{
-      left: 25px;
+      right: 25px;
       opacity: 1 ;
       visibility: visible;
       transition: all .3s linear;

@@ -101,11 +101,12 @@
     {% if product.available %}
     {% assign sold_out = false %}
     {% endif %}
+    <div class="add-wishlist">
+      {% include 'add-wishlist' %} 
+    </div>
     <div class="product-icon-action">
-      <div class="add-wishlist">
-        {% include 'add-wishlist' %} 
-      </div>
       
+      {% comment %}
       <div class="add-to-cart">
         {% if sold_out %}
         <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart margin_right_10 box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
@@ -126,14 +127,14 @@
         {% endif %}
         {% endif %}
       </div>
+      {% endcomment %}
       
-      <div class="quick-view">
-        <a href="javascript:void(0)" class="engoj_btn_quickview icon-quickview inline-block box-shadow" data-id="{{ product.handle }}" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_quickview_name}}">
-          <i class="{{settings.pia_quickview}}"></i>
-
-        </a>
-      </div>
-
+    </div>
+    <div class="quick-view">
+      <a href="javascript:void(0)" class="engoj_btn_quickview icon-quickview inline-block box-shadow" data-id="{{ product.handle }}" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_quickview_name}}">
+        {% comment %} <i class="{{settings.pia_quickview}}"></i> {% endcomment %}
+        <button class="btn">Quick view</button>
+      </a>
     </div>
 <!--     END ICON -->
     

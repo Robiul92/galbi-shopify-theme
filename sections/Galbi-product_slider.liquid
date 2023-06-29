@@ -20,6 +20,26 @@
             
           </div>
         </div>
+        
+        <div class="col-lg-8">
+          <div class="slicks-slider">
+            {% assign products_limit = section.settings.products_limit %}
+            {% assign col = section.settings.select_collection %}
+            {% for product in collections[col].products limit: products_limit %}
+              <div class="padding-slick product_item">
+                {% comment %} {% include 'product-item-v1' %} {% endcomment %}
+                {% include 'updated-product-item' %}
+              </div>
+              {% else %}
+              {% for i in (1..section.settings.products_limit) %}
+                <div class="padding-slick product_item">
+                  {% include 'empty-product-item' %}
+                </div>
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+        {% comment %}
         <div class="col-lg-8">
             <div class="row product_handpicked slick_product_h1_banner">    
               {% assign products_limit = section.settings.products_limit %}
@@ -38,10 +58,33 @@
               {% endfor %}
             </div>
         </div>
+        {% endcomment %}
+
       </div>
     </div>
   </div>
 </div>
+
+{{ 'slick.min.js' | asset_url | script_tag }}
+
+<script>
+  $('.slicks-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows : false,
+    responsive: [
+      {
+        breakpoint: 568, // Change this value to your desired mobile breakpoint
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+</script>
+
 {% schema %}
 {
   "name": "Galbi Products Slider",

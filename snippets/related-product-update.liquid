@@ -87,14 +87,12 @@
             <a href="/" class="button-shop related-product-button">Shop our latest collection</a>
           </div>
         </div>
+
         <div class="col-lg-8">
-          <div class="row product_handpicked slick_product_h1_banner">
+          <div class="slicks-slider">
             {% if collection and collection.products_count > 1 %}
               {% assign current_product = product %}
               {% assign current_product_found = false %}
-{% comment %}
-  products_limit
-{% endcomment %}
               {% for product in collection.products limit: products_limit %}
                 <div class="padding-slick product_item">
                   {% if product.handle == current_product.handle %}
@@ -110,6 +108,28 @@
               {% endfor %}
             {% endif %}
           </div>
+
+          {% comment %}
+          <div class="row product_handpicked slick_product_h1_banner">
+            {% if collection and collection.products_count > 1 %}
+              {% assign current_product = product %}
+              {% assign current_product_found = false %}
+              {% for product in collection.products limit: products_limit %}
+                <div class="padding-slick product_item">
+                  {% if product.handle == current_product.handle %}
+                    {% assign current_product_found = true %}
+                    {% include 'updated-product-item' %}
+                  {% else %}
+                    {% unless current_product_found == false and forloop.last %}
+                      {% comment %} {% include 'product-item-v1' %} {% endcomment %}
+                      {% include 'updated-product-item' %}
+                    {% endunless %}
+                  {% endif %}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+          {% endcomment %}
 
           {% comment %}
             {% assign products_limit = section.settings.products_limit %}
@@ -131,3 +151,23 @@
     </div>
   {% endif %}
 </div>
+
+{{ 'slick.min.js' | asset_url | script_tag }}
+
+<script>
+  $('.slicks-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows : false,
+    responsive: [
+      {
+        breakpoint: 568, // Change this value to your desired mobile breakpoint
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+</script>

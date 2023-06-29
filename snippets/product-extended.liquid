@@ -670,7 +670,6 @@
                   </div>
                 {% endif %}
               {% endif %}
-
               <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="cart clearfix">
                 <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
 
@@ -701,6 +700,36 @@
                   </div>
                 {% endif %}
               </form>
+
+              {% comment %}
+                testing form..need to solve
+              {% form 'product', product %}
+                <!-- form content -->
+                {% comment %}
+                <select name="id">
+                  {% for variant in product.variants %}
+                    <option value="{{ variant.id }}"
+                      {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+                    >
+                      {{ variant.title }} - {{ variant.price | money }}
+                    </option>
+                  {% endfor %}
+                </select>
+                {% endcomment %}
+                
+                {% comment %} <input name="id" value="{{ product.variants.first.id }}" type="hidden" /> {% endcomment %}
+
+                {% for option in product.options %}
+                  {%- for value in product.options_by_name[option].values %}
+                    <input type="radio" name="id" value="{{ value }}" id=""> {{ value }} <br/> <br/>
+                  {%- endfor %}
+                {% endfor %}
+
+                <input type="text" name="quantity" min="1" value="1">                
+              
+                <input type="submit" value="Add to cart">
+              {% endform %}
+              {% endcomment %}          
 
               {% comment %} <form method="post" action="/cart/add">
                 <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
@@ -765,7 +794,6 @@
                 <span class="text_whlist">{{'products.product.add_whlist' | t}}</span>
               </div>
               {% endcomment %}
-              
               <ul class="product-meta-info">
                 {% if section.settings.show_sku %}
                   {% if product.variants.first.sku != blank %}
@@ -823,6 +851,7 @@
             </div>
             {% include 'tab-product-details' %}
           </div>
+
           {% if section.settings.show_servicebox  %}
             <div class="col-lg-3 col-md-12 col-12">
               <div class="row">
