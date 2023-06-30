@@ -1,94 +1,202 @@
-<section id="content">
-  <div class="content-page contact-page">
+{% style %}
+  form > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0px;
+    gap: 2em;
+  }
+  form > ul > li {
+    list-style: none;
+    width: 100%;
+  }
+  form > ul > li > input:not([type="submit"]), textarea {
+    width: 100%;
+    border: 2px solid #000;
+    background: #f2f1eb;
+    border-radius: 0;
+  }
+  form > ul > li > input:focus, textarea:focus {
+    border: 2px solid #000;
+  }
+{% endstyle %}
 
-    <div class="container">
-    	 <div class="contact-form">
-          <div class="row">
-            {% if section.settings.contact_left_img %}
-            <div class="col-md-6">
-              {% if section.settings.contact_left_img %}	
-              	<img src="{% if section.settings.contact_left_img != blank %} {{section.settings.contact_left_img | img_url : 'master'}} {% else %}//placehold.it/768x583 {% endif %}">
-        	  {% endif %}
-              
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="section-banner-v7"
+  style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}"
+>
+  <div class="left-image-banner section-banner-v7 mt-all">
+    <div class="">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6">
+          <div class="picture text-center">
+            <div class="box-img2 w-100">
+              {% if section.settings.img_banner1 != blank %}
+                <a href="{{section.settings.url_banner1}}"
+                  ><img src="{{section.settings.img_banner1 | img_url:'master'}}" class="img-fluid w-100"
+                ></a>
+              {% else %}
+                <a href="{{section.settings.url_banner1}}"
+                  ><img src="//placehold.it/850x600" class="img-fluid w-100" alt=""
+                ></a>
+              {% endif %}
             </div>
-            {% endif %}
-            {% if section.settings.enable_s_contactform %}
-            <div class="col-md-6 col-sm-6 col-12">
-              <div class="contact-form-page">
-
-                {% if section.settings.contact_top_header %}
-                <h3>
-                  {{section.settings.contact_top_header}}
-                </h3>
-                {% endif %}
-
-                 {% if section.settings.contact_top_details != blank %}
-                    <p class="mb-5 content">{{section.settings.contact_top_details}}</p>
-                  {% endif %}
-              
-                {% form 'contact' %}
-
-                {% if form.posted_successfully? %}
-                <div class="alert alert-success alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <p style="margin-bottom: 5px;">
-                    {{ 'contact.form.post_success' | t }}
-                  </p>
-                </div>
-                {% endif %}
-
-                {% if form.errors %}
-                <div class="alert alert-success alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <!-- {{ form.errors.size }} or {{ form.errors | size }} -->
-                  <p style="margin-bottom: 5px;">Your contact form has {{ form.errors | size | pluralize: "an error", "a few errors" }}. To submit your form, make the following changes and try again:</p>
-                  {% for field in form.errors %}
-                  <p style="margin-bottom: 5px;">The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
-                  {% endfor %}
-                </div>
-                {% endif %}
-                <div class="contact-form">
-                  <p class="contact-name">
-                    <input class="" placeholder="{{section.settings.contactform_name}}" type="text" id="contactFormName" name="contact[name]" required>
-                  </p>
-                  <p class="contact-email">
-                    <input class="" placeholder="{{section.settings.contactform_email}}" type="email" id="contactFormEmail" name="contact[email]" required>
-                  </p>
-                  <p class="contact-subject">
-                    <input class="dark border" placeholder="{{section.settings.contactform_subject}}" type="text" id="contactFormSubject" name="contact[subject]" required>
-                  </p>
-                  <p class="contact-message">
-                    <textarea class="" placeholder="{{section.settings.contactform_content}}" cols="30" rows="10" id="contactFormMessage" name="contact[body]" required></textarea>
-                  </p>
-                  <p class="contact-submit">
-                    <input  class="shop-button" type="submit" value="{{section.settings.contactform_btn}}">
-                  </p>
-                </div>
-                {% endform %}
-              </div>
-            </div>
-            {% endif %}
-       		
           </div>
         </div>
 
+        <div class="col-lg-6 col-md-6">
+          <div style="text-align: left !important;" class="left_image_details info">
+            {% if section.settings.title_top != blank %}
+              <div class="title-banner-top">
+                <h3 class="title">{{ page.title }}</h3>
+              </div>
+            {% endif %}
+            <br>
+            <p>{{ page.content }}</p>
+            <br><br><br>
+            {% form 'contact' %}
+              {% if form.posted_successfully? %}
+                <p class="success-msg">Thanks for contacting us! We'll get back to you as soon as possible.</p>
+              {% endif %}
 
+              {% comment %}
+                -----Error message ----
+                {% if form.errors %}
+                  <p class="error-msg">
+                    <ul class="error-list" style="color:#E0360F">
+                      {% for field in form.errors %}
+                        {% if field == 'body' %}
+                          <li>Your message cannot be blank.</li>
+                        {% endif %}
+                        {% if field == 'email' %}
+                          <li>Please enter a valid email address.</li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </p>
+                {% endif %}
+              {% endcomment %}
+
+              <ul id="contact-form">
+                <li>
+                  <input placeholder="Name" type="text" id="name" name="contact[name]">
+                </li>
+                <li>
+                  <input placeholder="Email" type="email" id="email" class="email" name="contact[email]">
+                </li>
+                <li>
+                  <input placeholder="Subject" type="text" id="subject" class="subject" name="contact[body]">
+                </li>
+                <li>
+                  <textarea placeholder="Message" id="message" name="contact[body]"></textarea>
+                </li>
+
+                <li>
+                  <input style="margin-top: 0;" type="submit" class="submit btn" value="Submit">
+                </li>
+              </ul>
+            {% endform %}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
   "name": "Contact Us",
   "settings": [
-	
-	{
-    "type" : "image_picker",
-    "id": "contact_left_img",
-    "label" : "Contact Left Image",
-    "info" : "768x510px recommended"
+    {
+      "type": "header",
+      "content": "Info top left"
     },
-	
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Title banner top",
+      "default": "Contact"
+    },
+    {
+      "type": "textarea",
+      "id": "content_top",
+      "label": "Content top",
+      "default": "Eveland is a London based jewellery brand. Each piece in our collection has been meticulously designed in our studio near London Bridge and embodies our principals of simplicity, detail and understated masculinity. Our collection of Pendants, Cuffs and Rings have been designed to be worn individually or layered and stacked together."
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "button",
+      "default": "ShOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "url_button",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Info top right"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner1",
+      "label": "Image top right",
+      "info": "850 x 600px recommended"
+    },
+    {
+      "type": "url",
+      "id": "url_banner1",
+      "label": "URL images top right",
+      "default": "/collections/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner2",
+      "label": "Image bottom",
+      "info": "600 x 600px recommended"
+    },
+    {
+      "type": "header",
+      "content": "Product Name & Price"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product Name",
+      "default": "Product Title"
+    },
+    {
+      "type": "text",
+      "id": "product_price",
+      "label": "Product Price",
+      "default": "$455"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_left_img",
+      "label": "Contact Left Image",
+      "info": "768x510px recommended"
+    },
+
     {
       "type": "header",
       "content": "Section Contact Form"
@@ -123,7 +231,7 @@
       "label": "Placeholder email",
       "default": "Email*"
     },
-	{
+    {
       "type": "text",
       "id": "contactform_subject",
       "label": "Placeholder Subject",
@@ -142,12 +250,11 @@
       "default": "Send"
     }
   ],
-"blocks": [
+  "blocks": [
     {
       "type": "info",
       "name": "Info",
       "settings": [
-
         {
           "type": "text",
           "id": "block_title",
@@ -167,9 +274,7 @@
   "presets": [
     {
       "name": "Contact Us",
-       "blocks": [
-
-      ]
+      "blocks": []
     }
   ]
 }

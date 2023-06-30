@@ -10953,7 +10953,7 @@ POPup newletter
           box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
           border-radius: 0;
           border: none;
-          margin-top: 30px;
+          margin-top: -30px;
           opacity: 0;
           visibility: hidden;
           transition: all 0.5s ease;
@@ -10970,10 +10970,8 @@ POPup newletter
           .list-clothing {
             .title {
               h5 {
-                font-size: 20px;
                 text-transform: uppercase;
-                letter-spacing: 2px;
-                font-weight: 600;
+                font-weight: normal;
                 margin-bottom: 20px;
                 font-family: 'Ambroise Std';
                 a{
@@ -10983,17 +10981,21 @@ POPup newletter
                   // color:{{settings.hdv_color_text}};
                   color: #161616;
                   font-family: 'Ambroise Std';
-                  font-size: 20px;
+                  font-size: 30px;
                   font-weight: normal;
                   small {
                     font-family: 'Open Sans' !important;
                     font-size: 12px !important;
-                    text-transform: capitalize
+                    text-transform: capitalize;
+                    display: block;
+                    line-height: 20px;
+                    margin-top: 15px;
                   };
                   .under_image {
-                    font-family: 'Libre Baskerville';
+                    font-family: 'Libre Baskerville' !important;
                     font-size: 14px;
                     font-weight: 600;
+                    letter-spacing: 2px;
                   }
                   // &:after {
                   //   content: '';

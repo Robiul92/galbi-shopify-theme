@@ -1,64 +1,71 @@
-<div data-section-id="{{ section.id }}" data-section-type="section-banner-v7" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="section-banner-v7"
+  style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}"
+>
   <div style="background-color: #E2DED5;'" class="left-image-banner section-banner-v7 mt-all">
-<div class="">
-    <div class="row align-items-center">
-
-      <div class="col-lg-6 col-md-6">
-        <div class="picture text-center">
-          <div class="box-img2 w-100">
-            {% if section.settings.img_banner1 != blank %}
-            <a href="{{section.settings.url_banner1}}"><img src="{{section.settings.img_banner1 | img_url:'master'}}" class="img-fluid w-100"></a>
-            {% else %}
-            <a href="{{section.settings.url_banner1}}"><img src="//placehold.it/850x600" class="img-fluid w-100" alt=""></a>
-            {% endif %}
-          </div>
-
-        {% comment %}
-          <div class="galbi__product_nameprice">
-            {% if section.settings.product_name != blank %}
-            <div class="product__name">
-              <h3 class="title"><a href="{{section.settings.url_banner1}}">{{section.settings.product_name}}</a></h3>
+    <div class="">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6">
+          <div class="picture text-center">
+            <div class="box-img2 w-100">
+              {% if section.settings.img_banner1 != blank %}
+                <a href="{{section.settings.url_banner1}}"
+                  ><img src="{{section.settings.img_banner1 | img_url:'master'}}" class="img-fluid w-100"
+                ></a>
+              {% else %}
+                <a href="{{section.settings.url_banner1}}"
+                  ><img src="//placehold.it/850x600" class="img-fluid w-100" alt=""
+                ></a>
+              {% endif %}
             </div>
-            {% endif %}
-  
-            {% if section.settings.product_price != blank %}
-            <p class="mb-0 product___price">{{section.settings.product_price}}</p>
-            {% endif %}
-          </div>
-        {% endcomment %}
 
+            {% comment %}
+              <div class="galbi__product_nameprice">
+                {% if section.settings.product_name != blank %}
+                <div class="product__name">
+                  <h3 class="title"><a href="{{section.settings.url_banner1}}">{{section.settings.product_name}}</a></h3>
+                </div>
+                {% endif %}
+
+                {% if section.settings.product_price != blank %}
+                <p class="mb-0 product___price">{{section.settings.product_price}}</p>
+                {% endif %}
+              </div>
+            {% endcomment %}
+          </div>
         </div>
-      </div>
 
-      <div class="col-lg-6 col-md-6">
-        <div class="left_image_details info">
-          {% if section.settings.title_top != blank %}
-          <div class="title-banner-top">
-            <h3 class="title">{{section.settings.title_top}}</h3>
+        <div class="col-lg-6 col-md-6">
+          <div class="left_image_details info">
+            {% if section.settings.title_top != blank %}
+              <div class="title-banner-top">
+                <h3 class="title">{{ section.settings.title_top }}</h3>
+              </div>
+            {% endif %}
+
+            <p style="font-family: Libre Baskerville !important; font-size: 14px; text-transform: uppercase; padding-top: 15px; letter-spacing: 2px;">
+              The sub title
+            </p>
+
+            {% if section.settings.content_top != blank %}
+              <p style="padding:15px 0;" class="mb-0 content">{{ section.settings.content_top }}</p>
+            {% endif %}
+
+            {% if section.settings.img_banner1 != blank %}
+              <img src="{{section.settings.img_banner2 | img_url:'master'}}" class="img-fluid">
+            {% endif %}
+
+            {% if section.settings.button != blank %}
+              {% comment %} <a href="{{section.settings.url_button}}" class="button-shop">{{section.settings.button}}</a> {% endcomment %}
+            {% endif %}
           </div>
-          {% endif %}
-
-          <p style="font-family: Libre Baskerville !important; font-size: 14px; text-transform: uppercase; padding-top: 15px; letter-spacing: 2px;">The sub title</p>
-
-          {% if section.settings.content_top != blank %}
-          <p style="padding:15px 0;" class="mb-0 content">{{section.settings.content_top}}</p>
-          {% endif %}
-
-          {% if section.settings.img_banner1 != blank %}
-            <img src="{{section.settings.img_banner2 | img_url:'master'}}" class="img-fluid">
-          {% endif %}
-
-          {% if section.settings.button != blank %}
-          {% comment %} <a href="{{section.settings.url_button}}" class="button-shop">{{section.settings.button}}</a> {% endcomment %}
-          {% endif %}
         </div>
       </div>
     </div>
-</div>
   </div>
 </div>
 {% schema %}
-
 {
   "name": "Top section image",
   "settings": [
@@ -112,7 +119,7 @@
       "label": "Image bottom",
       "info": "600 x 600px recommended"
     },
-      {
+    {
       "type": "header",
       "content": "Product Name & Price"
     },
@@ -152,7 +159,6 @@
     }
   ]
 }
-
 {% endschema %}
 
 {% stylesheet %}

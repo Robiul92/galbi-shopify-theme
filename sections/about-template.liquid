@@ -8,7 +8,9 @@
     </div>
     {% comment %} {% include 'breadcrumb' %} {% endcomment %}
     <div class="container container-v1">
-      <img src="{{section.settings.bg_breadcrumb | img_url : 'master'}}" alt="Page image">
+      {% if section.settings.bg_breadcrumb != blank %}
+        <img src="{{section.settings.bg_breadcrumb | img_url : 'master'}}" alt="Page image">
+      {% endif %}
     </div>
   </div>
 </div>
@@ -333,7 +335,7 @@
       "type": "checkbox",
       "id": "enable_insta",
       "label": "Enable?",
-      "default": true
+      "default": false
     },
     {
       "type": "text",
