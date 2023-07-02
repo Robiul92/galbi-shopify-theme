@@ -1,30 +1,41 @@
-<!-- /templates/page.liquid -->
+{% style %}
+.container-v4 {
+  width: 50%;
+  margin: auto;
+}
+.container-v4 > p {
+  margin-top: 35px;
+  line-height: 25px;
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+  font-family: 'Open Sans' !important;
+  font-weight: 400;
+}
+.container-v4 > h3 {
+  font-size: 12px !important;
+  color: #333;
+  text-align: left;
+  font-family: 'Brooklyn' !important;
+  font-weight: bold;
+  font-style: normal;
+}
+@media only screen and (max-width: 600px) {
+  .container-v4 {
+    width: 90%;
+  }
+}
+{% endstyle %}
 <section>
   <div class="container">
-    <div class="pt-65 pb-30">
-      <div class="breadcrumbs">
-        {% include 'breadcrumb' %}
-      </div>
-      <!-- /.breadcrumbs -->
-    </div>
-  </div>
-</section>
-<h1 class="sr-only">{{page.title}}</h1>
-<section>
-  <div class="container">
-    <div class="mb-50">
-      <div class="maxus-titlebox">
-        <div class="text-center">
-          <h2 class="maxus-titlebox__title h1 font-300 fz-60">{{page.title}}</h2>
-          <h3 class="maxus-titlebox__meta text-uppercase h5  "></h3>
-        </div>
-      </div>
+    <div class="text-center">
+      <h2 class="" style="font-family: Ambroise Std; font-size: 50px; padding: 2em 0;">{{page.title}}</h2>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="container">
+  <div class="container-v4">
     {{page.content}}
   </div>
 </section>

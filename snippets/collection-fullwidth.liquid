@@ -70,7 +70,6 @@
           <div class="col_bestseller row js_product_related">
             {% assign products_limit = section.settings.prod_limit %}
             {% assign col = section.settings.col_bestseller %}
-
             {% for product in collections[col].products limit: products_limit %}
               <div class="col-12">
                 {% include 'product-item-v1' %}
@@ -87,16 +86,14 @@
           style="{% if section.settings.ena_filter == false and section.settings.ena_filter2 == false %} display: none {% endif %}"
           class="{% if section.settings.ena_list_col == false or section.settings.ena_prod_per == false and section.settings.ena_prod_change_style == false %}col-xl-6 {% else %} col-xl-3{% endif %} col-md-6 order-md-3 col-12 galbi__filter_width"
         >
-
           <div class="filter_sortby">
-            
             {% if section.settings.ena_title_cate %}
               <div class="title-cate">
                 <h2 class="mb-0">{{ collection.title }}</h2>
               </div>
-              {% else %}
+            {% else %}
               <div class="title-cate">
-                <h2 class="mb-0">Collections</h2>
+                <h2 class="mb-0">Shop dresses</h2>
               </div>
             {% endif %}
 
@@ -109,25 +106,25 @@
                 href="javascript:void(0)"
               >
                 {% comment %}
-                <svg
-                  version="1.1"
-                  id="Capa_1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 485.008 485.008"
-                  style="enable-background:new 0 0 485.008 485.008;"
-                  xml:space="preserve"
-                >
-                  <g>
+                  <svg
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 485.008 485.008"
+                    style="enable-background:new 0 0 485.008 485.008;"
+                    xml:space="preserve"
+                  >
                     <g>
-                      <path d="M171.501,464.698v-237.9l-166.3-192.6c-8.9-10.9-7.9-33.3,15.1-33.3h443.6c21.6,0,26.6,19.8,15.1,33.3l-162.3,187.5v147.2
-                               c0,6-2,11.1-7.1,15.1l-103.8,95.8C193.801,488.698,171.501,483.898,171.501,464.698z M64.701,41.298l142.2,164.3c3,4,5,8.1,5,13.1
-                               v200.6l64.5-58.5v-146.1c0-5,2-9.1,5-13.1l138.1-160.3L64.701,41.298L64.701,41.298z"/>
+                      <g>
+                        <path d="M171.501,464.698v-237.9l-166.3-192.6c-8.9-10.9-7.9-33.3,15.1-33.3h443.6c21.6,0,26.6,19.8,15.1,33.3l-162.3,187.5v147.2
+                                 c0,6-2,11.1-7.1,15.1l-103.8,95.8C193.801,488.698,171.501,483.898,171.501,464.698z M64.701,41.298l142.2,164.3c3,4,5,8.1,5,13.1
+                                 v200.6l64.5-58.5v-146.1c0-5,2-9.1,5-13.1l138.1-160.3L64.701,41.298L64.701,41.298z"/>
+                      </g>
                     </g>
-                  </g>
-                </svg>
+                  </svg>
                 {% endcomment %}
                 <p class="mb-0">{{ 'products.product.filter' | t }}</p>
               </a>
@@ -137,7 +134,7 @@
               {% include 'collection-sorting' %}
             {% endif %}
           </div>
-      </div>
+        </div>
 
         {% if section.settings.ena_list_col %}
           <div class=" col-xl-6 col-md-12 order-3 order-xl-2 col-12">
@@ -162,7 +159,7 @@
             </ul>
           </div>
         {% endif %}
-        
+
         <div
           style="{% if section.settings.ena_prod_change_style == false and section.settings.ena_prod_per == false %} display:none {% endif %}"
           class="{% if section.settings.ena_list_col == false  or section.settings.ena_filter == false  and section.settings.ena_filter2 == false  %}col-xl-6 {% else %} col-xl-3{% endif %}  col-md-6 order-2 order-xl-1 col-12"
@@ -236,7 +233,7 @@
           {% include 'collection-droplist' %}
         </div>
       </div>
- 
+
       <div class="clearfix relative collection_prod">
         <div class="product-grid-view {% if section.settings.prod_layout == 'prod_grid' %}active{% endif %} ">
           <div class="row grid-uniform">
@@ -312,7 +309,6 @@
           <!-- End Paginav -->
         </div>
       </div>
-      
     </div>
   </div>
 </section>

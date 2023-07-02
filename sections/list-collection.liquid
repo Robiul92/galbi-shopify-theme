@@ -1,9 +1,3 @@
-<div class="wrap-bread-crumb breadcrumb_collection2">
-  <div class="text-center bg-breadcrumb" style="background-image : url({% if section.settings.bg_breadcrumb != blank  %}{{section.settings.bg_breadcrumb | img_url : 'master'}} {% else %}//placehold.it/1920x510 {% endif %})">
-    {% include 'breadcrumb' %}
-  </div>
-</div>
-
 <div class="container container-v2">
   <div class="list-category row">
     {% for collection in collections %}
@@ -18,24 +12,8 @@
     {% capture collection_image_url %}{{ collection.products.first | img_url: 'master' }}{% endcapture %}
     {% endif %}
     {% endif %}
-    
-    <div class="col-md-4 margin-bottom-30">
-      <div class="img_collection">
-        <a href="{{ collection.url }}">
-          <img src="{{ collection_image_url }}" alt="{{ collection.title }}" title="{{ collection.title }}">
-        </a>
-      </div>
-      <div class="info_col text-center">
-        <h3 class="title_collection">
-          {{ collection.title }}
-        </h3>
-        <div class="total_item"> {{ collection.all_products_count }} {{ collection.all_products_count | pluralize: 'Item', 'Items' }} </div>
-        
-        <a href="{% if collection.empty? %}#{% else %}{{ collection.url }}{% endif %}" class="shop-button">
-          {{'list_collection.view_more'|t}}
-        </a>
-      </div>
-
+    <div class="col-md-4 col-sm-6 col-6">
+      {% include 'collection-item-v1' %}
     </div>
     {% endfor %}
   </div>

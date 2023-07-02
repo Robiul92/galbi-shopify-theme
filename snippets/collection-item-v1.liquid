@@ -1,0 +1,26 @@
+<div class="product-item-v1">
+  <div class="product mb-30 engoj_grid_parent relative">
+    <div class="img-product relative">
+      <a href="{{ collection.url }}" class="engoj_find_img">
+        <img
+          style="width: 100%"
+          src="{{ collection.featured_image | img_url: 'master' }}"
+          class="img-responsive"
+          alt="{{ collection.title | escape }}"
+        >
+        <img
+          style="width: 100%"
+          src="{{ collection.featured_image | img_url: 'master' }}"
+          class="img-responsive absolute img-product-hover"
+          alt="{{ collection.title | escape }}"
+        >
+      </a>
+    </div>
+
+    <div class="info-product">
+      <h4 class="des-font capital title-product mb-0 flex">
+        <a href="{{ collection.url | within: collection }}">{{ collection.title }}</a>
+      </h4>
+    </div>
+  </div>
+</div>
