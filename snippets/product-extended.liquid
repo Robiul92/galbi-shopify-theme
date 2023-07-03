@@ -8,6 +8,10 @@
   .colapsable {
     padding: 4rem 1rem;
   }
+  .product-extra-images {
+    flex-direction: column-reverse;
+    gap: 1em;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -52,7 +56,7 @@
           <div class="col-lg-6 col-md-7 col-sm-12 col-12">
             <div class="gallery-control">
               {% if section.settings.style_page  == "left" %}
-                <div class="row">
+                <div class="row product-extra-images">
                   <div class="col-sm-2 gutter ">
                     <div class="js_prod_sub">
                       {% for image in product.images %}

@@ -394,8 +394,7 @@
                       {{- link.title | split: '[' | first -}}
                     </a>
                   {% endif %}
-                  <div
-                    class="dropdown-menu list-woman show style_3"
+                  <div class="dropdown-menu list-woman show style_3"
                     style="{% if settings[_mega_bg_img] != blank %}background-image: url({{settings[_mega_bg_img] | img_url:'master'}});{% endif %}"
                   >
                     <div class="row">
@@ -571,7 +570,6 @@
               {% endif %}
             {% endif %}
           {% endfor %}
-
         {% else %}
           {% if linklists[child_list_handle].links != blank %}
             <li class="nav-item dropdown no-relative">
@@ -652,7 +650,8 @@
               </div>
             </li>
           {% else %}
-            <li class="nav-item dropdown no-relative">
+            {% comment %}
+              <li class="nav-item dropdown no-relative">
               {% if link.title contains '[' %}
                 {%- assign label = link.title | split: '[' | last | split: ']' | first -%}
                 {%- assign bgc = link.title | split: '(' | last | split: ')' | first -%}
@@ -686,9 +685,15 @@
                 </a>
               {% endif %}
             </li>
+            {% endcomment %}
           {% endif %}
         {% endif %}
       {% endfor %}
+
+      <li class="nav-item">
+        <a class="delay03 nav-link  menu_lv1" href="/pages/our-story">OUR STORY</a>
+      </li>
+
     </ul>
   </div>
 </nav>

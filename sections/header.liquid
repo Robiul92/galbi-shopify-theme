@@ -1,357 +1,343 @@
 <!-- /sections/header.liquid -->
 
 {% if template contains 'index' %}
-  {% if section.settings.select_hds == "header_v1" %}
-  {% comment %} {% include 'header-v1' %} {% endcomment %}
-  {% elsif section.settings.select_hds == "header_v2" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds == "header_v3" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds == "header_v4" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds == "header_v5" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds == "header_v6" %}
-  {% include 'header-v1' %}
+  {% if section.settings.select_hds == 'header_v1' %}
+    {% comment %} {% include 'header-v1' %} {% endcomment %}
+  {% elsif section.settings.select_hds == 'header_v2' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds == 'header_v3' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds == 'header_v4' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds == 'header_v5' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds == 'header_v6' %}
+    {% include 'header-v1' %}
   {% endif %}
 {% else %}
-  {% if section.settings.select_hds_all == "header_ver1" %}
-  {% comment %} {% include 'header-v1' %} {% endcomment %}
-  {% elsif section.settings.select_hds_all == "header_ver2" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds_all == "header_ver3" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds_all == "header_ver4" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds_all == "header_ver5" %}
-  {% include 'header-v1' %}
-  {% elsif section.settings.select_hds_all == "header_ver6" %}
-  {% include 'header-v1' %}
+  {% if section.settings.select_hds_all == 'header_ver1' %}
+    {% comment %} {% include 'header-v1' %} {% endcomment %}
+  {% elsif section.settings.select_hds_all == 'header_ver2' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds_all == 'header_ver3' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds_all == 'header_ver4' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds_all == 'header_ver5' %}
+    {% include 'header-v1' %}
+  {% elsif section.settings.select_hds_all == 'header_ver6' %}
+    {% include 'header-v1' %}
   {% endif %}
 {% endif %}
 
 {% style %}
-#myModal {
-  display: none;
-  position: fixed;
-  /* z-index: 1; */
-  left: 0;
-  top: 80px;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 120px;
-  overflow: auto;
-  background-color: #f2f1eb;
-}
+  #myModal {
+    display: none;
+    position: fixed;
+    /* z-index: 1; */
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 120px;
+    overflow: auto;
+    background-color: #f2f1eb;
+  }
 
-.col-lg-5 {
-  padding-right: 5em
-} 
+  .col-lg-5 {
+    padding-right: 5em;
+  }
 
-.no-relative {
-  position: static !important;
-}
+  .no-relative {
+    position: static !important;
+  }
 
-.modal-contents {
-  background-color: #f2f1eb;
-  /* background-color: #fefefe;
+  .modal-contents {
+    background-color: #f2f1eb;
+    /* background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%; */
-}
+  }
 
-.close {
-  color: black;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 1em 1em 0em 1em;
-  position: fixed;
-  right: 0;
-}
+  .close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1em 1em 0em 1em;
+    position: fixed;
+    right: 0;
+  }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 {% endstyle %}
 <div style="position: relative;">
-<header id="header" class="header-v1-h1 js_height_hd jsheader1 d-none d-xl-block {% if settings.hdv1_enable_absolute %}header-absolute {% endif %}">
-  <div class="container container-v1">
-    <div class="row align-items-center">
-      <div class="col-lg-2 galbi_head_s1">
-        <div class="logo">
-          <div class="center logo delay05">          	
-            {% if settings.hdv1_logo_svg !=blank %}
-            <div class="logosvg" style="max-width:{{settings.hdv1_logo_maxwidth}}px;">
-              <a class="logourl" href="{{shop.url}}">{{settings.hdv1_logo_svg}}</a>
-            </div>
-            {% else %}          	
-            <a href="{{shop.url}}">
-              {% if settings.hdv1_logo != blank %}
-              <img src="{{settings.hdv1_logo|img_url:'master'}}" width="{{settings.hdv1_logo_maxwidth}}" alt="{{shop.name}}">
+  <header
+    id="header"
+    class="header-v1-h1 js_height_hd jsheader1 d-none d-xl-block {% if settings.hdv1_enable_absolute %}header-absolute {% endif %}"
+  >
+    <div class="container container-v1">
+      {% comment %} <div style="position: relative;" class="row align-items-center"> {% endcomment %}
+        <div class="row align-items-center">
+        <div class="col-lg-2 galbi_head_s1">
+          <div class="logo">
+            <div class="center logo delay05">
+              {% if settings.hdv1_logo_svg != blank %}
+                <div class="logosvg" style="max-width:{{settings.hdv1_logo_maxwidth}}px;">
+                  <a class="logourl" href="{{shop.url}}">{{ settings.hdv1_logo_svg }}</a>
+                </div>
               {% else %}
-              <img src="//placehold.it/160x46" width="{{settings.hdv1_logo_maxwidth}}" alt="{{shop.name}}">
+                <a href="{{shop.url}}">
+                  {% if settings.hdv1_logo != blank %}
+                    <img
+                      src="{{settings.hdv1_logo|img_url:'master'}}"
+                      width="{{settings.hdv1_logo_maxwidth}}"
+                      alt="{{shop.name}}"
+                    >
+                  {% else %}
+                    <img src="//placehold.it/160x46" width="{{settings.hdv1_logo_maxwidth}}" alt="{{shop.name}}">
+                  {% endif %}
+                </a>
               {% endif %}
-            </a>
-            {% endif %}          
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-8 galbi_head_s2 no-relative">
-        <div class="menu right">
-			{% include 'eveland-menu' %}
+        <div class="col-lg-8 galbi_head_s2 no-relative">
+          <div class="menu right">
+            {% include 'eveland-menu' %}
+          </div>
         </div>
-      </div>
-      <div class="col-lg-2 galbi_head_s3 currencies-login">
-        <div class="cart-login-search align-items-center"> 
-          <ul class="list-inline list-unstyled mb-0">
-            <li class="list-inline-item mr-0">
-              <a href="{% if customer %}/account {% else %}javascript:void(0){% endif %}" class="login {% if customer %}{% else %}js-call-popup-login{% endif %}">
-                {% if settings.hd_icon_login_svg != blank %}
-                {% comment %} {{settings.hd_icon_login_svg}} {% endcomment %}
-                {% include 'icon-account' %}
-                {% else %}
-                {% comment %} <i class="{{settings.hd_icon_login}}"></i> {% endcomment %}
-                {% include 'icon-account' %}
-                {% endif %}                
-              </a>
-            </li>
-            <li class="list-inline-item mr-0">
-              {% comment %}
-                search icon
-              {% endcomment %}
-              {% comment %} <a href="https://shopgalbi.com/pages/galbi-search" class="galbi_searchs"> {% endcomment %}
-              <button id="openModalBtn">
-                {% if settings.hd_icon_search_svg != blank %}
-                {{settings.hd_icon_search_svg}}
-                {% else %}
-                <i class="{{settings.hd_icon_search}}"></i>
-                {% endif %}
-              </button>
-              {% comment %} </a> {% endcomment %}
-            </li>
-            <li class="list-inline-item mr-0">
-              <a href="javascript:void(0)" class="cart js-call-minicart">
-                
-                {% if settings.hd_icon_cart_svg != blank %}
-                {% comment %} {{settings.hd_icon_cart_svg}} {% endcomment %}
-                {% include 'icon-cart' %}
-                </object>                
-                {% else %}
-                {% comment %} <i class="{{settings.hd_icon_cart}}"></i> {% endcomment %}
-                {% include 'icon-cart' %}
-                
-                {% endif %}
-                <span class="number-cart enj-cartcount">{{ cart.item_count }}</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span> 
-    <div class="modal-contents">
-
-
-      <!-- /templates/search.liquid -->
-{% comment %}
-
-To return only products or pages in results:
-- http://docs.shopify.com/manual/configuration/store-customization/return-only-product-in-storefront-search-results
-- Or manually add type=product or type=page to the search URL as a parameter
-
-{% endcomment %}
-
-{% comment %}
-Set grid_results to true and set search results as a grid instead of a list.
-This works well when your search is only for products.
-{% endcomment %}
-{% assign grid_results = true %}
-
-{% comment %}
-Check to enforce respond.js
-{% endcomment %}
-{% assign respond_js_secret_key = shop.domain | md5 %}
-{% unless search.terms == respond_js_secret_key %}
-
-{% comment %}
-Avoid accessing search.results before the opening paginate tag.
-If you do, the pagination of results will be broken.
-{% endcomment %}
-
-
-
-<h1 class="sr-only mt-5">{{page.title}}</h1>
-<section class="galbi__search_page">
-  <h2>Find Your Fit</h2>
- <form class="galbi__search__field wg-search-form" action="/search">
-      <input type="hidden" name="type" value="product">
-      <input type="text" name="q" placeholder="Search The Site" class="search-input">
-      <button type="submit"><i class="icon-icon-search"></i></button>
-    </form>
-
-
-  <div style="letter-spacing: 2px;" class="container py-5">
-    <div class="text-center">
-      {% if search.performed %}
-      {% if search.results_count == 0 %}
-      <h3 class="text-uppercase h5">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h3>
-      {% else %}
-      <h3 class="text-uppercase h5">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h3>
-      {% endif %}
-      {% else %}
-      <h3 class="text-uppercase h5">SHOP OUR BEST SELLING  LOOKS</h3>
-      {% endif %}
-    </div>
-  </div>
-</section>
-
-{% if search.performed and grid_results == true %}
-<div class="container container-v2 my-3 my-lg-5">
-    <div class="row">
-      {% for product in search.results %}
-      <div class="col-md-3 col-sm-6 col-6">
-        {% include 'product-item-v1' %}
-      </div>
-      {% endfor %}
-    </div>
-    {% if paginate.pages > 1 %}
-    <div class="pagi-nav text-right">
-      {{ paginate | default_pagination | replace: '&laquo; Previous', '<i class="fa fa-angle-left"></i>' | replace: 'Next &raquo;', '<i class="fa fa-angle-right"></i>' }}
-    </div>
-    {% endif %}
-</div>
-{% endif %}
-
-  {% comment %} {% section 'section-three-product-items' %} {% endcomment %}
-
-  <div data-section-id="{{ section.id }}" data-section-type="section-banner-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
-    <div style="padding: 0em 10em;" class="three__product_items section-banner-v2 mt-all">
-      <div class="container container-v1">      
-        <div class="row">
-           <div class="col-lg-4 col-sm-6">
-           <div class="box-info one">
-              <div class="box-img text-center">
-                <a href="{{section.settings.url_collection3}}">
-                  {% if section.settings.img_collection3 != blank %}
-                  <img src="{{section.settings.img_collection3 | img_url:'master'}}" class="img-fluid">
+        <div class="col-lg-2 galbi_head_s3 currencies-login">
+          <div class="cart-login-search align-items-center">
+            <ul class="list-inline list-unstyled mb-0">
+              <li class="list-inline-item mr-0">
+                <a
+                  href="{% if customer %}/account {% else %}javascript:void(0){% endif %}"
+                  class="login {% if customer %}{% else %}js-call-popup-login{% endif %}"
+                >
+                  {% if settings.hd_icon_login_svg != blank %}
+                    {% comment %} {{settings.hd_icon_login_svg}} {% endcomment %}
+                    {% include 'icon-account' %}
                   {% else %}
-                  <img src="//placehold.it/480x652" class="img-fluid" alt="">
+                    {% comment %} <i class="{{settings.hd_icon_login}}"></i> {% endcomment %}
+                    {% include 'icon-account' %}
                   {% endif %}
                 </a>
+              </li>
+              <li class="list-inline-item mr-0">
+                {% comment %}
+                  search icon
+                {% endcomment %}
+                {% comment %} <a href="https://shopgalbi.com/pages/galbi-search" class="galbi_searchs"> {% endcomment %}
+                <button id="openModalBtn">
+                  {% if settings.hd_icon_search_svg != blank %}
+                    {{ settings.hd_icon_search_svg }}
+                  {% else %}
+                    <i class="{{settings.hd_icon_search}}"></i>
+                  {% endif %}
+                </button>
+                {% comment %} </a> {% endcomment %}
+              </li>
+              <li class="list-inline-item mr-0">
+                <a href="javascript:void(0)" class="cart js-call-minicart">
+                  {% if settings.hd_icon_cart_svg != blank %}
+                    {% include 'icon-cart' %}
+                  {% else %}
+                    {% comment %} <i class="{{settings.hd_icon_cart}}"></i> {% endcomment %}
+                    {% include 'icon-cart' %}
+                  {% endif %}
+                  <span class="number-cart enj-cartcount">{{ cart.item_count }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <div class="modal-contents">
+        {% assign grid_results = true %}
+
+        {% comment %}
+          Check to enforce respond.js
+        {% endcomment %}
+        {% assign respond_js_secret_key = shop.domain | md5 %}
+        {% unless search.terms == respond_js_secret_key %}
+          {% comment %}
+            Avoid accessing search.results before the opening paginate tag.
+            If you do, the pagination of results will be broken.
+          {% endcomment %}
+
+          <h1 class="sr-only mt-5">{{ page.title }}</h1>
+          <section class="galbi__search_page">
+            <h2>Find Your Fit</h2>
+            <form class="galbi__search__field wg-search-form" action="/search">
+              <input type="hidden" name="type" value="product">
+              <input type="text" name="q" placeholder="Search The Site" class="search-input">
+              <button type="submit"><i class="icon-icon-search"></i></button>
+            </form>
+
+            <div style="letter-spacing: 2px;" class="container py-5">
+              <div class="text-center">
+                {% if search.performed %}
+                  {% if search.results_count == 0 %}
+                    <h3 class="text-uppercase h5">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h3>
+                  {% else %}
+                    <h3 class="text-uppercase h5">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h3>
+                  {% endif %}
+                {% else %}
+                  <h3 class="text-uppercase h5">SHOP OUR BEST SELLING LOOKS</h3>
+                {% endif %}
               </div>
-              <div class="content-banner ">
-  
-                {% if section.settings.title_collection3 != blank %}
-                 <h3 class="bigtitle mb-0">{{section.settings.title_collection3}}</h3>
-                {% endif %}
-  
-                {% if section.settings.button_3 != blank %}
-                <span class="sub-title">{{section.settings.button_3}}</span>
-                {% endif %}
-  
+            </div>
+          </section>
+
+          {% if search.performed and grid_results == true %}
+            <div class="container container-v2 my-3 my-lg-5">
+              <div class="row">
+                {% for product in search.results %}
+                  <div class="col-md-3 col-sm-6 col-6">
+                    {% include 'product-item-v1' %}
+                  </div>
+                {% endfor %}
+              </div>
+              {% if paginate.pages > 1 %}
+                <div class="pagi-nav text-right">
+                  {{
+                    paginate
+                    | default_pagination
+                    | replace: '&laquo; Previous', '<i class="fa fa-angle-left"></i>'
+                    | replace: 'Next &raquo;', '<i class="fa fa-angle-right"></i>'
+                  }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% comment %} {% section 'section-three-product-items' %} {% endcomment %}
+
+          <div
+            data-section-id="{{ section.id }}"
+            data-section-type="section-banner-v2"
+            style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}"
+          >
+            <div style="padding: 0em 10em;" class="three__product_items section-banner-v2 mt-all">
+              <div class="container container-v1">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="box-info one">
+                      <div class="box-img text-center">
+                        <a href="{{section.settings.url_collection3}}">
+                          {% if section.settings.img_collection3 != blank %}
+                            <img src="{{section.settings.img_collection3 | img_url:'master'}}" class="img-fluid">
+                          {% else %}
+                            <img src="//placehold.it/480x652" class="img-fluid" alt="">
+                          {% endif %}
+                        </a>
+                      </div>
+                      <div class="content-banner ">
+                        {% if section.settings.title_collection3 != blank %}
+                          <h3 class="bigtitle mb-0">{{ section.settings.title_collection3 }}</h3>
+                        {% endif %}
+
+                        {% if section.settings.button_3 != blank %}
+                          <span class="sub-title">{{ section.settings.button_3 }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="box-info">
+                      <div class="box-img text-center">
+                        <a href="{{section.settings.url_collection1}}">
+                          {% if section.settings.img_collection1 != blank %}
+                            <img src="{{section.settings.img_collection1 | img_url:'master'}}" class="img-fluid">
+                          {% else %}
+                            <img src="//placehold.it/480x652" class="img-fluid" alt="">
+                          {% endif %}
+                        </a>
+                      </div>
+                      <div class="content-banner one style-white-one">
+                        {% if section.settings.title_collection1 != blank %}
+                          <h3 class="bigtitle mb-0">{{ section.settings.title_collection1 }}</h3>
+                        {% endif %}
+
+                        {% if section.settings.button_1 != blank %}
+                          <span class="sub-title">{{ section.settings.button_1 }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="box-info ">
+                      <div class="box-img text-center">
+                        <a href="{{section.settings.url_collection2}}">
+                          {% if section.settings.img_collection2 != blank %}
+                            <img src="{{section.settings.img_collection2 | img_url:'master'}}" class="img-fluid">
+                          {% else %}
+                            <img src="//placehold.it/480x652" class="img-fluid" alt="">
+                          {% endif %}
+                        </a>
+                      </div>
+                      <div class="content-banner">
+                        {% if section.settings.title_collection2 != blank %}
+                          <h3 class="bigtitle mb-0">{{ section.settings.title_collection2 }}</h3>
+                        {% endif %}
+
+                        {% if section.settings.button_2 != blank %}
+                          <span class="sub-title">{{ section.settings.button_2 }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="box-info">
-              <div class="box-img text-center">
-                <a href="{{section.settings.url_collection1}}">
-                  {% if section.settings.img_collection1 != blank %}
-                  <img src="{{section.settings.img_collection1 | img_url:'master'}}" class="img-fluid">
-                  {% else %}
-                  <img src="//placehold.it/480x652" class="img-fluid" alt="">
-                  {% endif %}
-                </a>
-              </div>
-              <div class="content-banner one style-white-one">              
-                {% if section.settings.title_collection1 != blank %}
-                <h3 class="bigtitle mb-0">{{section.settings.title_collection1}}</h3>
-                {% endif %}
-                
-                {% if section.settings.button_1 != blank %}
-                <span class="sub-title">{{section.settings.button_1}}</span>
-                {% endif %}
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-sm-6">
-            <div class="box-info ">
-              <div class="box-img text-center">
-                <a href="{{section.settings.url_collection2}}">
-                  {% if section.settings.img_collection2 != blank %}
-                  <img src="{{section.settings.img_collection2 | img_url:'master'}}" class="img-fluid">
-                  {% else %}
-                  <img src="//placehold.it/480x652" class="img-fluid" alt="">
-                  {% endif %}
-                </a>
-              </div>
-              <div class="content-banner">
-                
-                {% if section.settings.title_collection2 != blank %}
-                 <h3 class="bigtitle mb-0">{{section.settings.title_collection2}}</h3>
-                {% endif %}
-                
-                {% if section.settings.button_2 != blank %}
-                <span class="sub-title">{{section.settings.button_2}}</span>
-                {% endif %}
-                
-              </div>
-            </div>
-          </div>
-          
-         
-        </div>
+
+        {% else %}
+          {% include 'respond' %}
+          {% layout none %}
+        {% endunless %}
       </div>
     </div>
-  </div>
-
-{% else %}
-{% include 'respond' %}
-{% layout none %}
-{% endunless %}
-
-
-    </div>
-  </div>
-
-</header>
+  </header>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     // Open the modal when the button is clicked
-    $("#openModalBtn").on("click", function() {
-      $("#myModal").css("display", "block");
+    $('#openModalBtn').on('click', function () {
+      $('#myModal').css('display', 'block');
     });
-  
+
     // Close the modal when the close button is clicked
-    $(".close").on("click", function() {
-      $("#myModal").css("display", "none");
+    $('.close').on('click', function () {
+      $('#myModal').css('display', 'none');
     });
-  
+
     // Close the modal when clicking outside the modal content
-    $(window).on("click", function(event) {
-      if (event.target == $("#myModal")[0]) {
-        $("#myModal").css("display", "none");
+    $(window).on('click', function (event) {
+      if (event.target == $('#myModal')[0]) {
+        $('#myModal').css('display', 'none');
       }
     });
-  });  
+  });
 </script>
-
 
 {% schema %}
 {
@@ -379,11 +365,11 @@ If you do, the pagination of results will be broken.
           "value": "header_v4",
           "label": "Header v4"
         },
-		{
+        {
           "value": "header_v5",
           "label": "Header v5"
         },
-		{
+        {
           "value": "header_v6",
           "label": "Header v6"
         }
@@ -411,14 +397,14 @@ If you do, the pagination of results will be broken.
           "value": "header_ver4",
           "label": "Header v4"
         },
-		{
+        {
           "value": "header_ver5",
           "label": "Header v5"
         },
-		{
+        {
           "value": "header_ver6",
           "label": "Header v6"
-        }	
+        }
       ],
       "default": "header_ver1"
     },
@@ -459,38 +445,37 @@ If you do, the pagination of results will be broken.
     {
       "type": "header",
       "content": "Info Left"
-    },  
-	{
+    },
+    {
       "type": "header",
       "content": "Info Left 1"
-    },  
-	{
+    },
+    {
       "type": "image_picker",
       "id": "img_collection3",
       "label": "Image collection 1",
       "info": "480 x 310px recommended"
-    },    
+    },
     {
       "type": "text",
       "id": "title_collection3",
       "label": "Title Collection 1",
       "default": "Accessories"
     },
-	{
+    {
       "type": "text",
       "id": "button_3",
       "label": "Sub Title",
       "default": "Sales 30%"
     },
-	{
+    {
       "type": "url",
       "id": "url_collection3",
       "label": "URL Collection 1",
       "default": "/collections/all"
     },
-   
-	
-	{
+
+    {
       "type": "header",
       "content": "Info Center"
     },
@@ -499,50 +484,49 @@ If you do, the pagination of results will be broken.
       "id": "img_collection1",
       "label": "Image collection",
       "info": "480 x 652px recommended"
-    },    
+    },
     {
       "type": "text",
       "id": "title_collection1",
       "label": "Title Collection",
       "default": "Dress"
     },
-	{
+    {
       "type": "text",
       "id": "button_1",
       "label": "Sub Title",
       "default": "New Arrivals"
     },
-	{
+    {
       "type": "url",
       "id": "url_collection1",
       "label": "URL Collection",
       "default": "/collections/all"
     },
 
-
     {
       "type": "header",
       "content": "Info Right"
-    },  
-	{
+    },
+    {
       "type": "image_picker",
       "id": "img_collection2",
       "label": "Image collection",
       "info": "480 x 652px recommended"
-    },    
+    },
     {
       "type": "text",
       "id": "title_collection2",
       "label": "Title Collection",
       "default": "Tshirt"
     },
-	{
+    {
       "type": "text",
       "id": "button_2",
       "label": "Sub Title",
       "default": "New Collection"
     },
-	{
+    {
       "type": "url",
       "id": "url_collection2",
       "label": "URL Collection",

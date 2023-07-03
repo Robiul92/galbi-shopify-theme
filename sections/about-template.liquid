@@ -20,25 +20,22 @@
     {% if section.settings.enable_s_servicebox %}
       <div class="about-servicebox">
         <div class="container container-v2">
-          {% comment %} <h2 class="title-servicebox">{{section.settings.title_servicebox}}</h2> {% endcomment %}
-          <div class="row slickjs-services-v1">
+          <div class="row" style="gap: 2em;">
             {% if section.blocks.size > 0 %}
               {% for block in section.blocks %}
                 {% if block.type == 'service' %}
-                  <div class="text-center itemtservice justify-content-center">
+                  <div class="text-center itemtservice col-sm justify-content-center">
                     <div class="box-service col-lg-12">
-                      {% comment %}
-                        <span class="icon">
-                          <i class="{{block.settings.block_icon}} "></i>
-                        </span>
-                      {% endcomment %}
                       {% if block.settings.block_title != blank %}
                         <h4 style="color: #000; font-family: Brooklyn !important; font-size: 12px;" class="title">
                           {{ block.settings.block_title }}
                         </h4>
                       {% endif %}
                       {% if block.settings.block_content != blank %}
-                        <p style="color: #000; font-family: Open Sans !important; font-size: 12px; line-height: 25px; padding: 2em 0em; width: 80%; margin: auto;" class="content">
+                        <p
+                          style="color: #000; font-family: Open Sans !important; font-size: 12px; line-height: 25px; padding: 2em 0em; width: 80%; margin: auto;"
+                          class="content"
+                        >
                           {{ block.settings.block_content }}
                         </p>
                       {% endif %}
@@ -73,42 +70,44 @@
                       <p class="content_intro">{{ block.settings.content_intro }}</p>
                     </div>
                   </div>
-                  
+
                 {% else %}
-                <div class="col-md-6 intro_detail d-flex align-items-end">
-                  <div class="info-intro">
-                    <h3 class="title_intro">{{ block.settings.title_intro }}</h3>
-                    {% comment %} <p class="des_intro">{{block.settings.des_intro}}</p> {% endcomment %}
-                    <p class="content_intro">{{ block.settings.content_intro }}</p>
+                  <div class="col-md-6 intro_detail d-flex align-items-end">
+                    <div class="info-intro">
+                      <h3 class="title_intro">{{ block.settings.title_intro }}</h3>
+                      {% comment %} <p class="des_intro">{{block.settings.des_intro}}</p> {% endcomment %}
+                      <p class="content_intro">{{ block.settings.content_intro }}</p>
+                    </div>
                   </div>
-                </div>
                   <div class="col-md-6 intro_image">
                     <img
                       class="w-100"
                       src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}"
                     >
                   </div>
-                  
                 {% endif %}
               {% endif %}
               {% if block.type == 'introduce_v1' %}
-
-                  <div style="background-color: #E2DED5;" class="col-md-6 intro_detail d-flex align-items-center">
-                    <div style="width: 70%; margin: auto; text-align: center;" class="info-intro">
-                      <img src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/About_2.png?v=1687727429" alt="lorem image">
-                      
-                      <h3 style="text-align: center; margin-top: 1.5em;" class="title_intro">{{ block.settings.title_intro }}</h3>
-                      {% comment %} <p class="des_intro">{{ block.settings.des_intro }}</p> {% endcomment %}
-                      <p style="text-align: center;" class="content_intro">{{ block.settings.content_intro }}</p>
-                    </div>
-                  </div>
-                  <div style="background-color: #E2DED5;" class="col-md-6 intro_image ">
+                <div style="background-color: #E2DED5;" class="col-md-6 intro_detail d-flex align-items-center">
+                  <div style="width: 70%; margin: auto; text-align: center;" class="info-intro">
                     <img
-                      class="w-100"
-                      src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}"
+                      src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/About_2.png?v=1687727429"
+                      alt="lorem image"
                     >
+
+                    <h3 style="text-align: center; margin-top: 1.5em;" class="title_intro">
+                      {{ block.settings.title_intro }}
+                    </h3>
+                    {% comment %} <p class="des_intro">{{ block.settings.des_intro }}</p> {% endcomment %}
+                    <p style="text-align: center;" class="content_intro">{{ block.settings.content_intro }}</p>
                   </div>
-            
+                </div>
+                <div style="background-color: #E2DED5;" class="col-md-6 intro_image ">
+                  <img
+                    class="w-100"
+                    src="{% if block.settings.image_intro != blank %} {{block.settings.image_intro | img_url : 'master'}} {% else %}//placehold.it/660x600{% endif %}"
+                  >
+                </div>
               {% endif %}
             {% endfor %}
           </div>
