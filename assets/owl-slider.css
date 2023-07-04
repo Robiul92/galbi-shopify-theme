@@ -166,7 +166,7 @@
 .owl-carousel .owl-video-wrapper {
   position: relative;
   height: 100%;
-  background: #000;
+  background: #161616;
 }
 .owl-carousel .owl-video-play-icon {
   position: absolute;
@@ -239,7 +239,7 @@
 .bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-prev{left: inherit;right: 40px;}
 .bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-next{right: 0px;}
 .bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-prev:hover,.bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-next:hover{background: #ba933e;}
-.bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-prev i,.bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-next i{margin-top: 2px;color: #333;font-size: 16px;}
+.bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-prev i,.bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-next i{margin-top: 2px;color: #161616;font-size: 16px;}
 .bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-prev:hover i,.bottom-home1 .owl-carousel .owl-controls .owl-nav .owl-next:hover i{color: #fff;}
 /*Responsive*/
 

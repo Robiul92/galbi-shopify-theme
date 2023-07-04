@@ -363,7 +363,7 @@ div.MagicToolboxSelectorsContainer > div:not.MagicScroll a {
         content: '' !important;
         position: absolute !important;
         color: #fff !important;
-        text-shadow: 0px 1px 10px #000 !important;
+        text-shadow: 0px 1px 10px #161616 !important;
         top: 50% !important;
         left: 50% !important;
         display: inline-block;
@@ -417,7 +417,7 @@ div.MagicToolboxSelectorsContainer > div:not.MagicScroll a {
     content: '' !important;
     position: absolute !important;
     color: #fff !important;
-    text-shadow: 0px 1px 10px #000 !important;
+    text-shadow: 0px 1px 10px #161616 !important;
     top: 50% !important;
     left: 50% !important;
     display: inline-block;
@@ -609,7 +609,7 @@ a[data-slide-id].mz-thumb-selected img {
 .MagicScroll .mcs-button-arrow-prev:before {
     border-width: 1px;
     border-radius: 0;
-    border-color: #000;
+    border-color: #161616;
 }
 
 .mobile-magic .mz-zoom-window.mz-magnifier {

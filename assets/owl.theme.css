@@ -19,7 +19,7 @@
 .owl-theme .owl-controls .owl-buttons div{
         position: absolute;
     top: 50%;
-    color: #000;
+    color: #161616;
     width: 33px;
     height: 33px;
     margin-top: -20px;
@@ -29,7 +29,7 @@
     z-index: 2;
     background: #fff;
 }
-.owl-theme .owl-controls .owl-buttons div:hover:before{color: #000;}
+.owl-theme .owl-controls .owl-buttons div:hover:before{color: #161616;}
 .owl-theme:hover .owl-controls .owl-buttons div{
 	opacity: 0.9;
      visibility: visible;

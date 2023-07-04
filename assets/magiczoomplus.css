@@ -785,7 +785,7 @@ figure.mz-figure {
 .mz-expand .mz-caption {
     flex: 0 0;
     color: #fff;
-    text-shadow: 0px 0px 46px #000;
+    text-shadow: 0px 0px 46px #161616;
     padding: 10px 30px;
     font: normal 10pt/1.25 'Lucida Grande', 'Lucida Sans Unicode', Verdana, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     text-align: center;
@@ -1142,7 +1142,7 @@ a[data-zoom-id] img,
 .no-cssfilters-magic .thumbnails-style-shaded.mz-thumb.mz-thumb-selected,
 .no-cssfilters-magic .thumbnails-style-shaded .magic-thumb:hover,
 .no-cssfilters-magic .thumbnails-style-shaded .magic-thumb.magic-thumb-selected {
-    background: #000;
+    background: #161616;
 }
 
 .no-cssfilters-magic .thumbnails-style-shaded.mz-thumb:hover:not(.mz-thumb-selected) img {

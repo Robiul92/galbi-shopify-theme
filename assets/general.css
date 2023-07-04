@@ -25,7 +25,7 @@ Author URI: https://7uptheme.com/
 -----------------------------------*/
 /* General */
 body {
-  color: #333;
+  color: #161616;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: inherit;
@@ -53,7 +53,7 @@ a:hover,
 a:focus {
   text-decoration: none;
   outline: none;
-  color: #000;
+  color: #161616;
 }
 .container {
   max-width: 1200px;
@@ -109,10 +109,10 @@ input:hover {
   color: #fff;
 }
 .black {
-  color: #333;
+  color: #161616;
 }
 .dark {
-  color: #000;
+  color: #161616;
 }
 .gray {
   color: #555;
@@ -145,7 +145,7 @@ input:hover {
   background: #fff;
 }
 .bg-dark {
-  background: #000;
+  background: #161616;
 }
 .title14,
 .title8,
@@ -316,7 +316,7 @@ input:hover {
   background: #fff;
 }
 .owl-theme.rect-navi .owl-controls .owl-buttons div:hover {
-  border-color: #000;
+  border-color: #161616;
   color: #fff;
 }
 .owl-theme.rect-navi .owl-controls .owl-buttons div i {
@@ -329,7 +329,7 @@ input:hover {
   text-align: left;
 }
 .owl-theme .owl-controls .owl-buttons div:hover {
-  background: #000;
+  background: #161616;
 }
 .owl-theme .owl-controls .owl-buttons div i {
   line-height: 30px;
@@ -396,7 +396,7 @@ input:hover {
   margin: 0 5px;
 }
 .owl-theme .owl-controls .owl-page span {
-  background: #000;
+  background: #161616;
   margin: 0;
   width: 10px;
   height: 10px;
@@ -423,7 +423,7 @@ input:hover {
   margin: auto;
 }
 .owl-theme.pagi-white .owl-controls .owl-page.active span::after {
-  background: #000;
+  background: #161616;
 }
 .banner-slider.bg-slider .item-slider {
   background-position: center center;
@@ -785,7 +785,7 @@ input:hover {
   vertical-align: top;
 }
 .main-nav > ul > li > a {
-  color: #000;
+  color: #161616;
   display: block;
   font-weight: 700;
   height: 50px;
@@ -1125,7 +1125,7 @@ body .scroll-top {
 }
 body .scroll-top:hover {
   color: #fff;
-  background: #000;
+  background: #161616;
 }
 .scroll-top.active {
   opacity: 1;
@@ -1365,7 +1365,7 @@ div.table .product-info .product-title {
   left: 0;
   top: 0;
   z-index: 9000;
-  background-color: #000;
+  background-color: #161616;
   display: none;
 }
 #boxes .window {
