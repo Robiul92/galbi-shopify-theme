@@ -1,18 +1,96 @@
+{% style %}
+.color-filter-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 260px;
+  column-gap: 20em;
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-group label:before {
+  content:'';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.form-group input:checked + label:before {
+  background-color: black;
+}
+
+.form-group input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .color-filter-box {
+    height: auto;
+    column-gap: 0em;
+  }
+}
+{% endstyle %}
+
 <div class="filter-color widget widget-category widget_product_categories filter-tag">
   <h2 class="widget-title">{{section.settings.shop_by_color_title}}</h2>
-  <ul class="list-none list_color">
+  <ul class="list-none list_color list color-filter-box">
     {% assign tags = section.settings.shop_by_color_list_tags | split: ',' %}
     
     {% for t in tags %}
     {% assign tag = t | strip %}
     {% assign tag_value = tag | handleize %}
-    <li class="cat-item{% if current_tags contains tag %} current-cat{% endif %}">
-      <input type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %}/>
-      <a href="javascript:void(0)" title="{{tag}}" style="background: {{tag}}">
-      </a>
-    </li>
+
+    <div onclick="checkit(event)" class="form-group">
+      <input value="{{ tag_value | split: '|' | first }}" type="checkbox" id="html">
+      <label for="html">{{tag_value}}</label>
+    </div>
     {% endfor %}
     
   </ul>
   <!-- /.product-categories -->
 </div>
+
+<script>
+  function checkit(event) {
+    // Access the checkbox element
+    var checkbox = event.currentTarget.querySelector('input[type="checkbox"]');
+    
+    // Toggle the checked state
+    checkbox.checked = !checkbox.checked;
+  }    
+</script>

@@ -6,10 +6,10 @@
     {% for t in tags %}
     {% assign tag = t | strip %}
     {% assign tag_value = tag | handleize %}
-    <li class="cat-item{% if current_tags contains tag %} current-cat{% endif %}">
-      <input type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %}/>
-      <a href="javascript:void(0)" title="{{tag}}">{{tag}}</a>
-    </li>
+    <div onclick="checkit(event)" class="form-group">
+      <input value="{{ tag_value | split: '|' | first }}" type="checkbox" id="html">
+      <label for="html">{{ tag }}</label>
+    </div>
     {% endfor %}
   </ul>
   <!-- /.product-categories -->

@@ -4,7 +4,10 @@
     <ul class="list-category-toggle toggle-tab list-none">
       {% for link in linklists[section.settings.widget_cate_menu].links %}
 
-      	<li class="item-toggle-tab"><a  href="{{ link.url }}"><i class="fa fa-angle-right" aria-hidden="true"></i>{{link.title | split: '[' | first }}</a></li>
+      	<li class="item-toggle-tab">
+          <a  href="{{ link.url }}">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>{{link.title | split: '[' | first }}</a>
+        </li>
 
       {% endfor %}
     </ul>

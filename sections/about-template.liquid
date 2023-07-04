@@ -1,8 +1,25 @@
+{% style %}
+.description-template {
+  width: 50%;
+  margin: auto; 
+  text-align: justify; 
+  font-family: 'Open Sans' !important; 
+  font-size: 12px; 
+  line-height: 25px; 
+  padding-top: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .description-template {
+    width: 90%;
+  }
+}
+{% endstyle %}
+
 <div class="wrap-bread-crumb breadcrumb_collection2">
   <div class="text-center">
     <div style="padding: 120px 0;" class="title-page">
       <h2 style="font-family: Ambroise Std; font-size: 50px;" class="">{{ page.title }}</h2>
-      <p style="width: 50%; margin: auto; text-align: justify; font-family: Open Sans !important; font-size: 12px; line-height: 25px; padding-top: 30px;">
+      <p class="description-template">
         {{ page.content }}
       </p>
     </div>
@@ -55,7 +72,7 @@
           <div class="row">
             {% for block in section.blocks %}
               {% if block.type == 'introduce' %}
-                {% assign mod = forloop.index | modulo: 2 %}
+                {% assign mod = forloop.index | modulo: 1 %}
                 {% if mod == 0 %}
                   <div class="col-md-6 intro_image ">
                     <img
