@@ -1,6 +1,7 @@
 <div class=" tab-pd-details">
     <ul class="nav nav-tabs tab_prod">
           <div class="galbi_custom_tabs tabs">
+
  {% if section.settings.enable_description_tab %}
       <div class="tab">
         <input hidden type="checkbox" id="rd1" name="rd">
@@ -20,18 +21,38 @@
         </div>
       </div>
  {% endif %}
+
+
+ {% if section.settings.enable_FIT_MEASUREMENTS_tab %}
+      <div class="tab">
+        <input hidden type="checkbox" id="rd3" name="rd">
+        <label class="tab-label" for="rd3">{{section.settings.FIT_MEASUREMENTS_title}}</label>
+        <div class="tab-content">
+          {{ product.metafields.custom.fit_measurements.value }}
+        </div>
+      </div>
+ {% endif %}
+
+ {% if section.settings.enable_MATERIAL_CARE_tab %}
+      <div class="tab">
+        <input hidden type="checkbox" id="rd4" name="rd">
+        <label class="tab-label" for="rd4">{{section.settings.MATERIAL_CARE_title}}</label>
+        <div class="tab-content">
+          {{ product.metafields.custom.material_care.value }}
+        </div>
+      </div>
+ {% endif %}
  
  {% if section.settings.enable_review_tab %}
       <div class="tab">
-        <input hidden type="checkbox" id="rd3" name="rd">
-        <label class="tab-label" for="rd3">{{section.settings.reviewtab_title}}</label>
+        <input hidden type="checkbox" id="rd5" name="rd">
+        <label class="tab-label" for="rd5">{{section.settings.reviewtab_title}}</label>
         <div class="tab-content">
           <div class="tab-pane fade container" id="review"><div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div></div>
         </div>
       </div>
  {% endif %}
  
-
     </div>
 
 

@@ -1,11 +1,11 @@
 <div class="menu_moblie d-flex d-xl-none jsmenumobile align-items-center {% unless settings.enable_sticky_mobile %}engoc-disable-sticky{% endunless %}">
-  <a href="javascript:void(0)" title="" class="menuleft">
+  <span onclick="openMenu()" style="cursor: pointer;" title="" class="menuleft">
     <span class="iconmenu">
       <span></span>
       <span></span>
       <span></span>
     </span>
-  </a>
+  </span>
   <div class="logo_menumoblie">
 
     {% if settings.logo_svgmobile != blank %}
@@ -22,12 +22,14 @@
 
   </div>
   <div class="menuright">
-    <span class=" pr-3 js-search-destop"><i class="icon-icon-search"></i></span>
-    {% include 'icon-cart' %}
-    <a href="javascript:void(0)" title="" class="js-call-minicart">
-      {% comment %} <i class="icon-icon-cart"></i> {% endcomment %}
-      <span class="count_pr_incart enj-cartcount">{{cart.item_count }}</span>
-    </a>
+    <span style="cursor: pointer;" class="pr-3 js-search-destop"><i class="icon-icon-search"></i></span>
+    <span class="js-call-minicart" style="cursor: pointer;">
+      {% include 'icon-cart' %}
+      <a href="javascript:void(0)" title="" class="js-call-minicart">
+        {% comment %} <i class="icon-icon-cart"></i> {% endcomment %}
+        <span class="count_pr_incart enj-cartcount">{{cart.item_count }}</span>
+      </a>
+    </span>
   </div>
 </div>
 <div class="box_contentmenu_background">
@@ -263,3 +265,42 @@
     </div>
   </div>
 </div>
+
+<script>
+
+  function menumobile() {
+    var menuleft = document.querySelector('.menuleft');
+    var boxContentmenu = document.querySelector('.box_contentmenu');
+    var boxContentmenuBackground = document.querySelector('.box_contentmenu_background');
+    var evelandClose = document.querySelector('.js-eveland-close');
+    
+    menuleft.addEventListener('click', function() {
+      this.classList.toggle('active');
+      boxContentmenu.classList.toggle('active');
+      boxContentmenuBackground.classList.toggle('active');
+    });
+    
+    boxContentmenuBackground.addEventListener('click', function() {
+      this.classList.remove('active');
+      boxContentmenu.classList.remove('active');
+      menuleft.classList.remove('active');
+      boxContentmenuBackground.classList.remove('active');
+    });
+    
+    evelandClose.addEventListener('click', function() {
+      this.classList.remove('active');
+      boxContentmenu.classList.remove('active');
+      menuleft.classList.remove('active');
+      boxContentmenuBackground.classList.remove('active');
+    });
+  }
+  
+  function openMenu() {
+    alert('open menu');
+  }
+  
+
+  function openMenu(params) {
+    alert('open menu')
+  }
+</script>

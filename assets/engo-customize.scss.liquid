@@ -10,7 +10,11 @@
 @font-face {
   font-family: 'Ambroise Std';
   src: url('./AmbroiseStd-Regular.woff2') format('woff2'),
-      url('./AmbroiseStd-Regular.woff') format('woff');
+  url('./AmbroiseStd-Regular.woff') format('woff'),
+  url('./AmbroiseStd-Regular.otf') format('opentype'),
+  url('./AmbroiseStd-Regular.ttf') format('truetype'),
+  url('./AmbroiseStd-Regular-1.svg#AmbroiseStd') format('svg')
+  ;
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -32,32 +36,6 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: HurmeGeometricSans1;
-  src: url({{ "HurmeGeometricSans1.otf" | asset_url}});
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: HurmeGeometricSans1;
-  src: url({{ "HurmeGeometricSans1_Light.otf" | asset_url}});
-  font-style: normal;
-  font-weight: 300;
-}
-@font-face {
-  font-family: HurmeGeometricSans1;
-  src: url({{ "HurmeGeometricSans1_SemiBold.otf" | asset_url}});
-  font-style: normal;
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: HurmeGeometricSans1;
-  src: url({{ "HurmeGeometricSans1_Hairline.otf" | asset_url}});
-  font-style: normal;
-  font-weight: 100;
 }
 
 .fa-heart-o {
@@ -1086,10 +1064,13 @@ body {
   max-width: 1250px;
 }
 
+.info-product {
+  letter-spacing: 1px;
+}
 
 .aboutus-pages{
   padding-top: 66px;
-  padding-bottom: 90px;
+  padding-bottom: 60px;
   .about-servicebox{
     padding-top:130px;
     padding-bottom:130px;
@@ -8735,7 +8716,7 @@ RESPONSIVE
         width: 100%;
         padding-left: 0px; 
         .product-title {
-        	font-size: 18px;
+        	font-size: 30px;
         }
         .product-price {
           del{
@@ -9543,7 +9524,7 @@ body {
         font-size: 10px;
         position: absolute;
         text-align: center;
-        top: -28px;
+        top: -4px;
         left: -7px;
         width: 20px;
         height: 20px;
@@ -10151,7 +10132,7 @@ POPup newletter
           width: 50%;
           float: left;
           padding: 2em 4em;
-          max-height: 10px;
+          max-height: max-content;
           .title{
             font-size: 20px;
             position: relative;
@@ -15912,7 +15893,7 @@ POPup newletter
       transform: translateY(-22px);
     }
     .content-logo{
-      font-size: 14px;
+      font-size: 12px;
       color: #161616;
       line-height: 25px;
       margin-top: 10px;
@@ -21408,12 +21389,6 @@ body,p,span {font-family: "Open Sans" !important;}
 }
 
 h4 {font-family: "Brooklyn Bold" !important; text-transform: uppercase;}
-
-@font-face {
-  font-family: "Ambroise Std Regular";
-  src: url("AmbroiseStd_Regular.woff") format("woff"),
-  url("AmbroiseStd_Regular.woff") format("woff");
-}
 
 h2, h1 {
     font-family: 'Ambroise Std';

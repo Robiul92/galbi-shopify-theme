@@ -24,13 +24,15 @@
       </p>
     </div>
     {% comment %} {% include 'breadcrumb' %} {% endcomment %}
-    <div class="container container-v1">
-      {% if section.settings.bg_breadcrumb != blank %}
-        <img src="{{section.settings.bg_breadcrumb | img_url : 'master'}}" alt="Page image">
-      {% endif %}
-    </div>
   </div>
 </div>
+
+<div style=".aboutus-pageswidth: 100%;">
+  {% if section.settings.bg_breadcrumb != blank %}
+    <img src="{{section.settings.bg_breadcrumb | img_url : 'master'}}" alt="Page image">
+  {% endif %}
+</div>
+
 <section>
   <div class="aboutus-pages">
     <!-- service box -->
@@ -82,9 +84,9 @@
                   </div>
                   <div class="col-md-6 intro_detail d-flex align-items-end">
                     <div class="info-intro">
-                      <h3 class="title_intro">{{ block.settings.title_intro }}</h3>
+                      <h3 style="font-weight: bold;" class="title_intro">{{ block.settings.title_intro }}</h3>
                       {% comment %} <p class="des_intro">{{ block.settings.des_intro }}</p> {% endcomment %}
-                      <p class="content_intro">{{ block.settings.content_intro }}</p>
+                      <p style="letter-spacing: 1px;" class="content_intro">{{ block.settings.content_intro }}</p>
                     </div>
                   </div>
 

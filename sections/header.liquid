@@ -147,7 +147,7 @@
                 {% comment %} </a> {% endcomment %}
               </li>
               <li class="list-inline-item mr-0">
-                <a href="javascript:void(0)" class="cart js-call-minicart">
+                <p style="cursor: pointer;" class="cart js-call-minicart">
                   {% if settings.hd_icon_cart_svg != blank %}
                     {% include 'icon-cart' %}
                   {% else %}
@@ -155,7 +155,7 @@
                     {% include 'icon-cart' %}
                   {% endif %}
                   <span class="number-cart enj-cartcount">{{ cart.item_count }}</span>
-                </a>
+                </p>
               </li>
             </ul>
           </div>

@@ -36,10 +36,12 @@
           {% endif %}
 
           {% if section.settings.content_top != blank %}
-          <p class="mb-0 content">{{section.settings.content_top}}</p>
+          <h3 class="mb-0 content amalfi_subheading">{{section.settings.content_top}}</h3>
           {% endif %}
 
-          <p style="line-height: 25px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus perspiciatis architecto facere perferendis cum a quas eos culpa tempore quidem omnis vel, alias nemo recusandae excepturi, nostrum ullam, dolores repellat?</p>
+          {% if section.settings.content_description != blank %}
+          <p style="line-height: 25px;">{{ section.settings.content_description }}</p>
+          {% endif %}
 
           {% if section.settings.button != blank %}
           {% comment %} <a href="{{section.settings.url_button}}" class="button-shop">{{section.settings.button}}</a> {% endcomment %}
@@ -70,6 +72,12 @@
       "id": "content_top",
       "label": "Content top",
       "default": "Eveland is a London based jewellery brand. Each piece in our collection has been meticulously designed in our studio near London Bridge and embodies our principals of simplicity, detail and understated masculinity. Our collection of Pendants, Cuffs and Rings have been designed to be worn individually or layered and stacked together."
+    },
+    {
+      "type": "textarea",
+      "id": "content_description",
+      "label": "Content description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus perspiciatis architecto facere perferendis cum a quas eos culpa tempore quidem omnis vel, alias nemo recusandae excepturi, nostrum ullam, dolores repellat?"
     },
     {
       "type": "text",
