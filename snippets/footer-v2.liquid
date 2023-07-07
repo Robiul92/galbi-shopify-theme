@@ -128,7 +128,7 @@
                 placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}"
               >
             </div>
-            <button class="btn" type="submit">{{ 'general.newsletter_form.submit_footer' | t }}</button>
+            <button class="bottom_submit_btn btn" type="submit">{{ 'general.newsletter_form.submit_footer' | t }}</button>
           </form>
         </div>
       </div>
@@ -140,6 +140,12 @@
   @media (max-width: 576px) {
     .info_us {
       margin-bottom: 15px;
+    }
+    .bottom_submit_btn {
+      margin: 1em auto;
+    }
+    .form-control {
+      text-align: center;
     }
   }
 </style>

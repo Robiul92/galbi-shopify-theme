@@ -336,6 +336,39 @@
         $('#myModal').css('display', 'none');
       }
     });
+
+    $('.js-call-minicart').on('click', function (event) {
+      $('.js-minicart').addClass('active');
+      $('.bg-minicart').addClass('active');
+      $('.contentbody').addClass('activecart');
+      $('body').addClass('cartover');
+    })
+
+    $('.close-mini-cart').on('click', function() {
+      $('.js-minicart').removeClass('active');
+      $('.bg-minicart').removeClass('active');
+      $('.contentbody').removeClass('activecart');
+      $('body').removeClass('cartover');
+    });
+
+    $('.js-call-popup-login').on( 'click', function() {
+      $('.js-poup-login-destop').addClass('active');
+      $('.js-bg-login-popup').addClass('active');
+    });
+    $('.js-eveland-close-login').on( 'click', function() {
+      $('.js-poup-login-destop').removeClass('active');
+      $('.js-bg-login-popup').removeClass('active');
+    });
+    $('.js-bg-login-popup').on( 'click', function() {
+      $('.js-poup-login-destop').removeClass('active');
+      $('.js-bg-login-popup').removeClass('active');
+    });
+    $('.js-call-popup-login').on('click', function() {
+      $('.formlogin-destop').show();
+      $('.form_register-destop').hide();    
+    });
+
+    
   });
 </script>
 

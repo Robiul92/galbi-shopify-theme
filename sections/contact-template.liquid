@@ -26,6 +26,12 @@
   form > ul > li > input:focus, textarea:focus {
     border: 2px solid #161616;
   }
+  .left_image_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
 {% endstyle %}
 
 <div
@@ -54,14 +60,15 @@
 
         <div class="col-lg-6 col-md-6">
           <div style="text-align: left !important;" class="left_image_details info">
-            {% if section.settings.title_top != blank %}
-              <div class="title-banner-top">
-                <h3 style="font-size: 80px;" class="title">{{ page.title }}</h3>
-              </div>
-            {% endif %}
-            <br>
-            <p style="line-height: 25px;">{{ page.content }}</p>
-            <br><br><br>
+            <div>
+              {% if section.settings.title_top != blank %}
+                <div class="title-banner-top">
+                  <h3 style="font-size: 80px;" class="title">{{ page.title }}</h3>
+                </div>
+              {% endif %}
+              <br>
+              <p style="line-height: 25px;">{{ page.content }}</p>
+            </div>
             {% form 'contact' %}
               {% if form.posted_successfully? %}
                 <p class="success-msg">Thanks for contacting us! We'll get back to you as soon as possible.</p>

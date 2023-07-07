@@ -1,5 +1,5 @@
 <div class="menu_moblie d-flex d-xl-none jsmenumobile align-items-center {% unless settings.enable_sticky_mobile %}engoc-disable-sticky{% endunless %}">
-  <span onclick="openMenu()" style="cursor: pointer;" title="" class="menuleft">
+  <span style="cursor: pointer;" title="" class="menuleft">
     <span class="iconmenu">
       <span></span>
       <span></span>
@@ -54,6 +54,9 @@
         </a>
       </li>
     </ul>
+    <div class="close-menu-mobile text-center js-eveland-close">
+      <i class="ti-close mr-3"></i>Close    
+    </div>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane show in active tab_children_menu" id="tab_menu_mobile">        
 
@@ -260,47 +263,38 @@
         </div>
       </div>
     </div>
-    <div class="close-menu-mobile text-center js-eveland-close">
-      <i class="ti-close mr-3"></i>Close    
-    </div>
   </div>
 </div>
 
 <script>
+  $('.menuleft').on('click', function() {
+    $(this).toggleClass('active');
+    $('.box_contentmenu').toggleClass('active');     
+    $('.box_contentmenu_background').toggleClass('active');     
+  });
+  $('.box_contentmenu_background').on('click', function() {
+    $(this).removeClass('active');
+    $('.box_contentmenu').removeClass('active');
+    $('.menuleft').removeClass('active');
+    $('.box_contentmenu_background').removeClass('active');
+  });
+  $('.js-eveland-close').on('click', function() {
+    $(this).removeClass('active');
+    $('.box_contentmenu').removeClass('active');
+    $('.menuleft').removeClass('active');
+    $('.box_contentmenu_background').removeClass('active');
+  });
 
-  function menumobile() {
-    var menuleft = document.querySelector('.menuleft');
-    var boxContentmenu = document.querySelector('.box_contentmenu');
-    var boxContentmenuBackground = document.querySelector('.box_contentmenu_background');
-    var evelandClose = document.querySelector('.js-eveland-close');
-    
-    menuleft.addEventListener('click', function() {
-      this.classList.toggle('active');
-      boxContentmenu.classList.toggle('active');
-      boxContentmenuBackground.classList.toggle('active');
-    });
-    
-    boxContentmenuBackground.addEventListener('click', function() {
-      this.classList.remove('active');
-      boxContentmenu.classList.remove('active');
-      menuleft.classList.remove('active');
-      boxContentmenuBackground.classList.remove('active');
-    });
-    
-    evelandClose.addEventListener('click', function() {
-      this.classList.remove('active');
-      boxContentmenu.classList.remove('active');
-      menuleft.classList.remove('active');
-      boxContentmenuBackground.classList.remove('active');
-    });
-  }
-  
-  function openMenu() {
-    alert('open menu');
-  }
-  
-
-  function openMenu(params) {
-    alert('open menu')
-  }
+  $('.js-search-destop').on('click', function() {
+    $('.js-box-search').addClass('active');
+    $('.bg_search_box').addClass('active');
+  });
+  $('.js-drawer-close').on('click', function() {
+    $('.js-box-search').removeClass('active');
+    $('.bg_search_box').removeClass('active');
+  });
+  $('.bg_search_box').on('click', function() {
+    $('.js-box-search').removeClass('active');
+    $('.bg_search_box').removeClass('active');
+  });
 </script>
