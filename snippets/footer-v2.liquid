@@ -1,7 +1,7 @@
 <footer class="footer_v2">
   <div class="container container-v3">
-    <div class="row align-items-end">
-      <div class="col-lg-3 col-md-3">
+    <div class="row align-items-start">
+      <div style="align-self: end;" class="col-lg-3 col-md-3">
         <div class="info_us">
           <div class="logo-top">
             {% if settings.logo_svg2 != blank %}
@@ -61,36 +61,24 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-3">
-        <div class="info_footer">
-          <div class="title_footer">
-            <h4 class="mb-0 title_border">{{ settings.titlecolum_fv2_1 }}</h4>
+
+      {% for menu in section.settings.menu.links %}
+        <div style="align-self: end;" class="col-lg-3 col-md-3">
+          <div class="info_footer">
+            <div class="title_footer">
+              <h4 class="mb-0 title_border">{{ menu.title }}</h4>
+            </div>
+            <ul class="list-unstyled mb-0">
+              {% for link in menu.links %}
+                <li>
+                  <a style="text-transform: uppercase;" href="{{link.url}}" title="{{link.title}}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
           </div>
-          <ul class="list-unstyled mb-0">
-            {% for link in linklists[settings.menu_fv2_1].links %}
-              <li>
-                <a href="{{link.url}}" title="{{link.title}}">{{ link.title }}</a>
-              </li>
-            {% endfor %}
-            <li><a href="#" title="Titlte of link">Titlte of link</a></li>
-          </ul>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3">
-        <div class="info_footer">
-          <div class="title_footer">
-            <h4 class="mb-0 title_border">{{ settings.titlecolum_fv2_2 }}</h4>
-          </div>
-          <ul class="list-unstyled mb-0">
-            {% for link in linklists[settings.menu_fv2_2].links %}
-              <li>
-                <a href="{{link.url}}" title="{{link.title}}">{{ link.title }}</a>
-              </li>
-            {% endfor %}
-            <li><a href="#" title="Titlte of link">Titlte of link</a></li>
-          </ul>
-        </div>
-      </div>
+      {% endfor %}
+
       <div class="col-lg-2 col-md-3">
         <div class="info_footer">
           <div class="title_footer">
@@ -105,7 +93,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div style="align-self: end;height: 168.733px;" class="col-lg-3 col-md-3">
         <div class="info_footer end">
           <div class="title_footer ">
             <h4 class="mb-0 title_border end">{{ settings.titlecolum_fv2_4 }}</h4>

@@ -1,0 +1,104 @@
+{% style %}
+  .color-filter-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 260px;
+    column-gap: 20em;
+  }
+
+  .form-group {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: 'Brooklyn';
+    text-transform: uppercase;
+  }
+
+  .form-group input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+
+  .form-group label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .form-group label:before {
+    content: '';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #161616;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 25px;
+  }
+
+  .form-group input:checked + label:before {
+    background-color: black;
+  }
+
+  .form-group input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .color-filter-box {
+      height: auto;
+      column-gap: 0em;
+    }
+  }
+{% endstyle %}
+
+<div class="filter-color widget widget-category widget_product_categories filter-tag">
+  <ul class="list-none list_color list color-filter-box">
+    <h2 class="widget-title">{{ filter.label }}</h2>
+    {%- for filter_value in filter.values -%}
+      <li class="form-group">
+        <input
+          name="{{ filter_value.param_name }}"
+          value="{{ filter_value.value }}"
+          id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+          type="checkbox"
+          {% if filter_value.active -%}
+            checked
+          {%- endif %}
+          {% if filter_value.count == 0 and filter_value.active == false -%}
+            disabled
+          {%- endif %}
+        >
+        <label for="html">{{ filter_value.label }}</label>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
+
+<script>
+  function checkit(event) {
+    // Access the checkbox element
+    var checkbox = event.currentTarget.querySelector('input[type="checkbox"]');
+
+    // Toggle the checked state
+    checkbox.checked = !checkbox.checked;
+  }
+</script>

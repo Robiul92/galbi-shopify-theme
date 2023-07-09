@@ -1,0 +1,63 @@
+{% style %}
+  .box-info {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+  }
+  .box-img {
+    overflow: hidden;
+  }
+  .content-banner {
+    text-align: left;
+    position: absolute;
+    left: 60%;
+    transform: translate(-50%);
+    bottom: 5%;
+    transition: 0.5s;
+    width: 100%;
+  }
+  .bigtitle {
+    font-size: 12px !important;
+    font-weight: 500;
+    color: #161616;
+    color: #fff;
+    margin-bottom: 0 !important;
+    transition: 0.5s;
+    font-family: 'Brooklyn' !important;
+  }
+  .sub-title {
+    position: relative;
+    display: inline-block;
+    color: #fff !important;
+    padding-top: 5px;
+    color: #909090;
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: 'Brooklyn' !important;
+  }
+{% endstyle %}
+
+<div class="box-info one">
+  {% if block.settings.link != blank %}
+    <a href="{{block.settings.link}}">
+  {% endif %}
+  <div class="box-img text-center">
+    {% if block.settings.image != blank %}
+      <img
+        alt="{{ block.settings.image.alt | escape }}"
+        src="{{ block.settings.image | img_url: 'master' }}"
+        class="img-fluid"
+      >
+    {% endif %}
+  </div>
+  <div class="content-banner">
+    <h3 class="bigtitle mb-0">{{ block.settings.product_title }}</h3>
+
+    <span class="sub-title">{{ block.settings.price | money }}</span>
+  </div>
+  {% if block.settings.link != blank %}
+    </a>
+  {% endif %}
+</div>
+

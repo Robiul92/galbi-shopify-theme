@@ -53,26 +53,25 @@
     {% assign values = values | append: ',' | append: value %}
     {% assign values = values | split: ',' %}
 
-    <div data-value="{{ value | escape }}"  data-style="square" class="maxus-color none swatch-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}" {% if variant.available %}{% else %}data-toggle="tooltip" data-placement="top"  data-original-title="Sold Out"{% endif %}>
+    <div data-value="{{ value | escape }}"  data-style="square" class="maxus-color none swatch-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}"
+      
+      {% if variant.available %}
+        {% if is_color %}
+          data-toggle="tooltip" data-placement="top"  data-original-title="{{ value | handle }}"
+        {% endif %}
+        {% else %}
+        data-toggle="tooltip" data-placement="top"  data-original-title="Sold Out"
+      {% endif %}>
       <input class="swatches-option" id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} {% unless variant.available %}disabled{% endunless %} />
 
       {% if is_color %}
       <div class=" border-color">
       <label class="link_color" for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }}); background-size: cover;">
-        <div class="crossed-out">
-          {% comment %}
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 15.642 15.642" enable-background="new 0 0 15.642 15.642" width="25px" height="25px"><path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z" fill="#161616000"/></svg>
-          {% endcomment %}
-        </div>
       </label>
       </div>
       {% else %}
       <label class="variant_other" for="swatch-{{ option_index }}-{{ value | handle }}" style="font-weight: 600;">
         {{ value }}
-        {% comment %}
-        
-        <div class="crossed-out"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 15.642 15.642" enable-background="new 0 0 15.642 15.642" width="25px" height="25px"><path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z" fill="#161616000"/></svg></div>
-        {% endcomment %}
       </label>
       {% endif %}
     </div>

@@ -1180,20 +1180,25 @@ jQuery(document).ready(function($) {
 
     });
   }
-  function cookiepopup(){
-    if (!jQuery.cookie('brilliant_pop_newletter') || jQuery.cookie('brilliant_pop_newletter') == null) {    
+
+  function cookiepopup() {
+    if (!jQuery.cookie('brilliant_pop_newletter') || jQuery.cookie('brilliant_pop_newletter') == null) {
       jQuery(window).load(function() {
-        setTimeout($('.jsengo_popup').show(), 300 * 1000);
+        setTimeout(function() {
+          $('.jsengo_popup').show();
+        }, 3000);
+        
         jQuery('.jsclosepoup').click(function(e) {
           e.preventDefault();
-          jQuery('.jsengo_popup').hide(); 
-          jQuery.cookie('brilliant_pop_newletter', '1', {expires: 1, path:'/', domain: '{{shop.url}}' });
-                                                        });
+          $('.jsengo_popup').hide();
+          jQuery.cookie('brilliant_pop_newletter', '1', { expires: 1, path: '/', domain: '{{shop.url}}' });
         });
-      } else {
-                          $('.jsengo_popup').remove();
+      });
+    } else {
+      $('.jsengo_popup').remove();
     }
   }
+  
   
   
   // Scroll to TOP

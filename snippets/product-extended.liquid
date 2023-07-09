@@ -757,7 +757,6 @@
               >
                 <input id="product-id" name="id" value="{{ product.variants.first.id }}" type="hidden">
 
-                {% if product.available and product.variants.size > 1 %}
                   <div class="product-swatches">
                     <!-- Swatch Variant -->
                     {% for option in product.options %}
@@ -765,7 +764,6 @@
                     {% endfor %}
                     <!-- End Swatch Variant -->
                   </div>
-                {% endif %}
 
                 {% if sold_out %}
                   <div class="btn-action">
@@ -893,9 +891,9 @@
     </div>
   </section>
 
-  {% if section.settings.enable_related_product %}
+  {% comment %} {% if section.settings.enable_related_product %}
     {% include 'related-product-update' %}
-  {% endif %}
+  {% endif %} {% endcomment %}
 </div>
 
 {% if product.metafields.engo_360.enable_360 == 'true' %}

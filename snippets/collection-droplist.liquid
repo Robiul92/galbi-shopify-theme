@@ -1,11 +1,105 @@
+{% comment %}
+  <form id="myForm">
+    <input type="checkbox" name="myCheckbox" id="myCheckbox">
+    <label for="myCheckbox">Checkbox</label>
+    <input type="submit" value="Submit">
+  </form>
+{% endcomment %}
 
-  {% for i in (1..3) %}
-  {% capture collection_widget %}collection_widget_{{i}}{% endcapture %}
-  {% if section.settings[collection_widget] != blank %}
-    <div class="col-lg-2dot4 col-6 col-md-4">
-      {% include section.settings[collection_widget] %}
-    </div>
-  {% endif %}
-  {% endfor %}
+{% style %}
+  .filter-item-values {
+    display: grid;
+    gap: 0em 4em;
+  }
+  .form-group {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: 'Brooklyn';
+    text-transform: uppercase;
+  }
 
-<!-- #secondary -->
+  .form-group input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+
+  .form-group label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .form-group label:before {
+    content: '';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #161616;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 25px;
+  }
+
+  .form-group input:checked + label:before {
+    background-color: black;
+  }
+
+  .form-group input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .filter-div {
+    padding-right: 6em;
+  }
+  @media only screen and (max-width: 400px) {
+    .filter-div {
+      padding-right: 0em;
+    }
+  }
+{% endstyle %}
+
+{%- for filter in collection.filters -%}
+  <div id="myForm" class="filter-div">
+    {%- case filter.type -%}
+      {%- when 'boolean', 'list' -%}
+        <h3>{{ filter.label }}</h3>
+        <br>
+        <div style="grid-template-columns: auto auto;" class="filter-item-values">
+          {%- for filter_value in filter.values -%}
+            <div class="form-group">
+              <input
+                name="{{ filter_value.param_name }}"
+                value="{{ filter_value.value }}"
+                id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                type="checkbox"
+                class="myCheckbox"
+                {% if filter_value.active -%}
+                  checked
+                {%- endif %}
+                {% if filter_value.count == 0 and filter_value.active == false -%}
+                  disabled
+                {%- endif %}
+              >
+              <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">{{ filter_value.label }}</label>
+            </div>
+          {% endfor %}
+        </div>
+    {% endcase %}
+  </div>
+{% endfor %}

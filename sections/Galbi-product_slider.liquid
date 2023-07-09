@@ -1,3 +1,21 @@
+{% style %}
+.slider-arrow-button {
+  background-color: #161616;
+  width: 24px;
+}
+.slider-button-left {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  left: 0;
+}
+.slider-button-right {
+  position: absolute;
+  bottom: 0;
+  left: 3em;
+}
+{% endstyle %}
+
 <div
   data-section-id="{{ section.id }}"
   data-section-type="section-product-v1"
@@ -23,19 +41,11 @@
         </div>
 
         <div class="col-lg-8">
-          <div class="slicks-slider product_handpicked">
-            {% assign products_limit = section.settings.products_limit %}
-            {% assign col = section.settings.select_collection %}
-            {% for product in collections[col].products limit: products_limit %}
+          <div style="position: relative;" class="slicks-slider product_handpicked">
+            {% for block in section.blocks %}
               <div style="padding-bottom: 3em;" class="padding-slick product_item">
-                {% include 'updated-product-item' %}
+                  {% include 'updated-card-item' %}
               </div>
-            {% else %}
-              {% for i in (1..section.settings.products_limit) %}
-                <div class="padding-slick product_item">
-                  {% include 'empty-product-item' %}
-                </div>
-              {% endfor %}
             {% endfor %}
           </div>
         </div>
@@ -54,8 +64,8 @@
     speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
-    prevArrow: '<button type="button" class="prev-slide"><i class="fa fa-angle-left"></i> </button>',
-    nextArrow: '<button type="button" class="next-slide"> <i class="fa fa-angle-right"></i></button>',
+    prevArrow: '<button type="button" class="slider-button-left slider-arrow-button"><i class="fa fa-angle-left"></i> </button>',
+    nextArrow: '<button type="button" class="slider-button-right slider-arrow-button"> <i class="fa fa-angle-right"></i></button>',
     responsive: [
       {
         breakpoint: 1024,
@@ -145,6 +155,36 @@
       "id": "margin_bottom",
       "label": "Margin Bottom",
       "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Title",
+          "default": "Product title"
+        },
+        {
+          "type": "number",
+          "id": "price",
+          "label": "Products price",
+          "default": 20
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }        
+      ]
     }
   ],
   "presets": [

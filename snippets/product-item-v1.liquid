@@ -176,7 +176,7 @@
 <!-- END PRODUCT     -->
 
     <!-- VARIANT PRODUCT -->
-    
+{% comment %}     
     <nav class="engoj_select_color">
       {% for option in product.options %}
       {% if option == 'Color' or option == 'Colour' %}
@@ -202,7 +202,7 @@
       {% endfor %}
       {% endif %}
       {% endfor %}
-    </nav>
+    </nav> {% endcomment %}
 
 
     <!-- END VARIANT     -->

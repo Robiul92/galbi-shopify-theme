@@ -1,14 +1,14 @@
 <!-- /sections/footer.liquid -->
-{% if section.settings.select_fts == "footer_v1" %}
-{% include 'footer-v1' %}
-{% elsif section.settings.select_fts == "footer_v2" %}
-{% include 'footer-v2' %}
-{% elsif section.settings.select_fts == "footer_v3" %}
-{% include 'footer-v3' %}
-{% elsif section.settings.select_fts == "footer_v4" %}
-{% include 'footer-v4' %}
-{% elsif section.settings.select_fts == "footer_v5" %}
-{% include 'footer-v5' %}
+{% if section.settings.select_fts == 'footer_v1' %}
+  {% include 'footer-v1' %}
+{% elsif section.settings.select_fts == 'footer_v2' %}
+  {% include 'footer-v2' %}
+{% elsif section.settings.select_fts == 'footer_v3' %}
+  {% include 'footer-v3' %}
+{% elsif section.settings.select_fts == 'footer_v4' %}
+  {% include 'footer-v4' %}
+{% elsif section.settings.select_fts == 'footer_v5' %}
+  {% include 'footer-v5' %}
 {% endif %}
 
 {% schema %}
@@ -37,13 +37,18 @@
           "value": "footer_v4",
           "label": "Footer v4"
         },
-		{
+        {
           "value": "footer_v5",
           "label": "Footer v5"
         }
       ],
       "default": "footer_v1"
-    }
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }    
   ]
 }
 {% endschema %}

@@ -24,7 +24,7 @@
     border: 2px solid #161616;
 }
 {% endstyle %}
-<section class="popup jsengo_popup">
+<section style="display: none;" id="popup" class="popup jsengo_popup">
     <div class="modal-overlay"></div>
     <div class="modal-window">
       <div class="window-window">
@@ -38,6 +38,11 @@
             {% if settings.title_popup != blank %}
             <h1 class="title">{{settings.title_popup}}</h1>
             {% endif %}
+            {% if customer %}
+              <p>Welcome back, {{ customer.first_name }}!</p>
+            {% else %}
+              <p>Sign in or create an account to continue.</p>
+            {% endif %}            
             {% if settings.description_popup != blank %}
             <p class="sub-title mb-0">{{settings.description_popup}}</p>
             {% endif %}
@@ -102,3 +107,24 @@
     </div>
 </section>
 
+<script>
+  {% if customer %}
+    // Customer is logged in, do nothing
+  {% else %}
+    // Customer is not logged in, run the script
+    setTimeout(function() {
+      // Write your code here to display the pop-up
+      // For example, you can show a modal or update the visibility of a hidden element
+  
+      // Example using a hidden element with an ID "popup"
+      var popup = document.getElementById("popup");
+      if (popup) {
+        popup.style.display = "block";
+      }
+  
+      // Example using a modal library like Bootstrap Modal
+      // $('#myModal').modal('show');
+  
+    }, 3000);
+  {% endif %}
+</script>

@@ -1,4 +1,4 @@
-<section class="collection-page-fullwidth">
+<section style="padding: 3em 0;" class="collection-page-fullwidth">
   <div class="filter-to-left">
     <div class="filter_sidebar">
       <div class="close_filter">
@@ -87,9 +87,9 @@
           class="{% if section.settings.ena_list_col == false or section.settings.ena_prod_per == false and section.settings.ena_prod_change_style == false %}col-xl-6 {% else %} col-xl-3{% endif %} col-md-6 order-md-3 col-12 galbi__filter_width"
         >
           <div class="filter_sortby">
-              <div class="title-cate">
-                <h2 class="mb-0">{{ collection.title }}</h2>
-              </div>
+            <div class="title-cate">
+              <h2 class="mb-0">{{ collection.title }}</h2>
+            </div>
 
             {% if section.settings.ena_filter %}
               <a
@@ -99,27 +99,6 @@
                 {% endif %}
                 href="javascript:void(0)"
               >
-                {% comment %}
-                  <svg
-                    version="1.1"
-                    id="Capa_1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 485.008 485.008"
-                    style="enable-background:new 0 0 485.008 485.008;"
-                    xml:space="preserve"
-                  >
-                    <g>
-                      <g>
-                        <path d="M171.501,464.698v-237.9l-166.3-192.6c-8.9-10.9-7.9-33.3,15.1-33.3h443.6c21.6,0,26.6,19.8,15.1,33.3l-162.3,187.5v147.2
-                                 c0,6-2,11.1-7.1,15.1l-103.8,95.8C193.801,488.698,171.501,483.898,171.501,464.698z M64.701,41.298l142.2,164.3c3,4,5,8.1,5,13.1
-                                 v200.6l64.5-58.5v-146.1c0-5,2-9.1,5-13.1l138.1-160.3L64.701,41.298L64.701,41.298z"/>
-                      </g>
-                    </g>
-                  </svg>
-                {% endcomment %}
                 <p class="mb-0">{{ 'products.product.filter' | t }}</p>
               </a>
             {% endif %}
@@ -223,9 +202,13 @@
       </div>
 
       <div id="demo" class="collapse filter_ver2">
-        <div class="filter_sidebar row engoj-collection-sidebar engoc_sw_filter_tag">
+        <form id="myForm" class="filter-form filter_sidebar row engoj-collection-sidebar engoc_sw_filter_tag">
           {% include 'collection-droplist' %}
-        </div>
+
+          <div style="display: none;" class="filter-group-display__submit">
+            <input type="submit" value="Apply">
+          </div>
+        </form>
       </div>
 
       <div class="clearfix relative collection_prod">
@@ -306,3 +289,13 @@
     </div>
   </div>
 </section>
+
+<script>
+    var checkboxes = document.querySelectorAll('#myForm input[type="checkbox"]');
+    var form = document.getElementById('myForm');
+    checkboxes.forEach(checkbox=>{
+      checkbox.addEventListener('change', (e)=> {
+        form.submit();
+      })
+    })
+</script>
