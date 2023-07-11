@@ -27,9 +27,9 @@
   </div>
 </div>
 
-<div style=".aboutus-pageswidth: 100%;">
+<div style="width: 100%;">
   {% if section.settings.bg_breadcrumb != blank %}
-    <img src="{{section.settings.bg_breadcrumb | img_url : 'master'}}" alt="Page image">
+    <img style="width: 100%;" src="{{section.settings.bg_breadcrumb | img_url : 'master'}}" alt="Page image">
   {% endif %}
 </div>
 
@@ -448,7 +448,7 @@
           "label": "Description"
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "content_intro",
           "label": "Content"
         }
@@ -475,7 +475,7 @@
           "label": "Description"
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "content_intro",
           "label": "Content"
         }

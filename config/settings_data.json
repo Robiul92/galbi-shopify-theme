@@ -1,26 +1,27 @@
 {
   "current": {
-    "title_popup": "SIGN UP FOR EARLY ACCESS",
-    "description_popup": "GET THE LATEST FROM GALBI",
+    "title_popup": "SIGN UP IN STYLE",
+    "description_popup": "Become a GALBI Insider and be the first to shop our collections.",
     "placeholder_popup": "Email",
-    "button_name_popup": "Sign in",
-    "content_popup": "SIGN UP FOR EXCLUSIVE UPDATES, NEW ARRIVALS AND INSIDER-ONLY DISCOUNTS",
-    "icon_sc_popup1": "fa fa-twitter",
-    "url_sc_popup1": "",
-    "icon_sc_popup2": "fa fa-facebook",
-    "url_sc_popup2": "",
-    "icon_sc_popup3": "fa fa-instagram",
-    "icon_sc_popup4": "",
-    "url_sc_popup4": "",
+    "button_name_popup": "SUBMIT",
+    "content_popup": "",
+    "icon_sc_popup1": "fa fa-instagram",
+    "url_sc_popup1": "https:\/\/www.instagram.com\/shopgalbi\/",
+    "icon_sc_popup2": "fab fa-tiktok",
+    "url_sc_popup2": "https:\/\/www.tiktok.com\/@shopgalbi",
+    "icon_sc_popup3": "fa fa-twitter",
+    "url_sc_popup3": "https:\/\/twitter.com\/shopgalbi",
+    "icon_sc_popup4": "fa fa-pinterest-p",
+    "url_sc_popup4": "https:\/\/www.pinterest.com\/shopgalbi\/",
     "enable_image_poup": true,
-    "image_poup": "shopify:\/\/shop_images\/prod29.2.webp",
-    "pouplogin_logo": "shopify:\/\/shop_images\/logo_den.png",
+    "image_poup": "shopify:\/\/shop_images\/email.png",
+    "pouplogin_logo": "shopify:\/\/shop_images\/Galbi_Final_Deliverables-01.png",
     "pouplogin_logo_maxwidth": 135,
     "pouplogin_logo_svg": "",
     "icon-rpas-loginpopup": "ti-reload",
     "icon-register-loginpopup": "ti-pencil-alt",
     "color_main": "#333333",
-    "color_main2": "#48c8fd",
+    "color_main2": "#161616",
     "font_type": "normal_fonts",
     "fonts_name_1": "Open Sans Regular",
     "fonts_name_2": "Dancing Script",
@@ -74,7 +75,7 @@
     "hdv5_logo_svg": "",
     "enable_sticky_hdv6": true,
     "hdv6_enable_absolute": true,
-    "hdv6_bg_header_sticky": "#161616000",
+    "hdv6_bg_header_sticky": "#161616",
     "hdv6_logo": "shopify:\/\/shop_images\/logo_trang.png",
     "hdv6_logo_maxwidth": 135,
     "hdv6_logo_svg": "",
@@ -285,23 +286,23 @@
     "fv2_main_logo": "shopify:\/\/shop_images\/Galbi_Final_Deliverables-01.png",
     "fv2_main_logo_maxwidth": 135,
     "logo_svg2": "",
-    "content_col1_fv2": "Be the first who learns about our great promotions!",
+    "content_col1_fv2": "Making international fashion local and timeless since 2023.",
     "icon_sc_fv2_1": "fa fa-instagram",
     "url_sc_fv2_1": "https:\/\/www.instagram.com\/shopgalbi\/",
     "icon_sc_fv2_2": "fab fa-tiktok",
     "url_sc_fv2_2": "https:\/\/www.tiktok.com\/@shopgalbi",
     "icon_sc_fv2_3": "fa fa-twitter",
     "url_sc_fv2_3": "https:\/\/twitter.com\/shopgalbi",
-    "icon_sc_fv2_4": "fa fa-facebook",
-    "url_sc_fv2_4": "",
+    "icon_sc_fv2_4": "fa fa-pinterest-p",
+    "url_sc_fv2_4": "https:\/\/www.pinterest.com\/shopgalbi\/",
     "titlecolum_fv2_1": "About",
     "menu_fv2_1": "main-menu",
     "titlecolum_fv2_2": "Customer Care",
     "menu_fv2_2": "main-menu",
     "titlecolum_fv2_3": "",
     "menu_fv2_3": "",
-    "titlecolum_fv2_4": "Join The List",
-    "content_colum_fv2_4": "Subscribe our newsletter and get discount 30% off",
+    "titlecolum_fv2_4": "EXPLORE THE WORLD WITH US.",
+    "content_colum_fv2_4": "Join our email list and be the first to know when new collections arrive.",
     "color_bg_fv3": "#f4f4f4",
     "color_menu_fv3": "#333333",
     "color_hover_menu_fv3": "#161616",
@@ -3225,7 +3226,8 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "select_fts": "footer_v2"
+          "select_fts": "footer_v2",
+          "menu": "footer"
         }
       },
       "collection-template": {
@@ -3364,11 +3366,15 @@
           "show_sku": false,
           "show_cate": false,
           "enable_description_tab": true,
-          "destab_title": "Description",
-          "enable_addition_tab": true,
+          "destab_title": "DESCRIPTION",
+          "enable_FIT_MEASUREMENTS_tab": true,
+          "FIT_MEASUREMENTS_title": "FIT + MEASUREMENTS",
+          "enable_MATERIAL_CARE_tab": true,
+          "MATERIAL_CARE_title": "MATERIAL + CARE",
+          "enable_addition_tab": false,
           "addtab_title": "Additional Information",
           "addtab_content": "",
-          "enable_review_tab": true,
+          "enable_review_tab": false,
           "reviewtab_title": "Review",
           "enable_related_product": true,
           "related_product_title": "Latest products",
@@ -3466,7 +3472,21 @@
           "main_menu_store": "main-menu",
           "header_account_icon": "fa fa-user",
           "header_wishlist_icon": "fa fa-heart-o",
-          "header_cart_icon": "fa fa-shopping-basket"
+          "header_cart_icon": "fa fa-shopping-basket",
+          "img_collection3": "shopify:\/\/shop_images\/Search_Product_1.png",
+          "title_collection3": "THE LIMONCELLO LINEN TOP",
+          "button_3": "$290",
+          "url_collection3": "shopify:\/\/products\/the-limoncello-linen-top",
+          "img_collection1": "shopify:\/\/shop_images\/Search_product_2.png",
+          "title_collection1": "THE GIULIA DRESS",
+          "button_1": "$640",
+          "url_collection1": "shopify:\/\/products\/the-giulia-dress",
+          "img_collection2": "shopify:\/\/shop_images\/Search_Product_3.png",
+          "title_collection2": "THE NADIA DRESS",
+          "button_2": "$400",
+          "url_collection2": "shopify:\/\/products\/the-nadia-dress",
+          "margin_top": "",
+          "margin_bottom": ""
         }
       },
       "about-template": {
@@ -3476,48 +3496,51 @@
             "type": "service",
             "settings": {
               "block_icon": "icon-icon-transport",
-              "block_title": "FREE SHIPPING & RETURN",
-              "block_content": "On in-stock items ordered by 5:00 p.m."
+              "block_title": "COMMUNITY",
+              "block_content": "The beauty of art and fashion is found in connectedness. Creating ethical bridges between creators and consumers is at the core of what we do, embracing diverse people and supporting local communities as we bring timeless pieces to our customers. We love to shine a light on a bouquet of cultures, lifestyles, and creations."
             }
           },
           "1564989029747": {
             "type": "service",
             "settings": {
               "block_icon": "icon-icon-currency",
-              "block_title": "FREE SHIPPING & RETURN",
-              "block_content": "On in-stock items ordered by 5:00 p.m."
+              "block_title": "QUALITY",
+              "block_content": "Every item available through GALBI is carefully sourced and hand selected. We choose pieces that are both timeless and of-the-moment, allowing you to curate a style that’s all your own. We want you to immerse yourself in the creativity of the world, so we offer products created with love and excellence that you’ll truly never find anywhere else."
             }
           },
           "1564989031540": {
             "type": "service",
             "settings": {
               "block_icon": "icon-icon-flower",
-              "block_title": "FREE SHIPPING & RETURN",
-              "block_content": "On in-stock items ordered by 5:00 p.m."
+              "block_title": "INNOVATION",
+              "block_content": "Here, you’ll find a completely reimagined way to shop, with accessibility to custom pieces and local artisans and designers like never before. We often purchase our goods from designers and retailers that do not have an online presence or a way to sell their work outside of their own locale, creating sustainable income for them and unique buying experiences for you."
             }
           },
           "1564990504785": {
             "type": "service",
+            "disabled": true,
             "settings": {
               "block_icon": "icon-icon-transport",
               "block_title": "FREE SHIPPING & RETURN",
               "block_content": "On in-stock items ordered by 5:00 p.m."
             }
           },
+          "34d1ac80-8351-4096-aca1-7eea853d47a4": {
+            "type": "introduce_v1",
+            "settings": {
+              "image_intro": "shopify:\/\/shop_images\/About_3.png",
+              "title_intro": "FROM MY HEART TO YOURS",
+              "des_intro": "",
+              "content_intro": "<p>From the time I was a little girl, I remember peeking my head into shops and booths in exotic locations, looking for the perfect keepsake to bring home with me and capture the spirit of a place forever. GALBI is my attempt at doing just that for all of you. As I travel the world, I meet incredible creators who are designing gorgeous clothing, home goods, and art. I want to share their work with you and bring the magic of the world to your closet and your home. Thank you for choosing GALBI.<\/p><p>From the time I was a little girl, I remember peeking my head into shops and booths in exoticlocations, looking for the perfect keepsake to bring home with me andcapture the spirit of a place forever. GALBI is my attempt at doing just that for all of you. As I travel the world, I meet incredible creators who are designing gorgeous clothing, home goods, and art. I want to share their work with you and bring the magic of the world to your closet and your home. Thank you for choosing GALBI.<br\/><\/p><p><br\/>Xo, <br\/>Dina<\/p>"
+            }
+          },
           "1565063142979": {
             "type": "introduce",
             "settings": {
-              "title_intro": "Who we are",
+              "image_intro": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_3.jpg",
+              "title_intro": "MEET THE FOUNDER",
               "des_intro": "Fashion democracy",
-              "content_intro": "We believe in a world where you have total freedom to be you, without judgement. To experiment. To express yourself. To be brave and grab life as the extraordinary adventure it is. So we make sure everyone has an equal chance to discover all the amazing things they’re capable of – no matter who they are, where they’re from or what looks they like to boss. We exist to give you the confidence to be whoever you want to be."
-            }
-          },
-          "1565145662528": {
-            "type": "introduce",
-            "settings": {
-              "title_intro": "Choice for all",
-              "des_intro": "Fashion democracy",
-              "content_intro": "Our audience (AKA you) is wonderfully unique. And we do everything we can to help you find your fit, offering our Ciloe Brands in more than 30 sizes – and we're committed to providing all sizes at the same price – so you can be confident we’ve got the perfect thing for you. We’re also proud to partner with GLAAD, one of the biggest voices in LGBTQ activism, on a gender-neutral collection to unite in accelerating acceptance."
+              "content_intro": "<p>Dina Aluzri was destined to explore the world. Born in Southern California and raised on international travel, she loved nothing more than crossing the globe with her family, from revisiting their roots in Iraq to exploring new sights. From a young age, she found herself getting swept up in the story of every town she visited, carefully selecting a treasure to bring back home.<\/p><p><br\/>After spending years in the startup cybersecurity space, Dina knew it was time to combine her<br\/>passions. GALBI is the culmination of a new business model that blends creativity, fashion, entrepreneurship, and the unique corners of the world she loves most. Each GALBI collection reflects her personal style: simple, timeless, feminine, and rare.<\/p>"
             }
           }
         },
@@ -3526,14 +3549,15 @@
           "1564989029747",
           "1564989031540",
           "1564990504785",
-          "1565063142979",
-          "1565145662528"
+          "34d1ac80-8351-4096-aca1-7eea853d47a4",
+          "1565063142979"
         ],
         "settings": {
+          "bg_breadcrumb": "shopify:\/\/shop_images\/About_1.png",
           "enable_intro": true,
           "enable_s_servicebox": true,
           "title_servicebox": "Reasons to shop with us",
-          "enable_insta": true,
+          "enable_insta": false,
           "title_icon": "icon-icon-intagram",
           "title_content": "CALFIA ON INSTAGRAM",
           "des": "@calfia",
@@ -3566,6 +3590,16 @@
           "1565066810763"
         ],
         "settings": {
+          "title_top": "Contact",
+          "content_top": "Eveland is a London based jewellery brand. Each piece in our collection has been meticulously designed in our studio near London Bridge and embodies our principals of simplicity, detail and understated masculinity. Our collection of Pendants, Cuffs and Rings have been designed to be worn individually or layered and stacked together.",
+          "button": "ShOP NOW",
+          "url_button": "shopify:\/\/collections\/all",
+          "img_banner1": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_4.jpg",
+          "url_banner1": "shopify:\/\/collections\/all",
+          "product_name": "Product Title",
+          "product_price": "$455",
+          "margin_top": "",
+          "margin_bottom": "",
           "contact_left_img": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_4.jpg",
           "contact_top_header": "Contact",
           "contact_top_details": "If you have questions about our collections, sourcing, sizing, styling, or anything else, we’d love to hear from you. Reach out to the Galbi team through the form below — we’ll be in touch soon!",
@@ -3663,17 +3697,18 @@
       "8ccaf8b0-1195-405d-9382-b587c6e9f140": {
         "type": "section-banner-left-image-description",
         "custom_css": [
-          ".amalfi_subheading {display: block; font-weight: 600; font-size: 14px !important; line-height: 30px; text-align: center; margin: 15px auto; font-family: 'Libre Baskerville' !important; letter-spacing: 2px; width: 70%;}"
+          ".amalfi_subheading {display: block; font-weight: 600; font-size: 14px !important; line-height: 30px; text-align: center; margin: 15px auto; font-family: \"Libre Baskerville\" !important; letter-spacing: 2px; width: 70%;}"
         ],
         "settings": {
-          "title_top": "THE AMALFI COAST",
-          "content_top": "<h3 class=\"amalfi_subheading\">Our latest collecitons Straight from Italy\n<\/h3>",
+          "title_top": "THE AMALFI COLLECTION",
+          "content_top": "<h3 class=\"amalfi_subheading\">Shop gorgeous styles and textures sourced from the Italian coast\n<\/h3>",
+          "content_description": "An ode to the European summer, our first collection is full of textured linens, timeless colors, and casual silhouettes you’ll reach for over and over. Carefully sourced by our founder from local designers, each piece is handcrafted with the highest quality. You won’t find this collection anywhere else — that’s the GALBI way.",
           "button": "Shop the collection",
           "url_button": "shopify:\/\/products\/short-sleeve-button-up",
           "img_banner1": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_2.jpg",
-          "url_banner1": "shopify:\/\/products\/short-sleeve-button-up",
+          "url_banner1": "shopify:\/\/products\/the-luca-shirt",
           "product_name": "THE LUCA SHIRT",
-          "product_price": "$XXX",
+          "product_price": "$295",
           "margin_top": "35",
           "margin_bottom": "35"
         }
@@ -3681,18 +3716,18 @@
       "890ac97c-82ee-4e12-a731-5124e6f0930d": {
         "type": "section-three-product-items",
         "settings": {
-          "img_collection3": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_4.jpg",
+          "img_collection3": "shopify:\/\/shop_images\/3.png",
           "title_collection3": "THE AMBRA TOP",
-          "button_3": "$XXX",
-          "url_collection3": "shopify:\/\/collections\/all",
-          "img_collection1": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_5.jpg",
-          "title_collection1": "THE XX DRESS",
-          "button_1": "$XXX",
-          "url_collection1": "shopify:\/\/collections\/all",
-          "img_collection2": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_6.jpg",
-          "title_collection2": "THE CHIARA SET",
-          "button_2": "$XXX",
-          "url_collection2": "shopify:\/\/collections\/all",
+          "button_3": "$250",
+          "url_collection3": "shopify:\/\/products\/the-ambra-top",
+          "img_collection1": "shopify:\/\/shop_images\/4.png",
+          "title_collection1": "THE MIA DRESS",
+          "button_1": "$570",
+          "url_collection1": "shopify:\/\/products\/the-mia-dress",
+          "img_collection2": "shopify:\/\/shop_images\/5.png",
+          "title_collection2": "THE CHIARA TOP",
+          "button_2": "$330",
+          "url_collection2": "shopify:\/\/products\/the-chiara-top",
           "margin_top": "35",
           "margin_bottom": ""
         }
@@ -3700,18 +3735,18 @@
       "a9f4dd9a-dd1b-42af-8b25-670f4d620df3": {
         "type": "section-three-product-items",
         "settings": {
-          "img_collection3": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_00168a57-ed70-4b5c-aa5f-3752e49aed53.jpg",
+          "img_collection3": "shopify:\/\/shop_images\/13.png",
           "title_collection3": "THE GIULIA DRESS",
-          "button_3": "$XXX",
-          "url_collection3": "shopify:\/\/collections\/all",
-          "img_collection1": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_1_d1d343a6-2c0b-4e79-959d-36a994b038b2.jpg",
+          "button_3": "$640",
+          "url_collection3": "shopify:\/\/products\/the-giulia-dress",
+          "img_collection1": "shopify:\/\/shop_images\/14.png",
           "title_collection1": "THE LIAM DRESS",
-          "button_1": "New Arrivals",
-          "url_collection1": "shopify:\/\/collections\/all",
-          "img_collection2": "shopify:\/\/shop_images\/Galbi-TRAVELED_FASHION_AND_ART_2_5a3b2aee-6da4-4bbb-a27b-f1b6dfd85314.jpg",
+          "button_1": "$500",
+          "url_collection1": "shopify:\/\/products\/the-liam-dress",
+          "img_collection2": "shopify:\/\/shop_images\/15.png",
           "title_collection2": "THE POSITANO DUSTER",
-          "button_2": "$XXX",
-          "url_collection2": "shopify:\/\/collections\/all",
+          "button_2": "$425",
+          "url_collection2": "shopify:\/\/products\/the-positano-duster",
           "margin_top": "80",
           "margin_bottom": "35"
         }
@@ -3725,11 +3760,11 @@
               "video_link": "",
               "video_image": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_eba72f27-ba9b-4a85-9d3e-e2b0a9d64f3f.jpg",
               "overlay_opacity": 0,
-              "title": "Lorem Ipsum Dolar set amet temporum vest",
-              "text": "<p>By sourcing distinctive, high-quality pieces from local artisans and designers and bringing them directly to you, GALBI provides a consumer experience. <\/p>",
+              "title": "SAY HELLO TO THE OPPOSITE OF FAST FASHION.",
+              "text": "<p>By sourcing distinctive, high-quality pieces from local artisans and designers and bringing them directly to you, GALBI provides a consumer experience unlike any other. When you shop with us, you’re supporting hyper-local, undiscovered brands imbued with the culture and specialty of their home region. From Italian linens to Portuguese leather goods, you’ll reach for these unique styles for years to come. <\/p>",
               "color_text": "#ffffff",
-              "button_label": "Here The GALBI Story",
-              "button_link": "https:\/\/shopgalbi.com\/",
+              "button_label": "Discover the GALBI story",
+              "button_link": "shopify:\/\/pages\/our-story",
               "color_btn_bg": "rgba(0,0,0,0)",
               "color_btn_text": "#ffffff"
             }
@@ -3742,11 +3777,75 @@
       },
       "28b27f46-7c72-4d27-bd04-2a9994b8fa81": {
         "type": "Galbi-product_slider",
+        "blocks": {
+          "4bc7b2f8-159b-48fe-a942-5959fa738502": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Homepage_Image_7_scroll_menu.jpg",
+              "product_title": "THE JASMINE DRESS",
+              "price": "$525",
+              "link": "shopify:\/\/products\/the-jasmine-dress"
+            }
+          },
+          "86155833-99ee-4f4d-97b1-a945658f4b86": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home_page_3.jpg",
+              "product_title": "THE POSITANO DUSTER",
+              "price": "$425",
+              "link": "shopify:\/\/products\/the-positano-duster"
+            }
+          },
+          "dcebaa95-e334-4ee8-bfb1-ad1eef38fac5": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/homepage_9.jpg",
+              "product_title": "THE BETH DRESS",
+              "price": "$700",
+              "link": "shopify:\/\/products\/the-beth-dress"
+            }
+          },
+          "e0728e6c-1007-4ccf-b1a1-dd0f7c442aa2": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home_page_10.jpg",
+              "product_title": "THE LULU DRESS",
+              "price": "$450",
+              "link": "shopify:\/\/products\/the-lulu-dress"
+            }
+          },
+          "e03fc789-663a-43b9-bea9-49f59a55a806": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home_page_11.jpg",
+              "product_title": "THE LIMONCELLO LINEN MAXI",
+              "price": "$480",
+              "link": "shopify:\/\/products\/the-limoncello-linen-maxi"
+            }
+          },
+          "d340d8f9-81dc-4028-834a-b11f57b4aba6": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home_page_12.jpg",
+              "product_title": "THE BETH DRESS",
+              "price": "$700",
+              "link": "shopify:\/\/products\/the-beth-dress"
+            }
+          }
+        },
+        "block_order": [
+          "4bc7b2f8-159b-48fe-a942-5959fa738502",
+          "86155833-99ee-4f4d-97b1-a945658f4b86",
+          "dcebaa95-e334-4ee8-bfb1-ad1eef38fac5",
+          "e0728e6c-1007-4ccf-b1a1-dd0f7c442aa2",
+          "e03fc789-663a-43b9-bea9-49f59a55a806",
+          "d340d8f9-81dc-4028-834a-b11f57b4aba6"
+        ],
         "settings": {
-          "title": "The perfect sun dress",
-          "products_details": "Our first collection will transport you to the Italian coast with breezy, timeless pieces.",
-          "button_name": "Here The Galbi Story",
-          "url_button": "shopify:\/\/products\/short-sleeve-button-up",
+          "title": "SUN SOAKED Summer",
+          "products_details": "Our first collection will transport you to the Italian coast with breezy, timeless pieces that let your summer beauty shine.",
+          "button_name": "Shop Amalfi",
+          "url_button": "shopify:\/\/collections\/all",
           "select_collection": "newest-products",
           "products_limit": 4,
           "margin_top": "",
@@ -3822,31 +3921,85 @@
       },
       "section-product-v6": {
         "type": "section-product-v6",
-        "settings": {
-          "title_section_product": "Shop Dresses",
-          "select_collection": "shop-dresses",
-          "products_limit": 8,
-          "buttom_name": "ALL PRODUCTS",
-          "button_name_url": "shopify:\/\/collections\/all",
-          "margin_top": "",
-          "margin_bottom": "80"
-        }
+        "settings": {}
       },
       "galbi-collection-top-section": {
         "type": "galbi-collection-top-section",
         "settings": {
-          "img_bottom": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_5.jpg",
-          "title_product": "OUR COLLECTIONS",
-          "content-countdown": "Our collections are carefully curated by our founder. By visiting local artisans and designers around the world, we offer you unparalleled access to high-quality pieces from the best locales on Earth. Shopping small on an international scale has never been easier, and you’ll love reaching for pieces that are truly one of a kind in your closet for years to come.",
+          "title_top": "THE AMALFI COLLECTION",
+          "subtitle_top": "Gorgeous styles and textures sourced from the Italian coast",
+          "content_top": "An ode to the European summer, our first collection is full of textured linens, timeless colors, and casual silhouettes you’ll reach for over and over. Each piece is handmade Italian linen that will last a lifetime, carefully sourced on foot by our founder from local designers. We scoured Capri and Positano to find stunning, yet simple pieces that will become instant icons in your closet. You won’t find this collection anywhere else — that’s the GALBI way.",
+          "button": "ShOP NOW",
+          "url_button": "shopify:\/\/collections\/all",
+          "img_banner1": "shopify:\/\/shop_images\/Collection_image_1.png",
+          "url_banner1": "shopify:\/\/collections\/all",
+          "product_name": "Product Title",
+          "product_price": "$455",
+          "margin_top": "",
           "margin_bottom": ""
         }
       },
       "Galbi-product_slider": {
         "type": "Galbi-product_slider",
+        "blocks": {
+          "19da215a-b3db-4a01-af63-16f55680f0ff": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TheFlaviaPantImage1-Ecru.jpg",
+              "product_title": "The Flavia Pant",
+              "price": "$330",
+              "link": "shopify:\/\/products\/the-flavia-pant"
+            }
+          },
+          "6c57f637-d339-4f83-a5fa-074627227636": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TheGiuliaDressImage1-White.jpg",
+              "product_title": "The Giulia Dress",
+              "price": "$640",
+              "link": "shopify:\/\/products\/the-giulia-dress"
+            }
+          },
+          "94e92319-1f6e-4fe0-b613-72d2658a3bdc": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TheLuisaTopImage1-Ivory.jpg",
+              "product_title": "The Luisa Top",
+              "price": "$330",
+              "link": "shopify:\/\/products\/the-luisa-top"
+            }
+          },
+          "3896b0c1-ce4c-4ed5-a86f-bfc3914eb263": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TheLucianaDusterImage1-Ecru.jpg",
+              "product_title": "The Luciana Duster",
+              "price": "$370",
+              "link": "shopify:\/\/products\/the-luciana-duster"
+            }
+          },
+          "e33fe39f-a88a-4af7-a5f9-39305ecf8372": {
+            "type": "product",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/About_1.png",
+              "product_title": "Product title",
+              "price": "$ 20",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "19da215a-b3db-4a01-af63-16f55680f0ff",
+          "6c57f637-d339-4f83-a5fa-074627227636",
+          "94e92319-1f6e-4fe0-b613-72d2658a3bdc",
+          "3896b0c1-ce4c-4ed5-a86f-bfc3914eb263",
+          "e33fe39f-a88a-4af7-a5f9-39305ecf8372"
+        ],
         "settings": {
-          "title": "Handpicked Products",
-          "products_details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "button_name": "SHOP NOW",
+          "title": "More from the Italian coast",
+          "products_details": "",
+          "button_name": "Shop the Amalfi Collection",
           "url_button": "shopify:\/\/collections\/all",
           "select_collection": "",
           "products_limit": 4,
@@ -3871,6 +4024,63 @@
           "url_collection2": "shopify:\/\/collections\/all",
           "margin_top": "10",
           "margin_bottom": "80"
+        }
+      },
+      "Galbi-contact_page_slider": {
+        "type": "Galbi-contact_page_slider",
+        "blocks": {
+          "81f7463f-4bc8-44dc-9cb7-828db2bf4d5a": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Contact_Page_Image_2_scroll_menu.jpg",
+              "product_title": "The Mandy Dress",
+              "price": "$600",
+              "link": "shopify:\/\/products\/the-mandy-dress"
+            }
+          },
+          "c3922c9d-da95-4dc3-8210-f30e2919f188": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Contact_Page_Image_3_scroll_menu.jpg",
+              "product_title": "The Sofia Lace Top",
+              "price": "$300",
+              "link": "shopify:\/\/products\/the-sofia-lace-top"
+            }
+          },
+          "4a424993-3a66-4cd5-b18e-54e22167f2b3": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Contact_Page_Image_4_scroll_menu.jpg",
+              "product_title": "The Matteo Shirt",
+              "price": "$295",
+              "link": "shopify:\/\/products\/the-matteo-shirt"
+            }
+          },
+          "7fde55ce-f64a-4141-8ae2-507412bafb54": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Contact_Page_Image_5_scroll_menu.jpg",
+              "product_title": "The Luca Shirt",
+              "price": "$295",
+              "link": "shopify:\/\/products\/the-luca-shirt"
+            }
+          }
+        },
+        "block_order": [
+          "81f7463f-4bc8-44dc-9cb7-828db2bf4d5a",
+          "c3922c9d-da95-4dc3-8210-f30e2919f188",
+          "4a424993-3a66-4cd5-b18e-54e22167f2b3",
+          "7fde55ce-f64a-4141-8ae2-507412bafb54"
+        ],
+        "settings": {
+          "title": "Traveled Fashion & Art",
+          "products_details": "",
+          "button_name": "Shop Our Latest Collection",
+          "url_button": "shopify:\/\/collections\/all",
+          "select_collection": "",
+          "products_limit": 4,
+          "margin_top": "",
+          "margin_bottom": ""
         }
       }
     },

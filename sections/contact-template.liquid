@@ -29,7 +29,7 @@
   .left_image_details {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100vh;
   }
 {% endstyle %}
@@ -67,7 +67,7 @@
                 </div>
               {% endif %}
               <br>
-              <p style="line-height: 25px;">{{ page.content }}</p>
+              <p style="line-height: 25px; letter-spacing: 1px;">{{ page.content }}</p>
             </div>
             {% form 'contact' %}
               {% if form.posted_successfully? %}

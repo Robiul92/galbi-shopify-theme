@@ -23,16 +23,25 @@ Author URI: https://7uptheme.com/
 17.Blog
 18.Pages
 -----------------------------------*/
+*{
+  @font-face
+{
+font-family: ambroise;
+src: url('/assets/AmbroiseStd_Regular.woff'); /* IE9 */
+}
+}
 /* General */
 body {
   color: #161616;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'ambroise' !important;
   font-size: 14px;
   line-height: inherit;
   margin: 0;
   padding: 0;
   font-weight: 400;
 }
+
+
 .wrap {
   overflow: hidden;
   position: relative;

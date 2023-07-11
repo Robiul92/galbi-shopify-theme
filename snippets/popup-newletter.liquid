@@ -37,14 +37,9 @@
           <div class="left">
             {% if settings.title_popup != blank %}
             <h1 class="title">{{settings.title_popup}}</h1>
-            {% endif %}
-            {% if customer %}
-              <p>Welcome back, {{ customer.first_name }}!</p>
-            {% else %}
-              <p>Sign in or create an account to continue.</p>
-            {% endif %}            
+            {% endif %}          
             {% if settings.description_popup != blank %}
-            <p class="sub-title mb-0">{{settings.description_popup}}</p>
+            <p style="color: #161616 !important;font-size: 12px;line-height: 25px;" class="sub-title mb-0">{{settings.description_popup}}</p>
             {% endif %}
             <div id="mailchimp-email-subscibe ">
               <div id="mc_embed_signup">  
@@ -81,7 +76,7 @@
                 <li class="list-inline-item"><a href="{{settings.url_sc_popup1}}"><i class="{{settings.icon_sc_popup1}}"></i></a></li>
                 {% endif %}
                 {% if settings.icon_sc_popup2 != blank %}
-                <li class="list-inline-item"><a href="{{settings.url_sc_popup2}}"><i class="{{settings.icon_sc_popup2}}"></i></a></li>
+                    {% include 'tiktok-footer-icon' %}
                 {% endif %}
                 {% if settings.icon_sc_popup3 != blank %}
                 <li class="list-inline-item"><a href="{{settings.url_sc_popup3}}"><i class="{{settings.icon_sc_popup3}}"></i></a></li>

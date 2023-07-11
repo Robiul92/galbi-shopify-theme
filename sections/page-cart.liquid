@@ -7,13 +7,15 @@ For info on test orders:
 
 {% endcomment %}
 <div class="wrap-bread-crumb breadcrumb_collection2">
-  <div class="text-center bg-breadcrumb" style="background-image : url({% if section.settings.bg_breadcrumb != blank  %}{{section.settings.bg_breadcrumb | img_url : 'master'}} {% else %}//placehold.it/1920x510 {% endif %})">
+  <div class="text-center bg-breadcrumb"
+    {% comment %} style="background-image : url({% if section.settings.bg_breadcrumb != blank  %}{{section.settings.bg_breadcrumb | img_url : 'master'}} {% else %}//placehold.it/1920x510 {% endif %})" {% endcomment %}
+  >
     <div class="title-page">
 
-      <h2 class="">{{section.settings.page_title}}</h2>
+      <h2 style="font-family: Ambroise Std;" class="">{{section.settings.page_title}}</h2>
 
     </div>
-    {% include 'breadcrumb' %}
+    {% comment %} {% include 'breadcrumb' %} {% endcomment %}
   </div>
 </div>
 <section class="page-cart">

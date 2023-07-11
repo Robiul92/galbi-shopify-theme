@@ -11,8 +11,9 @@ For all available customer liquid tags:
     <div class="row">
       <div class="col-md-12">
         <div class="maxus-myaccount__header">
-          <h2 class="title-shop-page" style="font-size: 16px;" >{{ customer.email }}</h2>
-          <p class="mb-30 secondary-text">(not <strong>{{ customer.email }}</strong>? <a href="/account/logout">Sign out</a>).</p>
+          <h2 class="title-shop-page" style="font-size: 25px;" >{{ customer.email }}</h2>
+          <br>
+          <p class="mb-30 secondary-text"><a href="/account/logout">Sign out</a></p>
         </div>
         <div class="maxus-myaccount__content">
           <h2 style="font-size : 14px ; text-transform: uppercase ; letter-spacing: 2px; font-weight : 600; margin-top: 20px" class="maxus-myaccount__title" id="engo-orders">{{ 'customer.orders.title' | t }}</h2>
@@ -63,8 +64,8 @@ For all available customer liquid tags:
           
           <h2 class="maxus-myaccount__title d-flex align-items-center justify-content-center" style="margin: 20px 0" id="engo-address">
             <span style="font-size : 14px ; text-transform: uppercase ; letter-spacing: 2px; font-weight : 600" class="text-middle">{{ 'customer.account.details' | t }}</span>
-            <a href="/account/addresses" class="btn btn-maxus btn-waves btn-sm btn-sharp btn-default w-95">Edit</a>
           </h2>
+          <a href="/account/addresses" class="">Edit</a>
           <div class="maxus-myaccount__wrap">
             {% if customer.default_address != nil %}
             <p>
