@@ -53,11 +53,11 @@
     {% assign values = values | append: ',' | append: value %}
     {% assign values = values | split: ',' %}
 
-    <div data-value="{{ value | escape }}"  data-style="square" class="maxus-color none swatch-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}"
+    <div onclick="varientclick({{variant.id}})" data-value="{{ value | escape }}"  data-style="square" class="maxus-color none swatch-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}"
       
       {% if variant.available %}
         {% if is_color %}
-          data-toggle="tooltip" data-placement="top"  data-original-title="{{ value | handle }}"
+          data-toggle="tooltip" data-placement="top"  data-original-title="{{ value | handle | capitalize }}"
         {% endif %}
         {% else %}
         data-toggle="tooltip" data-placement="top"  data-original-title="Sold Out"
@@ -87,3 +87,18 @@
 </div>
 {% endunless %}
 {% endif %}
+
+<script>
+const product = {{ product | json }};
+function varientclick(varientId) {
+  product.variants.forEach(variant=>{
+    if(varientId == variant.id){
+      document.querySelectorAll('.product-sidebar-images-all').forEach(el=>{
+        if(variant.featured_image.position == el.id ){
+          el.click();
+        }
+      })
+    }
+  })
+}
+</script>

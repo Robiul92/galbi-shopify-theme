@@ -1,6 +1,6 @@
 {
   "current": {
-    "title_popup": "SIGN UP IN STYLE",
+    "title_popup": "SIGN UP <br>IN STYLE",
     "description_popup": "Become a GALBI Insider and be the first to shop our collections.",
     "placeholder_popup": "Email",
     "button_name_popup": "SUBMIT",
@@ -3661,7 +3661,7 @@
               "color_block_button": "#ffffff",
               "color_bg_block_button": "rgba(0,0,0,0)",
               "color_bg_block_button_hover": "rgba(0,0,0,0)",
-              "block_url": "shopify:\/\/collections\/all"
+              "block_url": "shopify:\/\/collections\/shop-by-collection"
             }
           },
           "1573548467792-1": {
@@ -3845,7 +3845,7 @@
           "title": "SUN SOAKED Summer",
           "products_details": "Our first collection will transport you to the Italian coast with breezy, timeless pieces that let your summer beauty shine.",
           "button_name": "Shop Amalfi",
-          "url_button": "shopify:\/\/collections\/all",
+          "url_button": "shopify:\/\/collections\/shop-by-collection",
           "select_collection": "newest-products",
           "products_limit": 4,
           "margin_top": "",

@@ -8,17 +8,18 @@
 }
 
 @font-face {
-  font-family: 'Ambroise Std';
-  src: url('./AmbroiseStd-Regular.woff2') format('woff2'),
-  url('./AmbroiseStd-Regular.woff') format('woff'),
-  url('./AmbroiseStd-Regular.otf') format('opentype'),
-  url('./AmbroiseStd-Regular.ttf') format('truetype'),
-  url('./AmbroiseStd-Regular-1.svg#AmbroiseStd') format('svg')
-  ;
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+    font-family: 'Ambroise Std';
+    src: url('AmbroiseStd-Regular.eot');
+    src: url('AmbroiseStd-Regular.eot?#iefix') format('embedded-opentype'),
+        url('AmbroiseStd-Regular.woff2') format('woff2'),
+        url('AmbroiseStd-Regular.woff') format('woff'),
+        url('AmbroiseStd-Regular.ttf') format('truetype'),
+        url('AmbroiseStd-Regular.svg#AmbroiseStd-Regular') format('svg');
+    font-weight: normal;
+    font-display: swap;
 }
+
+
 
 @font-face {
   font-family: 'Libre Baskerville';
@@ -621,16 +622,16 @@ Swatches Styles
 
   .close-window{
     position: absolute;
-    right: -30px;
-    top: 0;
-    color: #ffffff;
-    width: 24px;
-    height: 24px;
+    right: 0;
+    top: 5px;
+    color: #161616;
+    width: 34px;
+    height: 34px;
     text-align: center;
     i{
       line-height: 24px;}
     &:hover{
-    	color: #41cce5;
+    	// color: #41cce5;
     }
   }
   .success-message{
@@ -1269,9 +1270,10 @@ body {
           font-family: 'Brooklyn' !important;
           font-weight: 300;
           font-style: normal;
+          letter-spacing: 1px;
         }
         p {
-          letter-spacing: 1px;
+          letter-spacing: 0px;
           font-family: 'Open Sans' !important;
           line-height: 25px;
           font-size: 12px;
@@ -6437,11 +6439,11 @@ body {
       .product-name{
         a{
           font-family: 'Ambroise Std';
-          font-size: 22px;
+          font-size: 44px;
           font-weight: 400;
           color: #010101;
           margin-bottom: 12px;
-          line-height: 32px;
+          line-height: 50px;
           letter-spacing: 2px;
         }
       }
@@ -6488,15 +6490,15 @@ body {
         .swatch-element {
           .size-quickview{
             display: inline-block;
-            min-width: 44px !important;
-            height: 44px !important;
-            border: 2px solid #b0b0b0 ;
+            min-width: 34px !important;
+            height: 34px !important;
+            border: 2px solid #b0b0b0;
             color: #868686;
             margin: 0 10px 10px 0 !important;
-            padding-top: 6px;
+            padding-top: 2px;
             text-align: center;
             transition: all .3s ease;
-            font-size: 14px;
+            font-size: 12px;
           }
           .color-quickview{
             background-color: white;
@@ -6509,7 +6511,7 @@ body {
             min-width: 30px !important;
             height: 30px !important;
             transition: all .3s ease;
-            margin: 0 10px 10px 0;
+            // margin: 0 10px 10px 0;
           }
         }
       }
@@ -10127,18 +10129,18 @@ POPup newletter
         // float: left;
         .close_edit{
           padding: 0;
-          height: 25px;
-          width: 25px;
+          height: 35px;
+          width: 35px;
           position: absolute;
-          right: -15px;
-          top: -15px;
+          right: 8px;
+          top: 8px;
           z-index: 9;
-          color: #fff;
+          color: #161616;
           text-align: center;
-          font-size: 13px;
-          line-height: 27px;
+          font-size: 17px;
+          line-height: 33px;
           border: 0;
-          background: #161616;
+          background: transparent;
           cursor: pointer;
         }
         .left{
@@ -10159,7 +10161,7 @@ POPup newletter
             font-size: 14px;
           }
           #mc_embed_signup{
-            margin: 40px 0;
+            margin: 20px 0;
             .form-control{
               border-radius: 0;
               border: 1px solid #161616;
@@ -10990,7 +10992,7 @@ POPup newletter
                     display: block;
                     line-height: 25px;
                     margin-top: 15px;
-                    letter-spacing: 1px;
+                    letter-spacing: 0px;
                   };
                   .under_image {
                     font-family: 'Libre Baskerville' !important;
@@ -21407,7 +21409,7 @@ body,p,span {font-family: "Open Sans" !important;}
 h4 {font-family: "Brooklyn Bold" !important; text-transform: uppercase;}
 
 h2, h1 {
-    font-family: 'Ambroise Std';
+    font-family: 'Ambroise Std' ;
     font-weight: 400 !important;
     text-transform: uppercase;
     font-size: 30px;

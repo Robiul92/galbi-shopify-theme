@@ -57,7 +57,7 @@
                   <div class="col-sm-2 gutter ">
                     <div class="js_prod_sub">
                       {% for image in product.images %}
-                        <div class="engoj_img_variant prod_sub engoj-nav-item">
+                        <div id="{{image.position}}" class="engoj_img_variant product-sidebar-images-all prod_sub engoj-nav-item">
                           <img src="{{ image.src | product_img_url: 'master' }}" alt="{{product.title}}">
                         </div>
                       {% endfor %}
