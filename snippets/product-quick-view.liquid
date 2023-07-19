@@ -32,8 +32,8 @@
                 <form action="/cart/add" method="post" class="variants CartContainer" style="letter-spacing: 2px;">
                   <div class="d-flex justify-content-between">
                   <div class="prices product-price dosis-font variation-price mb-15"> 
-                    <label class="price product-price">                 
-                    <span class="compare-price dark opaci title14"></span>
+                    <label id="remove-usd" class="price product-price">
+                      <span class="compare-price dark opaci title14"></span>
                     </label>
                   </div>
                   </div>
@@ -74,4 +74,24 @@
 
 <script type="text/javascript">
   Shopify.doNotTriggerClickOnThumb = false;
+
+  
+  function checkAndRemoveUSD() {
+    // Find the <label> element
+    var labelElement = document.getElementById('remove-usd');
+
+    console.log(labelElement)
+  
+    // Check if the element exists and contains the text "USD"
+    if (labelElement && labelElement.textContent.includes('USD')) {
+      // Replace "USD" with an empty string in the text content
+      labelElement.textContent = labelElement.textContent.replace('USD', '');
+    } else {
+      // If the label is empty or doesn't contain "USD", wait for a specific duration (e.g., 500ms) and try again
+      
+      {% comment %} setTimeout(checkAndRemoveUSD, 500); {% endcomment %}
+    }
+  }
+  // Start checking and removing "USD"
+  // checkAndRemoveUSD();    
 </script>

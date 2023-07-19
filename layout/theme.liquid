@@ -233,8 +233,21 @@ Add the page template as a class for easy page or template specific styling.
   {% if template contains 'index' %}
   {% include 'popup-newletter' %}
   {% endif%}
- 
- 
+
+  <style>
+    @font-face {
+      font-family: 'Ambroise Std';
+      src: url('AmbroiseStd-Regular.eot');
+      src: url('AmbroiseStd-Regular.eot?#iefix') format('embedded-opentype'),
+          url('AmbroiseStd-Regular.woff2') format('woff2'),
+          url('AmbroiseStd-Regular.woff') format('woff'),
+          url('AmbroiseStd-Regular.ttf') format('truetype'),
+          url('AmbroiseStd-Regular.svg#AmbroiseStd-Regular') format('svg');
+      font-weight: normal;
+      font-display: swap;
+    }
+  </style>
+
 </body>
 </html>
  

@@ -52,21 +52,20 @@
     {% assign values = values | join: ',' %}
     {% assign values = values | append: ',' | append: value %}
     {% assign values = values | split: ',' %}
+    {% assign bg_color = value | split: ' ' | last %}
+    {% assign bg_color_name = value | split: ' ' | first | capitalize %}
 
-    <div onclick="varientclick({{variant.id}})" data-value="{{ value | escape }}"  data-style="square" class="maxus-color none swatch-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}"
-      
-      {% if variant.available %}
-        {% if is_color %}
-          data-toggle="tooltip" data-placement="top"  data-original-title="{{ value | handle | capitalize }}"
-        {% endif %}
-        {% else %}
-        data-toggle="tooltip" data-placement="top"  data-original-title="Sold Out"
+    <div onclick="varientclick({{variant.id}})" data-value="{{ value | escape }}"  data-style="square" class="maxus-color none swatch-element swatch-colours-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}"
+      {% comment %} id="color-swatch-value" {% endcomment %}
+      id="{{variant.id}}"
+      {% if is_color %}
+        data-toggle="tooltip" data-placement="top" data-original-title="{{ bg_color_name }}"
       {% endif %}>
-      <input class="swatches-option" id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} {% unless variant.available %}disabled{% endunless %} />
+      <input class="swatches-option" id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
 
       {% if is_color %}
       <div class=" border-color">
-      <label class="link_color" for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }}); background-size: cover;">
+      <label class="link_color" for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color: {{ bg_color }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }}); background-size: cover;">
       </label>
       </div>
       {% else %}

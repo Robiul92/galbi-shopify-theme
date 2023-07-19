@@ -59,6 +59,7 @@
                     </a>
                   {% else %}
                     <a
+                      style="padding: 0;"
                       href="{{ link.url }}"
                       title="{{link.title | split: '[' | first }}"
                       class="delay03 relative nav-link  menu_lv1 "
@@ -204,6 +205,7 @@
                     </a>
                   {% else %}
                     <a
+                      style="padding: 0;"
                       href="{{ link.url }}"
                       title="{{link.title | split: '[' | first }}"
                       class="delay03 relative nav-link  menu_lv1 "
@@ -344,13 +346,13 @@
                               {% if settings[_mega_lcol_img_up] == blank %}
                                 {% comment %} {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }} {% endcomment %}
                               {% else %}
-                                <img
+                                {% comment %} <img
                                   src="https://cdn.shopify.com/s/files/1/0756/1412/6358/files/Shop_by_products_image.png?v=1687444182"
                                   alt="banner-megamenu"
-                                >
-                                {% comment %}
-                                  {{settings[_mega_lcol_img_up] | img_url: "master"}}
-                                {% endcomment %}
+                                > {% endcomment %}
+
+                                <img src="{{settings[_mega_lcol_img_up] | img_url: "master"}}" alt="">
+                               
                               {% endif %}
                             </a>
                           </div>
@@ -638,6 +640,7 @@
                               href="{{ childlink.url }}"
                               title="{{childlink.title | split: '[' | first }}"
                               class="delay03 relative nav-link  menu_lv1 "
+                              style="padding: 0;"
                             >
                               {{- childlink.title | split: '[' | first -}}
                             </a>

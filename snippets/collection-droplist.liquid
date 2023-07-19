@@ -71,6 +71,9 @@
     .filter-div {
       padding-right: 0em;
     }
+    .form-group label:before {
+      margin-right: 5px;
+    }
   }
 {% endstyle %}
 
@@ -96,7 +99,15 @@
                   disabled
                 {%- endif %}
               >
-              <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">{{ filter_value.label }}</label>
+
+              <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                {% if filter.label == 'Color' %}
+                  {{ filter_value.label | split: ' ' | first }}
+                {% else %}
+                  {{ filter_value.label }}
+                {% endif %}
+              </label>
+
             </div>
           {% endfor %}
         </div>

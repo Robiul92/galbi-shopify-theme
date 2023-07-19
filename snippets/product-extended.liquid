@@ -6,7 +6,7 @@
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     .colapsable {
-      padding: 4rem 1rem;
+      padding: 4rem 1rem 0rem 1rem;
     }
     .product-extra-images {
       flex-direction: column-reverse;
@@ -767,8 +767,8 @@
 
                 {% if sold_out %}
                   <div class="btn-action">
-                    <button class="shop-button-soldout">
-                      {{ 'products.product.out_of_stock' | t }}
+                    <button disabled class="shop-button">
+                     {{ 'products.product.out_of_stock' | t }}
                     </button>
                   </div>
                 {% else %}
@@ -784,6 +784,9 @@
                   </div>
                 {% endif %}
               </form>
+
+              <div style="display: none;" id="sold-out-error" class="errors qty-error">
+              </div>
 
               {% comment %}
                 <div class="btn-addwhlist">
@@ -938,7 +941,10 @@
 {% endif %}
 
 <script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    
   const product = {{ product | json }};
+
   //selected watch
   document.querySelectorAll('.product-swatches input[type="radio"]').forEach(radio=>{
     radio.addEventListener('change', ()=> {
@@ -961,9 +967,36 @@
         return pass;
       })
 
-      document.getElementById('product-id').value = matchVarient.id;
+      /* this  code remove for client requst.  he  do not want to  show the sold out text on color swatch when it hover
 
+      document.querySelectorAll('.swatch-colours-element').forEach(swatch=>{
+        swatch.setAttribute('data-original-title', swatch.getAttribute('data-value'));
+        const input = swatch.querySelector('input:checked');
+        if (input) {
+          if (swatch.classList.contains('color')) {
+            if(matchVarient.available === false ){
+              swatch.setAttribute('data-original-title', 'Sold Out');
+            } else {
+              swatch.setAttribute('data-original-title', swatch.getAttribute('data-value'));
+            }
+          }
+        }
+      });
+
+      */
+
+      let soldOutError = document.getElementById('sold-out-error');
+
+      if(matchVarient.available === false ){
+        soldOutError.style.display = 'block';
+        soldOutError.innerText = "Sold out.";
+      } else {
+        soldOutError.style.display = 'none';
+      }
+
+      document.getElementById('product-id').value = matchVarient.id;
     })
   });
-  
+
+  });  
 </script>

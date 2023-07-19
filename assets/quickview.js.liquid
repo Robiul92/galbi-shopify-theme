@@ -357,7 +357,7 @@
         /* Quick View SWATCH */
         createQuickViewVariantsSwatch: function(product, quickviewTemplate) {
           var self = this;
-          if (product.variants.length > 1) {
+          if (product.variants.length > 0) {
             for (var i = 0; i < product.variants.length; i++) {
               var variant = product.variants[i];
               var option = '<option value="' + variant.id + '">' + variant.title + '</option>';
@@ -395,7 +395,13 @@
                   options += '<input id="' + forText + '" type="radio" name="option-' + i + '" value="' + value + '" ' + (j == 0 ? ' checked ' : '') + (variant.available ? '' : ' disabled') + ' />';
 
                   if (is_color) {
-                    options += '<label class="color-quickview" for="' + forText + '" style="background-color: ' + valueHandle + ';"></label>';
+                    let bg_color_name = valueHandle; // Define bg_color_name outside of the if statement
+
+                    if (valueHandle.split('-').length > 1) {
+                      bg_color_name = "#" + valueHandle.split('-')[1];
+                    }
+
+                    options += '<label class="color-quickview" for="' + forText + '" style="background-color: ' + bg_color_name + ';"></label>';
                   } else {
                     options += '<label class="size-quickview" for="' + forText + '">' + value + '</label>';
                   }

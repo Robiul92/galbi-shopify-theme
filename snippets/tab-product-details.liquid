@@ -28,7 +28,7 @@
         <input hidden type="checkbox" id="rd3" name="rd">
         <label class="tab-label" for="rd3">{{section.settings.FIT_MEASUREMENTS_title}}</label>
         <div class="tab-content">
-          {{ product.metafields.custom.fit_measurements.value }}
+          {{ product.metafields.custom.fit_and_measurements | metafield_tag }}
         </div>
       </div>
  {% endif %}
@@ -38,7 +38,7 @@
         <input hidden type="checkbox" id="rd4" name="rd">
         <label class="tab-label" for="rd4">{{section.settings.MATERIAL_CARE_title}}</label>
         <div class="tab-content">
-          {{ product.metafields.custom.material_care.value }}
+          {{ product.metafields.custom.material_and_care | metafield_tag }}
         </div>
       </div>
  {% endif %}
