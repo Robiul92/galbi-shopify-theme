@@ -21,7 +21,7 @@
               </div>
               <div class="product-detail">
                 <h3 class="product_name_mini">
-                  <a href="{{item.url}}">{{item.title}}</a>
+                  <a class="mini-cart-product-title" href="{{item.url}}">{{ item.title }}</a>
                 </h3>
                 <div class="product_info">
                   <div class="product_quanity">QTY : {{ item.quantity }} </div>
@@ -63,3 +63,11 @@
   </div>
 </div>
 <div class="js-bg bg-minicart"></div>
+
+<script>
+  const hashTagRegex = /(?:^|\s)(#[a-zA-Z0-9_]+)/g;
+  const productTitles = document.querySelectorAll('.mini-cart-product-title');
+  productTitles.forEach(title=>{
+    title.innerText = title.innerText.replace(hashTagRegex, '');
+  })
+</script>

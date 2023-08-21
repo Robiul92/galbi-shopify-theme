@@ -241,7 +241,7 @@
     },
     "login": {
       "title": "Login",
-      "email": "Email adress",
+      "email": "Email Address",
       "password": "Password",
       "description": "If you have an account with us, log in using your email address.",
       "forgot_password": "Forgot your password?",
@@ -300,9 +300,9 @@
     "register": {
       "title": "Register",
       "description": "Registering for this site allows you to access your order status and history. Just fill in the fields below, and we’ll get a new account set up for you in no time. We will only ask you for information necessary to make the purchase process faster and easier.",
-      "first_name": "Username",
+      "first_name": "First Name",
       "last_name": "Last Name",
-      "email": "Email address",
+      "email": "Email Address",
       "password": "Password",
       "submit": "register",
       "cancel": "Return to Store"
@@ -433,9 +433,9 @@
       "added": "Go to Wishlist",
       "continue": "Continue Shopping",
       "title": "My Wishlist",
-      "subtext": "Please login: ",
+      "subtext": "Login",
       "sign_in": "Login",
-      "or": "Register now?"
+      "or": "Register"
     }
   },
   "product_detail": {

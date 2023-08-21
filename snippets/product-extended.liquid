@@ -57,7 +57,10 @@
                   <div class="col-sm-2 gutter ">
                     <div class="js_prod_sub">
                       {% for image in product.images %}
-                        <div id="{{image.position}}" class="engoj_img_variant product-sidebar-images-all prod_sub engoj-nav-item">
+                        <div
+                          id="{{image.position}}"
+                          class="engoj_img_variant product-sidebar-images-all prod_sub engoj-nav-item"
+                        >
                           <img src="{{ image.src | product_img_url: 'master' }}" alt="{{product.title}}">
                         </div>
                       {% endfor %}
@@ -748,27 +751,32 @@
                 {% endif %}
               {% endif %}
 
-              <form
-                action="/cart/add"
-                method="post"
-                enctype="multipart/form-data"
-                id="AddToCartForm"
-                class="cart clearfix"
-              >
+              {% comment %}
+                <form
+                  action="/cart/add"
+                  method="post"
+                  enctype="multipart/form-data"
+                  id="AddToCartForm"
+                  class="cart clearfix"
+                >
+                </form>
+              {% endcomment %}
+
+              {% form 'product', product, id: 'AddToCartForm', class: 'cart clearfix' %}
                 <input id="product-id" name="id" value="{{ product.variants.first.id }}" type="hidden">
 
-                  <div class="product-swatches">
-                    <!-- Swatch Variant -->
-                    {% for option in product.options %}
-                      {% include 'swatch' with option %}
-                    {% endfor %}
-                    <!-- End Swatch Variant -->
-                  </div>
+                <div class="product-swatches">
+                  <!-- Swatch Variant -->
+                  {% for option in product.options %}
+                    {% include 'swatch' with option %}
+                  {% endfor %}
+                  <!-- End Swatch Variant -->
+                </div>
 
                 {% if sold_out %}
                   <div class="btn-action">
                     <button disabled class="shop-button">
-                     {{ 'products.product.out_of_stock' | t }}
+                      {{ 'products.product.out_of_stock' | t }}
                     </button>
                   </div>
                 {% else %}
@@ -776,6 +784,15 @@
                     <button type="submit" class="shop-button enj-add-to-cart-btn engoj-btn-addtocart">
                       {{ settings.pia_addcart_name }}
                     </button>
+
+                    <div
+                      id="checkoutBtn"
+                      style="cursor: pointer;"
+                      class="shop-button enj-add-to-cart-btn engoj-btn-addtocart"
+                    >
+                      BUY NOW
+                    </div>
+
                     {% if section.settings.show_quantity %}
                       <div class="js-qty">
                         <input type="number" size="4" title="Qty" value="1" min="1" id="Quantity" name="quantity">
@@ -783,10 +800,9 @@
                     {% endif %}
                   </div>
                 {% endif %}
-              </form>
+              {% endform %}
 
-              <div style="display: none;" id="sold-out-error" class="errors qty-error">
-              </div>
+              <div style="display: none;" id="sold-out-error" class="errors qty-error"></div>
 
               {% comment %}
                 <div class="btn-addwhlist">
@@ -894,9 +910,11 @@
     </div>
   </section>
 
-  {% comment %} {% if section.settings.enable_related_product %}
-    {% include 'related-product-update' %}
-  {% endif %} {% endcomment %}
+  {% comment %}
+    {% if section.settings.enable_related_product %}
+      {% include 'related-product-update' %}
+    {% endif %}
+  {% endcomment %}
 </div>
 
 {% if product.metafields.engo_360.enable_360 == 'true' %}
@@ -942,7 +960,7 @@
 
 <script>
   window.addEventListener("DOMContentLoaded", (event) => {
-    
+
   const product = {{ product | json }};
 
   //selected watch
@@ -998,5 +1016,25 @@
     })
   });
 
-  });  
+  document.getElementById('checkoutBtn').addEventListener('click', function(){
+
+    let form = document.querySelector('form[action="/cart/add"]');
+    let formData = new FormData(form);
+    fetch('/cart/add', {
+      method: 'POST',
+      body: formData
+    }).then(function (response){
+      if (response.ok) {
+        location.href='/checkout';
+        return response.json();
+      }
+      throw response;
+    }).then(function (data) {
+      console.log(data);
+    }).catch(function (error) {
+      console.warn(error);
+    });
+  })
+
+  });
 </script>

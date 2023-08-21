@@ -234,6 +234,28 @@ Add the page template as a class for easy page or template specific styling.
   {% include 'popup-newletter' %}
   {% endif%}
 
+  <script>
+    const hashTagRegex = /(?:^|\s)(#[a-zA-Z0-9_]+)/g;
+    const productTitles = document.querySelectorAll('.mini-cart-product-title');
+    productTitles.forEach(title=>{
+      title.innerText = title.innerText.replace(hashTagRegex, '');
+    })
+
+    // this bellow script for checkout page
+    window.addEventListener("DOMContentLoaded", (event) => {
+  
+    const divElements = document.querySelectorAll("div._1x52f9s1._1fragemai._1x52f9sl._1fragem1l._1x52f9sh");
+    
+    divElements.forEach((divElement) => {
+      const innerText = divElement.innerText;
+      const filteredText = innerText.replace(hashTagRegex, '');
+      divElement.innerText = filteredText;
+    });
+
+    });
+    
+  </script>
+
   <style>
     @font-face {
       font-family: 'Ambroise Std';

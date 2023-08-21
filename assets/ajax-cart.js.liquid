@@ -21,6 +21,9 @@ if ((typeof ShopifyAPI) === 'undefined') { ShopifyAPI = {}; }
 /*============================================================================
   API Helper Functions
 ==============================================================================*/
+// Define a regular expression to match words starting with '#'
+const hashTagRegex = /(?:^|\s)(#[a-zA-Z0-9_]+)/g;
+
 function attributeToString(attribute) {
   if ((typeof attribute) !== 'string') {
     attribute += '';
@@ -235,7 +238,7 @@ var ajaxCart = (function(module, $) {
     $addToCart_btn.removeClass('is-adding').addClass('is-added');
     $addToCart_btn.find('.enj-loader-add-to-cart').html('<i class="fa fa-check"></i>');
     
-    $('.product-popup').find('.product-name').html(product.title);
+    $('.product-popup').find('.product-name').html(product.title.replace(hashTagRegex, ''));
     $('.product-popup').find('.product-image img').attr('src', product.image);
 
     showPopup('.product-popup');
@@ -250,7 +253,7 @@ var ajaxCart = (function(module, $) {
 
     if (!!data.message) {
       if (data.status == 422) {
-        $formContainer.after('<div id="sold-out-error" class="errors qty-error">'+ data.description +'</div>')
+        $formContainer.after('<div id="sold-out-error" class="errors qty-error">'+ data.description.replace(hashTagRegex, '') +'</div>')
       }
     }
   };
@@ -310,6 +313,8 @@ var ajaxCart = (function(module, $) {
         price: Shopify.formatMoney(cartItem.price, settings.moneyFormat),
         vendor: cartItem.vendor
       };
+      // Replace all matched words with an empty string
+      item.variation = item.variation.replace(hashTagRegex, '');
 
       items.push(item);
     });

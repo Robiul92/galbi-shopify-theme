@@ -1,17 +1,15 @@
 <!-- /snippets/ajax-cart-template.liquid -->
 {% comment %}
-
   This snippet provides the default handlebars.js templates for
   the ajax cart plugin. Use the raw liquid tags to keep the
   handlebar.js template tags as available hooks.
-
 {% endcomment %}
 <script id="CartTemplate" type="text/template">
   {% raw %}
     <form action="/cart" method="post" novalidate class="ajaxcart">
     	<div class="prod">
        <div class="product-cart">
-        {{#items}} 
+        {{#items}}
         <ol class="minicart_item list-unstyled mb-0">
             <li class="d-flex">
               <div class="thumb_img_cartmini">
@@ -21,7 +19,9 @@
                 <h3 class="product_name_mini">
                   <a href="{{url}}">{{name}}</a>
                   {{#if variation}}
-                    <span class="ajaxcart__product-meta">{{variation}}</span>
+                    <span class="ajaxcart__product-meta">
+                      {{ variation }}
+                    </span>
                   {{/if}}
                   {{#properties}}
                     {{#each this}}
@@ -30,7 +30,7 @@
                       {{/if}}
                     {{/each}}
                   {{/properties}}
-                  
+
                 </h3>
                 <div class="product_info">
                   <div class="product_quanity">QTY : {{itemQty}} </div>
@@ -40,11 +40,11 @@
                 </div>
               </div>
               <div class="produc_remove">
-              <a href="/cart/change?line={{line}}&amp;quantity=0" class="remove-product"><i class="ti-close"></i></a>               
+              <a href="/cart/change?line={{line}}&amp;quantity=0" class="remove-product"><i class="ti-close"></i></a>
               </div>
             </li>
           </ol>
-          {{/items}} 
+          {{/items}}
        </div>
        </div>
         <div class="sub-total">
@@ -59,16 +59,16 @@
           <span>{% endraw %}{{ 'minicart.general.checkout' | t }}{% raw %}</span>
         </a>
       </div>
-     </form> 
-     
-    
-          
-     
-     
-     
+     </form>
+
+
+
+
+
+
   {% endraw %}
-  </script>
-  <script id="AjaxQty" type="text/template">
+</script>
+<script id="AjaxQty" type="text/template">
   {% raw %}
     <div class="ajaxcart__qty">
       <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}">
@@ -82,8 +82,8 @@
       </button>
     </div>
   {% endraw %}
-  </script>
-  <script id="JsQty" type="text/template">
+</script>
+<script id="JsQty" type="text/template">
   {% raw %}
     <div class="js-qty">
       <button type="button" class="qty_minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}">
@@ -95,4 +95,37 @@
       </button>
     </div>
   {% endraw %}
-  </script>
+</script>
+
+{% comment %} <script>
+  function filterVariationAndSetContent() {
+    const variationElement = document.getElementById('ajaxcart__product-meta');
+    if (!variationElement) return; // Exit if the element is not found
+
+    const variation = variationElement.innerText;
+    const filteredVariation = filterVariation(variation);
+
+    variationElement.innerText = filteredVariation;
+  }
+
+  function filterVariation(variation) {
+    // Define a regular expression to match words starting with '#'
+    const hashTagRegex = /(?:^|\s)(#[a-zA-Z0-9_]+)/g;
+
+    // Replace all matched words with an empty string
+    return variation.replace(hashTagRegex, '');
+  }
+
+  // Call the function once the DOM content is loaded
+  document.addEventListener('DOMContentLoaded', filterVariationAndSetContent);
+</script> {% endcomment %}
+
+<script>
+  function filterVariation(variation) {
+    // Define a regular expression to match words starting with '#'
+    const hashTagRegex = /(?:^|\s)(#[a-zA-Z0-9_]+)/g;
+
+    // Replace all matched words with an empty string
+    return variation.replace(hashTagRegex, '');
+  }
+</script>

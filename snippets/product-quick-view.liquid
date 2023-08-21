@@ -46,7 +46,7 @@
 
                   <div class="product-actions">
                     
-                    <div class="product-quantity">
+                    <div style="padding-right: 10px;" class="product-quantity">
                       
                       <div class="quantity-all js-qty">
                         <span  class='qtyminus qty_minus js-qty__adjust js-qty__adjust--minus' data-field='quantity'><i class="fa fa-caret-down"></i></span>
@@ -55,7 +55,9 @@
                       </div>
                     </div>
                     <div class="actions btn-addtocart" >
-                      <button  type="submit" class="btn-addToCart shop-button addcart-link font-bold">{{ 'products.product.add_to_cart' | t }}</button>
+                      <button  type="submit" class="btn-addToCart shop-button addcart-link font-bold">
+                        {{ 'products.product.out_of_stock' | t }}
+                      </button>
                     </div>
                   </div>
                   

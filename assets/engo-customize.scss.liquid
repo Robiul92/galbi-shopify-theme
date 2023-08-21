@@ -2381,7 +2381,8 @@ body {
       -ms-align-items: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center;
+      align-items: start;
+      gap: 1rem;
       .shop-button{
         margin-right: 7px;
         font-family: 'Brooklyn';
@@ -3890,6 +3891,11 @@ body {
         font-weight: 500;
         color: #161616;
         font-family: 'Ambroise Std';
+      }
+      @media (max-width: 480px) {
+        h2{
+          font-size: 30px;
+        }
       }
     }
     .shop_control{
@@ -6566,7 +6572,7 @@ body {
           }
           .btn-addtocart{
             .shop-button{
-              margin-left: 10px;
+              margin-left: 0px;
               font-family: $font-primary;
               transition: all .3s ease;
               width: 200px;
@@ -9620,8 +9626,6 @@ body {
 
   .tab_content_menu_mobile {
     width: 100%;
-    height: 100%;
-    overflow: scroll;
 
     .nav-tabs {
       border-bottom: none;
@@ -10084,16 +10088,33 @@ body {
     }
     
     .close-menu-mobile{
-      background-color: #161616;
-      color: {{settings.bgmenu_mobile}};
+      background-color: transparent;
+      color: #161616;
       z-index: 20;
       height: 50px;
-      line-height: 50px;
       text-align: center;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 12px;
-    } 
+      font-size: 28px;
+      width: 30%;
+      cursor: pointer;
+      padding: 1rem 0;
+    }
+    .new-tab-content {
+      height: 68vh;
+      overflow-y: scroll;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .mobile-menu-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 30px;
+      padding-bottom: 5rem;
+      background-color: #f2f1eb;
+    }
   }
 }
 
@@ -10248,7 +10269,7 @@ POPup newletter
   padding: 100px 0;
   h1, h2.title24.title-form-account{
     font-size: 18px;
-    font-family: $font-primary;
+    font-family: 'Ambroise Std';
     text-transform: uppercase;
     font-weight: 600;
     padding-bottom: 50px;
@@ -10268,7 +10289,7 @@ POPup newletter
     
   }
   label{
-      font-family: $font-primary;
+      font-family: 'Open Sans';
       font-size: 14px;
     }
   input{
@@ -10329,9 +10350,10 @@ POPup newletter
     }
   }
    .forgot_pass{
-    a{
-      text-decoration: none;
       font-size: 14px;
+      a{
+        text-decoration: underline;
+        font-size: 14px;
     }
   }
   .forgot_pass_form{
@@ -12927,10 +12949,10 @@ POPup newletter
       }
       position: absolute;
       padding: 5px;
-      font-family: $font-primary;
+      font-family: 'Brooklyn';
       font-weight: 500;
       display: inline-block;
-      font-size: 18px;
+      font-size: 12px;
       text-transform: uppercase;
       text-align: center;
       line-height: 1.2;
@@ -12938,7 +12960,7 @@ POPup newletter
       top : 50%;
       transform: translate(-50%, -50%);
       transition: all .3s ease;
-      background-color: #eb5050b3;
+      background-color: #161616;
       padding : 10px;
       border-radius : 20px;
       opacity:0;
@@ -13139,11 +13161,11 @@ POPup newletter
     .content-banner{
       text-align: left;
       position: absolute;
-      left: 60%;
+      // left: 60%;
       transform: translate(-50%);
       bottom: 5%;
       transition: 0.5s;
-      width: 100%;
+      // width: 100%;
       letter-spacing: 2px;
       line-height: 30px;
       .bigtitle{
@@ -21551,6 +21573,16 @@ a.videoBoxInfoBtn {
 
 .popup .modal-window .window-window .window-content .right {
     order: 1;
+}
+
+.our-collection-static-image {
+  width: 8.5em;
+}
+
+@media(max-width: 576px){
+  .our-collection-static-image {
+    width: 12em;
+  }
 }
 
 .popup .modal-window .window-window .window-content .left .title {

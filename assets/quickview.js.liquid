@@ -216,8 +216,8 @@
 
         //out of stock
         if (!product.available) {
-          quickview.find("select, input, .total-price, .dec, .inc, .variants label").remove();
-          quickview.find(".btn-addToCart").text('unavailable').addClass('disabled').attr("disabled", "disabled");;
+          quickview.find("select, .product-quantity, input, .total-price, .dec, .inc, .variants label").remove();
+          quickview.find(".btn-addToCart").text('Sold Out').addClass('disabled').attr("disabled", "disabled");;
         } else {
           quickview.find('.total-price span').html(Shopify.formatMoney(currencyConverter(product.price), window.money_format));
 
