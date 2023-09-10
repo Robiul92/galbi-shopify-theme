@@ -2,7 +2,7 @@
   <div class="container">
     <div style="max-width: 550px;margin: auto;" class="">      
       <div class="login pb-5">
-        <div class="CustomerLoginForm">
+        <div class="CustomerLoginForm-page">
         <h1 class="mb-0 title_login text-center"><i class="mr-3 ti-user"></i>{{ 'customer.login.title' | t }}</h1>        
         {% form 'customer_login' %}
         {{ form.errors | default_errors }}
@@ -32,7 +32,7 @@
            
             {% if form.password_needed %}
             <div class="rightx">
-            <a style="text-decoration: underline;" href="#recover" class="RecoverPassword"  >{{ 'customer.login.forgot_password' | t }}</a>
+            <span style="text-decoration: underline; cursor: pointer;" class="RecoverPassword-page"  >{{ 'customer.login.forgot_password' | t }}</span>
             </div>
             {% endif %}
           </div>
@@ -50,7 +50,7 @@
          {% if form.posted_successfully? %}
          {% assign resetPassword = true %}
          {% endif %}
-         <div class="RecoverPasswordForm" style="display: none;">
+         <div class="RecoverPasswordForm-page" style="display: none;">
            <div class="block-login">
              <h2 class="title24 text-center title-form-account"><i class="mr-3 ti-reload"></i>{{ 'customer.recover_password.title' | t }}</h2>
              <div class="form-group row">
@@ -64,7 +64,7 @@
              </div>
              <div class="table-custom create-account">
                <div class="text-center mt-4">
-                 <a class="HideRecoverPasswordLink" style="cursor: pointer;" class="color">{{ 'customer.recover_password.cancel' | t }}</a>
+                 <a class="HideRecoverPasswordLink-page" style="cursor: pointer;" class="color">{{ 'customer.recover_password.cancel' | t }}</a>
                </div>
              </div>
            </div>
@@ -75,3 +75,26 @@
     </div>
   </div>
 </div>
+
+<script>
+  console.log("login page")
+  document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("login page dom loaded")
+
+    const loginFromPage = document.querySelector(".CustomerLoginForm-page");
+    const forgotFormPage = document.querySelector(".RecoverPasswordForm-page");
+
+    document.querySelector(".RecoverPassword-page").addEventListener("click", ()=>{
+        forgotFormPage.style.display = "block";
+        loginFromPage.style.display = "none";
+        console.log("for got pass?")
+      })
+      
+      document.querySelector(".HideRecoverPasswordLink-page").addEventListener("click", ()=>{
+        forgotFormPage.style.display = "none";
+        loginFromPage.style.display = "block";
+      
+    })
+    
+  })
+</script>

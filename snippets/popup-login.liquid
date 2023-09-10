@@ -32,7 +32,7 @@
             {% endif %}
             <div class="form-check">
               {% if form.password_needed %}
-              <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+              <p style="cursor: pointer;" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</p>
               {% endif %}
             </div>
             <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.login.log_in' | t }}">
@@ -126,3 +126,23 @@
 </div>
 <div class="bg-login-popup js-bg-login-popup">
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+
+    const loginFrom = document.querySelector(".CustomerLoginForm");
+    const forgotForm = document.querySelector(".RecoverPasswordForm");
+
+    document.querySelector(".RecoverPassword").addEventListener("click", ()=>{
+        forgotForm.style.display = "block";
+        loginFrom.style.display = "none";
+      })
+      
+      document.querySelector(".HideRecoverPasswordLink").addEventListener("click", ()=>{
+        forgotForm.style.display = "none";
+        loginFrom.style.display = "block";
+      
+    })
+    
+  })
+</script>
