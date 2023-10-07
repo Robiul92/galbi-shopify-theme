@@ -1088,8 +1088,16 @@ jQuery(document).ready(function($) {
       $('.js-poup-login-destop').addClass('active');
       $('.js-bg-login-popup').addClass('active');
     });
+    $('.js-call-popup-notify-sold-out').on( 'click', function() {
+      $('.js-poup-nptify-destop').addClass('active');
+      $('.js-bg-login-popup').addClass('active');
+    });
     $('.js-eveland-close-login').on( 'click', function() {
       $('.js-poup-login-destop').removeClass('active');
+      $('.js-bg-login-popup').removeClass('active');
+    });
+    $('.js-eveland-close-notify').on( 'click', function() {
+      $('.js-poup-nptify-destop').removeClass('active');
       $('.js-bg-login-popup').removeClass('active');
     });
     $('.js-bg-login-popup').on( 'click', function() {
