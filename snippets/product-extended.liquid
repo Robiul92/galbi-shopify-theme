@@ -778,7 +778,7 @@
                     .sold-out-buttons {
                       display: flex;
                     }
-                    @media only screen and (max-width: 600px){
+                    @media only screen and (max-width: 600px) {
                       .sold-out-buttons {
                         display: flex;
                         flex-direction: column;
@@ -792,13 +792,17 @@
                         {{ 'products.product.out_of_stock' | t }}
                       </button>
                     </div>
-  
+
                     <div class="btn-action">
-                      <a href="javascript:void(0)" style="cursor: pointer;" class="js-call-popup-notify-sold-out shop-button">Notify Me</a>
+                      <a
+                        href="javascript:void(0)"
+                        style="cursor: pointer;"
+                        class="js-call-popup-notify-sold-out shop-button"
+                        >Notify Me</a
+                      >
                     </div>
                   </div>
                 {% else %}
-
                   <div class="btn-action detail-attr qty-cart">
                     <button type="submit" class="shop-button enj-add-to-cart-btn engoj-btn-addtocart">
                       {{ settings.pia_addcart_name }}

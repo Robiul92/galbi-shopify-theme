@@ -1,103 +1,154 @@
 {% comment %}
   Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endcomment %}
+
 {% assign file_extension = 'png' %}
 {% capture variantsswatch %} {% endcapture %}
-{% if swatch == "Color" %}
-	{% capture variantsswatch %}{{ 'products.variants.color' | t }}{% endcapture %}
-{% elsif swatch == "Size" %}
-	{% capture variantsswatch %}{{ 'products.variants.size' | t }}{% endcapture %}
+{% if swatch == 'Color' %}
+  {% capture variantsswatch %}{{ 'products.variants.color' | t }}{% endcapture %}
+{% elsif swatch == 'Size' %}
+  {% capture variantsswatch %}{{ 'products.variants.size' | t }}{% endcapture %}
 {% else %}
-	{% capture variantsswatch %}{{ swatch }}{% endcapture %}
+  {% capture variantsswatch %}{{ swatch }}{% endcapture %}
 {% endif %}
 {% if swatch == blank %}
-    <div class="swatch error">
-        <p>You must include the snippet swatch.liquid with the name of a product option.</p>
-        <p>Use: <code>{% raw %}{% include 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
-        <p>Example: <code>{% raw %}{% include 'swatch' with 'Color' %}{% endraw %}</code></p>
-    </div>
-{% else %}
-{% assign found_option = false %}
-{% assign is_color = false %}
-{% assign option_index = 0 %}
-{% assign indexChild = 0 %}
-{% for option in product.options %}
-    {% if option == swatch %}
-        {% assign found_option = true %}
-        {% assign option_index = forloop.index0 %}
-		{% assign indexChild = forloop.index %}
-		<style rel="stylesheet" type="text/css">
-          .proVariants .selector-wrapper:nth-child({{ indexChild }}){display: none;}
-          .maxus-productdetail__options:not(:last-child) {
-            margin-right: 20px;
-            {% comment %} height: 27px; {% endcomment %}
-          }
-        </style>
-        {% assign downcased_option = swatch | downcase %}
-        {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
-            {% assign is_color = true %}
-        {% endif %}
-    {% endif %}
-{% endfor %}
-{% unless found_option %}
-
-{% else %}
-<div class="maxus-productdetail__options{% unless section.settings.spd_style == "pd_style2" %} {% endunless %}">
-  <div class="swatch clearfix {% if settings.po_style == "po_swatchs" %} align-center flex engoc-flex-wrap{% endif %}" data-option-index="{{ option_index }}">
-    {% comment %} <p class="text-uppercase title_variant">{{ variantsswatch }}</p> {% endcomment %}
-    {% assign values = '' %}
-    {% for variant in product.variants %}
-    {% assign value = variant.options[option_index] %}
-    {% unless values contains value %}
-    {% assign values = values | join: ',' %}
-    {% assign values = values | append: ',' | append: value %}
-    {% assign values = values | split: ',' %}
-    {% assign bg_color = value | split: ' ' | last %}
-    {% assign bg_color_name = value | split: ' ' | first | capitalize %}
-
-    <div onclick="varientclick({{variant.id}})" data-value="{{ value | escape }}"  data-style="square" class="maxus-color none swatch-element swatch-colours-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}"
-      {% comment %} id="color-swatch-value" {% endcomment %}
-      id="{{variant.id}}"
-      {% if is_color %}
-        data-toggle="tooltip" data-placement="top" data-original-title="{{ bg_color_name }}"
-      {% endif %}>
-      <input class="swatches-option" id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
-
-      {% if is_color %}
-      <div class=" border-color">
-      <label class="link_color" for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color: {{ bg_color }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }}); background-size: cover;">
-      </label>
-      </div>
-      {% else %}
-      <label class="variant_other" for="swatch-{{ option_index }}-{{ value | handle }}" style="font-weight: 600;">
-        {{ value }}
-      </label>
-      {% endif %}
-    </div>
-
-    {% endunless %}
-    {% if variant.available %}
-    <script>
-      jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
-    </script>
-    {% endif %}
-    {% endfor %}
+  <div class="swatch error">
+    <p>You must include the snippet swatch.liquid with the name of a product option.</p>
+    <p>
+      Use: <code>{% raw %}{% include 'swatch' with 'name of your product option here' %}{% endraw %}</code>
+    </p>
+    <p>
+      Example: <code>{% raw %}{% include 'swatch' with 'Color' %}{% endraw %}</code>
+    </p>
   </div>
-</div>
-{% endunless %}
+{% else %}
+  {% assign found_option = false %}
+  {% assign is_color = false %}
+  {% assign option_index = 0 %}
+  {% assign indexChild = 0 %}
+  {% for option in product.options %}
+    {% if option == swatch %}
+      {% assign found_option = true %}
+      {% assign option_index = forloop.index0 %}
+      {% assign indexChild = forloop.index %}
+      <style rel="stylesheet" type="text/css">
+        .proVariants .selector-wrapper:nth-child({{ indexChild }}){display: none;}
+        .maxus-productdetail__options:not(:last-child) {
+          margin-right: 20px;
+          {% comment %} height: 27px; {% endcomment %}
+        }
+      </style>
+      {% assign downcased_option = swatch | downcase %}
+      {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
+        {% assign is_color = true %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% unless found_option %}
+  {% else %}
+    <div class="maxus-productdetail__options{% unless section.settings.spd_style == "pd_style2" %} {% endunless %}">
+      <div
+        class="swatch clearfix {% if settings.po_style == "po_swatchs" %} align-center flex engoc-flex-wrap{% endif %}"
+        data-option-index="{{ option_index }}"
+      >
+        {% comment %} <p class="text-uppercase title_variant">{{ variantsswatch }}</p> {% endcomment %}
+        {% assign values = '' %}
+        {% assign theNewText = '' %}
+
+        {% for colour in shop.metaobjects.product_colors.values %}
+          {% assign text = colour.color_names.value %}
+          {% capture formatted_text %}{{ text | replace: "#", " #" }}{% endcapture %}
+          {% assign cleaned_text = text | replace: '[', '' | replace: ']', '' | replace: '"', '' %}
+          {% capture newFormatted_text %}{{ cleaned_text | replace: "#", "-#" }}{% endcapture %}
+          {% assign theNewText = newFormatted_text %}
+        {% endfor %}
+        {% assign array_of_strings = theNewText | split: ', ' %}
+
+        {% for variant in product.variants %}
+          {% assign value = variant.options[option_index] %}
+          {% unless values contains value %}
+            {% assign values = values | join: ',' %}
+            {% assign values = values | append: ',' | append: value %}
+            {% assign values = values | split: ',' %}
+            {% assign bg_color = value | split: ' ' | last %}
+            {% assign bg_color_name = value | split: ' ' | first | capitalize %}
+
+
+            {% for string in array_of_strings %}
+              {% assign valueName = string | split: ' -' | first %}
+              {% if value == valueName %}
+                {% assign colorCode = string | split: ' -' | last %}
+              {% endif %}
+            {% endfor %}
+
+            <div
+              onclick="varientclick({{variant.id}})"
+              data-value="{{ value | escape }}"
+              data-style="square"
+              class="maxus-color none swatch-element swatch-colours-element {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}"
+              {% comment %} id="color-swatch-value" {% endcomment %}
+              id="{{variant.id}}"
+              {% if is_color %}
+                data-toggle="tooltip" data-placement="top" data-original-title="{{ bg_color_name }}"
+              {% endif %}
+            >
+              <input
+                class="swatches-option"
+                id="swatch-{{ option_index }}-{{ value | handle }}"
+                type="radio"
+                name="option-{{ option_index }}"
+                value="{{ value | escape }}"
+                {% if forloop.first %}
+                  checked
+                {% endif %}
+              >
+
+              {% if is_color %}
+                <div class=" border-color">
+                  <label
+                    class="link_color"
+                    for="swatch-{{ option_index }}-{{ value | handle }}"
+                    style="background-color: {{ colorCode }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }}); background-size: cover;"
+                  >
+                  </label>
+                </div>
+              {% else %}
+                <label
+                  class="variant_other"
+                  for="swatch-{{ option_index }}-{{ value | handle }}"
+                  style="font-weight: 600;"
+                >
+                  {{ value }}
+                </label>
+              {% endif %}
+            </div>
+          {% endunless %}
+          {% if variant.available %}
+            <script>
+              jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}')
+                .removeClass('soldout')
+                .addClass('available')
+                .find(':radio')
+                .removeAttr('disabled');
+            </script>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endunless %}
 {% endif %}
 
 <script>
-const product = {{ product | json }};
-function varientclick(varientId) {
-  product.variants.forEach(variant=>{
-    if(varientId == variant.id){
-      document.querySelectorAll('.product-sidebar-images-all').forEach(el=>{
-        if(variant.featured_image.position == el.id ){
-          el.click();
-        }
-      })
-    }
-  })
-}
+  const product = {{ product | json }};
+  function varientclick(varientId) {
+    product.variants.forEach(variant=>{
+      if(varientId == variant.id){
+        document.querySelectorAll('.product-sidebar-images-all').forEach(el=>{
+          if(variant.featured_image.position == el.id ){
+            el.click();
+          }
+        })
+      }
+    })
+  }
 </script>
