@@ -69,10 +69,12 @@
               <br>
               <p style="line-height: 25px; letter-spacing: 1px;">{{ page.content }}</p>
             </div>
-            {% form 'contact' %}
-              {% if form.posted_successfully? %}
-                <p class="success-msg">Thanks for contacting us! We'll get back to you as soon as possible.</p>
-              {% endif %}
+            {% form 'customer' %}
+              {%- if form.posted_successfully? -%}
+                <script>
+                  window.location.replace('/pages/thank-you-for-subscribe');
+                </script>
+              {%- endif -%}
 
               {% comment %}
                 -----Error message ----
@@ -99,7 +101,7 @@
                       placeholder="{{section.settings.contactform_name}}"
                       type="text"
                       id="name"
-                      name="contact[name]"
+                      name="contact[first_name]"
                     >
                   </li>
                 {% endif %}
@@ -166,7 +168,7 @@
 
 {% schema %}
 {
-  "name": "Contact Us",
+  "name": "Subscribe",
   "settings": [
     {
       "type": "header",
@@ -266,7 +268,7 @@
 
   "presets": [
     {
-      "name": "Contact Us",
+      "name": "Subscribe",
       "blocks": []
     }
   ]

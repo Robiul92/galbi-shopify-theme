@@ -107,17 +107,24 @@
           {% else %}
             {% assign form_action = '#' %}
           {% endif %}
-          <form class="needs-validation form-inline" action="{{form_action}}" method="post">
+          {% form 'customer' %}
+
+            {%- if form.posted_successfully? -%}
+              <script>
+                window.location.replace('/pages/thank-you-for-subscribe');
+              </script>
+            {%-endif -%}
+
             <div class="form-group mb-0">
               <input
                 type="email"
-                name="EMAIL"
+                name="contact[email]"
                 class="form-control"
                 placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}"
               >
             </div>
-            <button class="bottom_submit_btn btn" type="submit">{{ 'general.newsletter_form.submit_footer' | t }}</button>
-          </form>
+            <input class="bottom_submit_btn btn" type="submit" value="{{ 'general.newsletter_form.submit_footer' | t }}" />
+          {% endform %}
         </div>
       </div>
     </div>

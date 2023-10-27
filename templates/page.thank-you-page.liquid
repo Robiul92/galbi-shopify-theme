@@ -1,0 +1,43 @@
+{% style %}
+  .container-v4 {
+    width: 50%;
+    margin: auto;
+  }
+  .container-v4 p {
+    line-height: 25px;
+    font-size: 14px;
+    color: #161616;
+    text-align: left;
+    font-family: 'Open Sans' !important;
+    font-weight: 400;
+  }
+  .container-v4 h3 {
+    font-size: 12px !important;
+    color: #161616;
+    text-align: left;
+    font-family: 'Brooklyn' !important;
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 25px;
+    margin-top: 22px;
+    letter-spacing: 2px;
+  }
+  @media only screen and (max-width: 600px) {
+    .container-v4 {
+      width: 90%;
+    }
+  }
+{% endstyle %}
+<section>
+  <div class="container">
+    <div class="text-center">
+      <h2 class="" style="font-family: Ambroise Std; font-size: 50px; padding: 30vh 0 40vh;">{{ page.title }}</h2>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-v4">
+    {{ page.content }}
+  </div>
+</section>
