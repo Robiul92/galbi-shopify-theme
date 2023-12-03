@@ -414,6 +414,7 @@
     "checkout_accent_color": "#1990c6",
     "checkout_button_color": "#1990c6",
     "checkout_error_color": "#ff6d6d",
+    "subscribe_banner_img": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_4.jpg",
     "url_sc_popup13": "",
     "color_background_fv6": "#f6f6f6",
     "color_title_fv6": "#161616",
@@ -3590,25 +3591,17 @@
           "1565066810763"
         ],
         "settings": {
-          "title_top": "Contact",
-          "content_top": "Eveland is a London based jewellery brand. Each piece in our collection has been meticulously designed in our studio near London Bridge and embodies our principals of simplicity, detail and understated masculinity. Our collection of Pendants, Cuffs and Rings have been designed to be worn individually or layered and stacked together.",
-          "button": "ShOP NOW",
-          "url_button": "shopify:\/\/collections\/all",
+          "title_top": "",
+          "content_top": "",
           "img_banner1": "shopify:\/\/shop_images\/Contact_Page_Image_1_v_2-3.jpg",
           "url_banner1": "shopify:\/\/collections\/all",
-          "product_name": "Product Title",
-          "product_price": "$455",
-          "margin_top": "",
-          "margin_bottom": "",
-          "contact_left_img": "shopify:\/\/shop_images\/Galbi-SOURCING_TIMELESS_WELL-TRAVELED_STYLE_4.jpg",
-          "contact_top_header": "Contact",
-          "contact_top_details": "If you have questions about our collections, sourcing, sizing, styling, or anything else, we’d love to hear from you. Reach out to the Galbi team through the form below — we’ll be in touch soon!",
           "enable_s_contactform": true,
-          "contactform_name": "Your Name (Required)",
-          "contactform_email": "Your Email (Required)",
+          "contactform_name": "Name",
+          "contactform_email": "Email",
+          "contactform_number": "Phone",
           "contactform_subject": "Subject",
-          "contactform_content": "Your Message",
-          "contactform_btn": "Send To us"
+          "contactform_message": "Message",
+          "contactform_btn": "SUBMIT"
         }
       },
       "list-collection": {
@@ -4081,6 +4074,22 @@
           "products_limit": 4,
           "margin_top": "",
           "margin_bottom": ""
+        }
+      },
+      "subscribe-template": {
+        "type": "subscribe-template",
+        "settings": {
+          "title_top": "",
+          "content_top": "",
+          "img_banner1": "shopify:\/\/shop_images\/Contact_Page_Image_1_v_2-3.jpg",
+          "url_banner1": "",
+          "enable_s_contactform": true,
+          "contactform_name": "Name",
+          "contactform_email": "Email",
+          "contactform_number": "Phone",
+          "contactform_subject": "",
+          "contactform_message": "",
+          "contactform_btn": "SUBMIT"
         }
       }
     },
